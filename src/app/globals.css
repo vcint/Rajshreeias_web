@@ -1,0 +1,111 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: #FAF9F6;
+    --foreground: #2D1B33;
+    
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+ 
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+ 
+    --primary: 282 31% 15%;
+    --primary-foreground: 60 30% 96%;
+ 
+    --secondary: 42 63% 60%;
+    --secondary-foreground: 282 31% 15%;
+ 
+    --muted: 60 30% 96%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+ 
+    --accent: 42 63% 60%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+ 
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 282 31% 15%;
+ 
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif;
+  }
+  
+  /* Selection styling */
+  ::selection {
+    @apply bg-secondary/30 text-primary;
+  }
+}
+
+@layer components {
+  /* Reusable container styles */
+  .section-padding {
+    @apply py-20 sm:py-28;
+  }
+  
+  /* Glass effect utility */
+  .glass-effect {
+    @apply bg-white/10 backdrop-blur-lg border border-white/20;
+  }
+  
+  /* Card hover effect */
+  .card-hover {
+    @apply transition-all duration-300 hover:shadow-xl hover:shadow-primary/5 hover:-translate-y-1;
+  }
+  
+  /* Gradient text */
+  .gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-secondary to-accent;
+  }
+  
+  /* Section header styles */
+  .section-badge {
+    @apply inline-block mb-4 px-4 py-1.5 rounded-full text-sm font-medium;
+  }
+  
+  .section-title {
+    @apply text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight font-serif;
+  }
+  
+  .section-subtitle {
+    @apply mt-4 text-lg text-primary/60;
+  }
+}
+
+@layer utilities {
+  /* Custom animation delays */
+  .animation-delay-200 {
+    animation-delay: 200ms;
+  }
+  
+  .animation-delay-400 {
+    animation-delay: 400ms;
+  }
+  
+  /* Text balance for headings */
+  .text-balance {
+    text-wrap: balance;
+  }
+}
