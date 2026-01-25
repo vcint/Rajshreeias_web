@@ -4,27 +4,32 @@ import { CheckCircle, Users, BookOpen, Clock, Award, Target, FileText, Headphone
 
 const reasons = [
     {
-        icon: Users,
-        title: "Experienced Faculty",
-        description: "Learn from educators with 10+ years of experience in UPSC/MPSC coaching. Our faculty includes former civil servants and subject matter experts."
+        icon: Target,
+        title: "Gurukul Weekly Tracker",
+        description: "We don't just teach; we track your progress every week. You are never studying alone."
     },
     {
         icon: BookOpen,
-        title: "Comprehensive Study Material",
-        description: "Get access to meticulously prepared notes, current affairs compilations, and previous year question papers with detailed solutions."
-    },
-    {
-        icon: Clock,
-        title: "Flexible Batch Timings",
-        description: "Choose from morning, evening, or weekend batches. We also offer recorded lectures for those who miss live sessions."
-    },
-    {
-        icon: Target,
-        title: "Focused Approach",
-        description: "Our teaching methodology is aligned with the latest UPSC and MPSC exam patterns, ensuring you study what matters most."
+        title: "Bilingual Excellence",
+        description: "Learn in mixed language, but get high-quality notes SEPARATELY in English & Marathi."
     },
     {
         icon: FileText,
+        title: "Descriptive Focus",
+        description: "Answer Writing integrated from Month 1. Master the art of expression for the new pattern."
+    },
+    {
+        icon: Users,
+        title: "Subject-Wise Mastery",
+        description: "Flexible modules. Join the full course or just the subject you need."
+    },
+    {
+        icon: Award,
+        title: "The \"Balance & Harmony\" Approach",
+        description: "The difference between a student and an officer is often just their state of mind. We provide exclusive mindset mastery sessions with experts to keep your focus sharp, your confidence high, and your spirit unshakeable throughout this journey."
+    },
+    {
+        icon: Clock,
         title: "Regular Test Series",
         description: "Weekly tests for Prelims and monthly tests for Mains with detailed performance analysis and improvement suggestions."
     },
@@ -32,11 +37,6 @@ const reasons = [
         icon: Headphones,
         title: "Doubt Resolution",
         description: "Get your doubts cleared through dedicated doubt-clearing sessions and one-on-one interactions with faculty."
-    },
-    {
-        icon: Award,
-        title: "Answer Writing Practice",
-        description: "Daily answer writing practice with personalized feedback to help you develop the skill most crucial for Mains examination."
     },
     {
         icon: CheckCircle,
@@ -52,14 +52,14 @@ export default function WhyChooseUs() {
                 {/* Header */}
                 <div className="max-w-3xl mx-auto text-center mb-16">
                     <p className="text-sm font-medium text-[#D9A15B] uppercase tracking-wider mb-4">
-                        Why Rajshree IAS Portal
+                        Why Rajashree's IAS Portal
                     </p>
                     <h2 className="text-3xl sm:text-4xl font-bold text-[#2D1B33] font-serif mb-6">
-                        8 Reasons to Choose Us for Your Civil Services Preparation
+                        Why Choose Rajashree's IAS Portal: The Digital Gurukul Experience
                     </h2>
                     <p className="text-[#2D1B33]/60 text-lg">
-                        We understand that choosing the right coaching institute is a crucial decision. 
-                        Here's what makes Rajshree IAS Portal the preferred choice for UPSC and MPSC aspirants.
+                        Experience a revolutionary approach to civil services preparation that combines traditional wisdom with modern technology. 
+                        Here's what makes our Gurukul methodology unique and effective.
                     </p>
                 </div>
 

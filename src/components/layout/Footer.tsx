@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Instagram, Send, Youtube, Phone, Mail, MapPin, Clock, ArrowRight } from "lucide-react";
+import siteSettings from "@/content/site-settings.json";
 
 const courses = [
     { name: "UPSC Civil Services", href: "/courses#upsc" },
@@ -65,32 +66,32 @@ export default function Footer() {
                             <div className="w-12 h-12 relative">
                                 <Image
                                     src="/logo.png"
-                                    alt="Rajshree IAS Portal Logo"
+                                    alt="Rajashree IAS Portal Logo"
                                     fill
                                     className="object-contain"
                                 />
                             </div>
                             <div>
-                                <h3 className="text-xl font-bold text-white font-serif">Rajshree IAS Portal</h3>
+                                <h3 className="text-xl font-bold text-white font-serif">Rajashree IAS Portal</h3>
                                 <span className="text-xs text-[#D9A15B] font-medium tracking-wider">Excellence in Civil Services Coaching</span>
                             </div>
                         </div>
                         
                         <p className="text-sm leading-relaxed text-white/60 max-w-sm">
-                            Rajshree IAS Portal is dedicated to providing quality education for UPSC and MPSC aspirants. 
+                            Rajashree's IAS Portal is dedicated to providing quality education for UPSC and MPSC aspirants. 
                             Our experienced faculty, comprehensive study material, and personalized mentorship help students 
                             achieve their dream of becoming civil servants.
                         </p>
 
                         {/* Contact Info */}
                         <div className="space-y-3">
-                            <a href="tel:+918668275251" className="flex items-center gap-3 text-white/80 hover:text-[#D9A15B] transition-colors">
-                                <Phone className="w-4 h-4 text-[#D9A15B]" />
-                                <span className="text-sm">+91 86682 75251</span>
+                            <a href={`tel:+91${siteSettings.contact.phone.replace(/\s+/g, '')}`} className="flex items-center gap-3 text-white/80 hover:text-[#D9A15B] transition-colors">
+                                <Phone className="w-4 h-4" />
+                                <span className="text-sm">+91 {siteSettings.contact.phone}</span>
                             </a>
-                            <a href="mailto:info@rajshreeias.com" className="flex items-center gap-3 text-white/80 hover:text-[#D9A15B] transition-colors">
-                                <Mail className="w-4 h-4 text-[#D9A15B]" />
-                                <span className="text-sm">info@rajshreeias.com</span>
+                            <a href={`mailto:${siteSettings.contact.email}`} className="flex items-center gap-3 text-white/80 hover:text-[#D9A15B] transition-colors">
+                                <Mail className="w-4 h-4" />
+                                <span className="text-sm">{siteSettings.contact.email}</span>
                             </a>
                             <div className="flex items-start gap-3 text-white/60">
                                 <MapPin className="w-4 h-4 text-[#D9A15B] flex-shrink-0 mt-0.5" />
@@ -203,7 +204,7 @@ export default function Footer() {
             <div className="border-t border-white/10">
                 <div className="container mx-auto px-4 py-6">
                     <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-white/40">
-                        <p>© 2026 Rajshree IAS Portal. All rights reserved.</p>
+                        <p>© 2026 Rajashree's IAS Portal. All rights reserved.</p>
                         <div className="flex items-center gap-6">
                             <Link href="/about" className="hover:text-[#D9A15B] transition-colors">About Us</Link>
                             <Link href="/courses" className="hover:text-[#D9A15B] transition-colors">Courses</Link>

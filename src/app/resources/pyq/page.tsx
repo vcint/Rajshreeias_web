@@ -6,7 +6,7 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-    title: "Previous Year Questions (PYQ) | Rajshree IAS Portal",
+    title: "Previous Year Questions (PYQ) | Rajashree IAS Portal",
     description: "Comprehensive PYQ analysis for UPSC CSE prelims and mains. Topic-wise questions, answer keys, and detailed explanations.",
     keywords: "UPSC PYQ, previous year questions, UPSC prelims PYQ, UPSC mains PYQ, PYQ analysis",
 };

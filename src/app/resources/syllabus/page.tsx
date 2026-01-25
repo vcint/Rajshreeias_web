@@ -6,7 +6,7 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-    title: "UPSC Syllabus | Rajshree IAS Portal",
+    title: "UPSC Syllabus | Rajashree IAS Portal",
     description: "Complete UPSC CSE syllabus breakdown. Detailed topic-wise syllabus for prelims and mains with preparation strategy.",
     keywords: "UPSC syllabus, UPSC CSE syllabus, prelims syllabus, mains syllabus, UPSC exam pattern",
 };

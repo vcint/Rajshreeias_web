@@ -9,7 +9,7 @@ import {
 } from "lucide-react";
 
 const benefits = [
-    { icon: GraduationCap, text: "Expert Faculty with years of experience" },
+    { icon: GraduationCap, text: "The team of dedicated Gurus" },
     { icon: Users, text: "Small batch sizes (30-40 students)" },
     { icon: BookOpen, text: "Comprehensive study material included" },
     { icon: Calendar, text: "Flexible batch timings available" },
@@ -35,6 +35,9 @@ export default function EnrollPage() {
         phone: "",
         course: "",
         educationLevel: "",
+        previousAttempts: "",
+        yearOfAttempt: "",
+        optionalSubject: "",
         message: ""
     });
 
@@ -312,6 +315,68 @@ export default function EnrollPage() {
                                                 <option value="post-graduate">Post Graduate</option>
                                                 <option value="final-year">Final Year Student</option>
                                                 <option value="other">Other</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div className="grid md:grid-cols-3 gap-5">
+                                        <div>
+                                            <label className="block text-sm font-medium text-[#2D1B33] mb-2">
+                                                Previous Attempts
+                                            </label>
+                                            <select
+                                                value={formData.previousAttempts}
+                                                onChange={(e) => setFormData({...formData, previousAttempts: e.target.value})}
+                                                className="w-full px-4 py-3 rounded-xl border border-[#2D1B33]/10 bg-[#FAF9F6] focus:outline-none focus:ring-2 focus:ring-[#D9A15B] focus:border-transparent transition-all"
+                                            >
+                                                <option value="">Select attempts</option>
+                                                <option value="0">First Attempt</option>
+                                                <option value="1">1 Previous Attempt</option>
+                                                <option value="2">2 Previous Attempts</option>
+                                                <option value="3">3+ Previous Attempts</option>
+                                            </select>
+                                        </div>
+
+                                        <div>
+                                            <label className="block text-sm font-medium text-[#2D1B33] mb-2">
+                                                Year of Last Attempt
+                                            </label>
+                                            <select
+                                                value={formData.yearOfAttempt}
+                                                onChange={(e) => setFormData({...formData, yearOfAttempt: e.target.value})}
+                                                className="w-full px-4 py-3 rounded-xl border border-[#2D1B33]/10 bg-[#FAF9F6] focus:outline-none focus:ring-2 focus:ring-[#D9A15B] focus:border-transparent transition-all"
+                                            >
+                                                <option value="">Select year</option>
+                                                <option value="2026">2026</option>
+                                                <option value="2025">2025</option>
+                                                <option value="2024">2024</option>
+                                                <option value="2023">2023</option>
+                                                <option value="2022">2022</option>
+                                                <option value="2021">2021</option>
+                                                <option value="2020">2020 or earlier</option>
+                                            </select>
+                                        </div>
+
+                                        <div>
+                                            <label className="block text-sm font-medium text-[#2D1B33] mb-2">
+                                                Optional Subject
+                                            </label>
+                                            <select
+                                                value={formData.optionalSubject}
+                                                onChange={(e) => setFormData({...formData, optionalSubject: e.target.value})}
+                                                className="w-full px-4 py-3 rounded-xl border border-[#2D1B33]/10 bg-[#FAF9F6] focus:outline-none focus:ring-2 focus:ring-[#D9A15B] focus:border-transparent transition-all"
+                                            >
+                                                <option value="">Select optional</option>
+                                                <option value="history">History</option>
+                                                <option value="geography">Geography</option>
+                                                <option value="public-administration">Public Administration</option>
+                                                <option value="sociology">Sociology</option>
+                                                <option value="political-science">Political Science</option>
+                                                <option value="economics">Economics</option>
+                                                <option value="anthropology">Anthropology</option>
+                                                <option value="philosophy">Philosophy</option>
+                                                <option value="psychology">Psychology</option>
+                                                <option value="not-decided">Not Decided Yet</option>
                                             </select>
                                         </div>
                                     </div>

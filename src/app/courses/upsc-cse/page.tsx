@@ -5,108 +5,46 @@ import {
     Target, TrendingUp, Star, Calendar, FileText, Brain,
     Shield, Heart, Zap
 } from "lucide-react";
+import coursesData from "@/content/courses.json";
 
 export const metadata: Metadata = {
-    title: "UPSC Civil Services (IAS/IPS) Course | Rajshree IAS Portal",
-    description: "Comprehensive UPSC Civil Services preparation for IAS/IPS aspirants. Complete GS coverage, test series, mentorship, and interview guidance. Join our flagship program.",
-    keywords: "UPSC CSE, IAS preparation, IPS coaching, civil services exam, UPSC foundation course, IAS Portal Latur",
+    title: "Sankalp 2027 Foundation Batch (Pre + Mains) | Rajashree's IAS Portal",
+    description: "Complete UPSC CSE preparation covering Prelims and Mains with comprehensive syllabus coverage. 11-month structured program with expert faculty guidance.",
+    keywords: "Sankalp 2027, UPSC CSE, IAS preparation, Prelims Mains, UPSC foundation course, IAS Portal Latur",
 };
 
-const courseHighlights = [
-    {
-        icon: BookOpen,
-        title: "Complete GS Syllabus",
-        description: "Comprehensive coverage of General Studies papers I, II, III, IV with focus on conceptual clarity"
-    },
-    {
-        icon: Target,
-        title: "Prelims + Mains + Interview",
-        description: "Integrated preparation covering all three stages of UPSC Civil Services Examination"
-    },
-    {
-        icon: TrendingUp,
-        title: "Regular Assessment",
-        description: "Weekly tests, monthly mock exams, and personalized performance analysis"
-    },
-    {
-        icon: Users,
-        title: "Small Batch Size",
-        description: "Limited to 30-40 students for personalized attention and doubt clearing"
-    },
-    {
-        icon: Brain,
-        title: "Answer Writing Practice",
-        description: "Daily answer writing sessions with expert evaluation and feedback"
-    },
-    {
-        icon: Shield,
-        title: "Current Affairs Integration",
-        description: "Daily current affairs analysis with prelims-mains linkage"
-    }
-];
+const course = coursesData.courses.find(c => c.id === "upsc-cse")!;
 
-const courseStructure = [
-    {
-        phase: "Foundation Phase (Months 1-4)",
-        duration: "4 Months",
-        topics: ["Ancient, Medieval & Modern History", "Geography (Physical & Human)", "Polity & Governance", "Economy Basics", "Environment & Ecology"],
-        focus: "Building strong conceptual foundation"
-    },
-    {
-        phase: "Intensive Phase (Months 5-8)",
-        duration: "4 Months",
-        topics: ["International Relations", "Science & Technology", "Internal Security", "Ethics & Integrity", "Disaster Management"],
-        focus: "Advanced topics and integration"
-    },
-    {
-        phase: "Revision & Practice (Months 9-12)",
-        duration: "4 Months",
-        topics: ["Comprehensive Revision", "Mock Tests", "Answer Writing", "Current Affairs", "Interview Preparation"],
-        focus: "Consolidation and exam readiness"
-    }
-];
+const courseHighlights = course.courseHighlights.map((highlight, index) => ({
+    icon: [BookOpen, Target, TrendingUp, Users, Brain, Shield][index] || BookOpen,
+    title: highlight.split(' ').slice(0, 3).join(' '),
+    description: highlight
+}));
 
-const faculty = [
-    {
-        name: "Dr. Rajesh Sharma",
-        qualification: "PhD in Political Science, Former UPSC Mentor",
-        experience: "15+ years",
-        specialization: "Polity, Governance & International Relations"
-    },
-    {
-        name: "Prof. Meera Patel",
-        qualification: "MPhil History, Published Author",
-        experience: "12+ years",
-        specialization: "Ancient & Modern History, Art & Culture"
-    },
-    {
-        name: "CA Vikram Singh",
-        qualification: "Chartered Accountant, Economics Expert",
-        experience: "10+ years",
-        specialization: "Economy, Budget & Financial Systems"
-    }
-];
+const courseStructure = course.courseStructure;
 
-const successStories = [
-    {
-        name: "Priya Sharma",
-        rank: "AIR 45",
-        year: "2024",
-        quote: "The structured approach and regular feedback helped me stay focused throughout the preparation journey."
-    },
-    {
-        name: "Rahul Desai",
-        rank: "AIR 89",
-        year: "2023",
-        quote: "Small batch size ensured personalized attention, which was crucial for my success."
-    },
-    {
-        name: "Ananya Gupta",
-        rank: "AIR 156",
-        year: "2024",
-        quote: "The current affairs integration and answer writing practice gave me the edge I needed."
-    }
-];
+const faculty = course.faculty;
+
+// const successStories = [
+//     {
+//         name: "Priya Sharma",
+//         rank: "AIR 45",
+//         year: "2024",
+//         quote: "The structured approach and regular feedback helped me stay focused throughout the preparation journey."
+//     },
+//     {
+//         name: "Rahul Desai",
+//         rank: "AIR 89",
+//         year: "2023",
+//         quote: "Small batch size ensured personalized attention, which was crucial for my success."
+//     },
+//     {
+//         name: "Ananya Gupta",
+//         rank: "AIR 156",
+//         year: "2024",
+//         quote: "The current affairs integration and answer writing practice gave me the edge I needed."
+//     }
+// ];
 
 export default function UPSCCSEPage() {
     return (
@@ -120,7 +58,7 @@ export default function UPSCCSEPage() {
                         <span>/</span>
                         <Link href="/courses" className="hover:text-[#D9A15B]">Courses</Link>
                         <span>/</span>
-                        <span className="text-[#2D1B33]">UPSC Civil Services</span>
+                        <span className="text-[#2D1B33]">Sankalp 2027</span>
                     </div>
 
                     <div className="text-center max-w-4xl mx-auto">
@@ -128,43 +66,44 @@ export default function UPSCCSEPage() {
                             Flagship Program
                         </p>
                         <h1 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-[#2D1B33] mb-4">
-                            UPSC Civil Services (IAS/IPS)
+                            {course.title}
                         </h1>
                         <p className="text-[#2D1B33]/60 text-lg mb-8">
-                            Comprehensive preparation for India's most prestigious examination. Join thousands of successful candidates
-                            who started their journey with Rajshree IAS Portal.
+                            {course.shortDescription}
                         </p>
 
                         {/* Key Stats */}
                         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-8">
                             <div className="bg-white rounded-xl p-4 shadow-sm border border-[#2D1B33]/10">
-                                <div className="text-2xl font-bold text-[#2D1B33]">12</div>
+                                <div className="text-2xl font-bold text-[#2D1B33]">{course.duration.split(' ')[0]}</div>
                                 <div className="text-sm text-[#2D1B33]/60">Months Duration</div>
                             </div>
                             <div className="bg-white rounded-xl p-4 shadow-sm border border-[#2D1B33]/10">
-                                <div className="text-2xl font-bold text-[#2D1B33]">30-40</div>
-                                <div className="text-sm text-[#2D1B33]/60">Students/Batch</div>
+                                <div className="text-2xl font-bold text-[#2D1B33]">{course.duration}</div>
+                                <div className="text-sm text-[#2D1B33]/60">Duration</div>
                             </div>
                             <div className="bg-white rounded-xl p-4 shadow-sm border border-[#2D1B33]/10">
-                                <div className="text-2xl font-bold text-[#2D1B33]">85%</div>
-                                <div className="text-sm text-[#2D1B33]/60">Success Rate</div>
+                                <div className="text-2xl font-bold text-[#2D1B33]">{course.mode}</div>
+                                <div className="text-sm text-[#2D1B33]/60">Mode</div>
                             </div>
                             <div className="bg-white rounded-xl p-4 shadow-sm border border-[#2D1B33]/10">
-                                <div className="text-2xl font-bold text-[#2D1B33]">500+</div>
-                                <div className="text-sm text-[#2D1B33]/60">Selections</div>
+                                <div className="text-2xl font-bold text-[#2D1B33]">50</div>
+                                <div className="text-sm text-[#2D1B33]/60">Batch Size</div>
                             </div>
                         </div>
 
                         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                            <Link href="/enroll">
-                                <button className="w-full sm:w-auto px-8 py-4 bg-[#2D1B33] text-white font-semibold rounded-lg hover:bg-[#2D1B33]/90 transition-colors flex items-center justify-center gap-2">
-                                    Enroll Now
+                            <a href={course.razorpayUrl} target="_blank" rel="noopener noreferrer">
+                                <button className="w-full sm:w-auto px-8 py-4 bg-[#D9A15B] text-white font-semibold rounded-lg hover:bg-[#c4923f] transition-colors flex items-center justify-center gap-2">
+                                    Buy Now
                                     <ArrowRight className="w-5 h-5" />
                                 </button>
+                            </a>
+                            <Link href="/enroll">
+                                <button className="w-full sm:w-auto px-8 py-4 border-2 border-[#2D1B33] text-[#2D1B33] font-semibold rounded-lg hover:bg-[#2D1B33]/5 transition-colors">
+                                    Free Counseling
+                                </button>
                             </Link>
-                            <button className="w-full sm:w-auto px-8 py-4 border-2 border-[#2D1B33] text-[#2D1B33] font-semibold rounded-lg hover:bg-[#2D1B33]/5 transition-colors">
-                                Download Brochure
-                            </button>
                         </div>
                     </div>
                 </div>
@@ -223,8 +162,6 @@ export default function UPSCCSEPage() {
                                                 {phase.phase}
                                             </h3>
                                         </div>
-                                        <p className="text-sm text-[#D9A15B] font-medium">{phase.duration}</p>
-                                        <p className="text-sm text-[#2D1B33]/60 mt-1">{phase.focus}</p>
                                     </div>
                                     <div className="lg:w-2/3">
                                         <div className="flex flex-wrap gap-2">
@@ -263,20 +200,21 @@ export default function UPSCCSEPage() {
                                     {member.name}
                                 </h3>
                                 <p className="text-sm text-[#D9A15B] font-medium mb-2">
-                                    {member.qualification}
+                                    {member.designation}
                                 </p>
                                 <p className="text-sm text-[#2D1B33]/60 mb-3">
                                     {member.experience} Experience
                                 </p>
                                 <p className="text-sm text-[#2D1B33]/70">
-                                    {member.specialization}
+                                    {member.designation}
                                 </p>
                             </div>
                         ))}
                     </div>
                 </div>
 
-                {/* Success Stories */}
+                {/* Success Stories - Commented out for new institute */}
+                {/*
                 <div className="max-w-6xl mx-auto mb-16">
                     <div className="text-center mb-12">
                         <h2 className="text-2xl md:text-3xl font-serif font-bold text-[#2D1B33] mb-4">
@@ -305,6 +243,7 @@ export default function UPSCCSEPage() {
                         ))}
                     </div>
                 </div>
+                */}
 
                 {/* CTA Section */}
                 <div className="max-w-4xl mx-auto text-center">
@@ -317,14 +256,14 @@ export default function UPSCCSEPage() {
                             Limited seats available for February 2026 batch.
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                            <Link href="/enroll">
+                            <a href={course.razorpayUrl} target="_blank" rel="noopener noreferrer">
                                 <button className="w-full sm:w-auto px-8 py-4 bg-[#D9A15B] text-white font-semibold rounded-lg hover:bg-[#c4923f] transition-colors flex items-center justify-center gap-2">
-                                    Enroll Now
+                                    Buy Now
                                     <ArrowRight className="w-5 h-5" />
                                 </button>
-                            </Link>
+                            </a>
                             <a href="tel:+918668275251" className="w-full sm:w-auto px-8 py-4 border-2 border-white/30 text-white font-semibold rounded-lg hover:bg-white/10 transition-colors flex items-center justify-center gap-2">
-                                Call: +91 98765 43210
+                                Call: +91 86682 75251
                             </a>
                         </div>
                         <p className="text-xs text-white/60 mt-4">

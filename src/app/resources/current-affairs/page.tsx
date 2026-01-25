@@ -6,7 +6,7 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-    title: "Daily Current Affairs | Rajshree IAS Portal",
+    title: "Daily Current Affairs | Rajashree IAS Portal",
     description: "Stay updated with daily current affairs covering The Hindu, Indian Express, and PIB. Daily news analysis with prelims MCQs and mains links.",
     keywords: "current affairs UPSC, daily current affairs, UPSC current affairs, current affairs analysis, daily news analysis",
 };

@@ -6,7 +6,7 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-    title: "Study Notes | Rajshree IAS Portal",
+    title: "Study Notes | Rajashree IAS Portal",
     description: "Comprehensive study notes for UPSC CSE preparation. Topic-wise notes, mind maps, flowcharts, and revision materials.",
     keywords: "UPSC study notes, UPSC notes, revision notes, mind maps, UPSC preparation notes",
 };

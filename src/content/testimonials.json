@@ -1,0 +1,40 @@
+{
+  "testimonials": [
+    {
+      "id": 1,
+      "name": "Priya Sharma",
+      "rank": "AIR 45, UPSC CSE 2023",
+      "image": "/testimonials/priya-sharma.jpg",
+      "text": "Rajashree's IAS Portal provided me with the perfect blend of guidance and resources. The faculty's dedication and personalized attention helped me achieve my dream rank.",
+      "rating": 5,
+      "course": "UPSC CSE Complete Course"
+    },
+    {
+      "id": 2,
+      "name": "Rahul Deshmukh",
+      "rank": "AIR 128, UPSC CSE 2023",
+      "image": "/testimonials/rahul-deshmukh.jpg",
+      "text": "The answer writing program transformed my Mains preparation. The detailed feedback and regular practice sessions were instrumental in my success.",
+      "rating": 5,
+      "course": "Mains Answer Writing"
+    },
+    {
+      "id": 3,
+      "name": "Anjali Patil",
+      "rank": "AIR 67, MPSC 2023",
+      "image": "/testimonials/anjali-patil.jpg",
+      "text": "Being from a Marathi medium background, I found their MPSC course extremely helpful. The faculty understood our unique challenges and guided us accordingly.",
+      "rating": 5,
+      "course": "MPSC Complete Course"
+    },
+    {
+      "id": 4,
+      "name": "Vikram Singh",
+      "rank": "AIR 203, UPSC CSE 2023",
+      "image": "/testimonials/vikram-singh.jpg",
+      "text": "The current affairs program kept me updated throughout the year. The daily analysis and monthly compilations were comprehensive and exam-focused.",
+      "rating": 5,
+      "course": "Current Affairs Mastery"
+    }
+  ]
+}

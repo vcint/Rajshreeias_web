@@ -6,7 +6,7 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-    title: "UPSC FAQs | Rajshree IAS Portal",
+    title: "UPSC FAQs | Rajashree IAS Portal",
     description: "Comprehensive FAQs for UPSC CSE preparation. Get answers to common questions about syllabus, strategy, books, and exam pattern.",
     keywords: "UPSC FAQs, UPSC questions, UPSC preparation FAQs, civil services exam FAQs",
 };

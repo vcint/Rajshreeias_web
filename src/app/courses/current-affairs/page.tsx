@@ -7,7 +7,7 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-    title: "Current Affairs Yearly Program | Rajshree IAS Portal",
+    title: "Current Affairs Yearly Program | Rajashree IAS Portal",
     description: "Daily current affairs analysis with monthly compilations and prelims-mains integration. Stay updated with The Hindu, Indian Express, and PIB.",
     keywords: "current affairs UPSC, daily current affairs, UPSC current affairs, current affairs analysis, UPSC preparation",
 };
@@ -170,15 +170,17 @@ export default function CurrentAffairsPage() {
                         </div>
 
                         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                            <Link href="/enroll">
-                                <button className="w-full sm:w-auto px-8 py-4 bg-[#2D1B33] text-white font-semibold rounded-lg hover:bg-[#2D1B33]/90 transition-colors flex items-center justify-center gap-2">
-                                    Enroll Now
+                            <a href="https://razorpay.me/@rajshreeias/current-affairs" target="_blank" rel="noopener noreferrer">
+                                <button className="w-full sm:w-auto px-8 py-4 bg-[#D9A15B] text-white font-semibold rounded-lg hover:bg-[#c4923f] transition-colors flex items-center justify-center gap-2">
+                                    Buy Now
                                     <ArrowRight className="w-5 h-5" />
                                 </button>
+                            </a>
+                            <Link href="/enroll">
+                                <button className="w-full sm:w-auto px-8 py-4 border-2 border-[#2D1B33] text-[#2D1B33] font-semibold rounded-lg hover:bg-[#2D1B33]/5 transition-colors">
+                                    Free 7-Day Trial
+                                </button>
                             </Link>
-                            <button className="w-full sm:w-auto px-8 py-4 border-2 border-[#2D1B33] text-[#2D1B33] font-semibold rounded-lg hover:bg-[#2D1B33]/5 transition-colors">
-                                Free Trial (7 Days)
-                            </button>
                         </div>
                     </div>
                 </div>

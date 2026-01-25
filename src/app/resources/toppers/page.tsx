@@ -6,9 +6,9 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-    title: "Toppers' Copies & Strategies | Rajshree IAS Portal",
-    description: "Learn from UPSC toppers. Access toppers' answer copies, strategies, and success stories from previous years.",
-    keywords: "UPSC toppers, toppers copies, toppers strategy, UPSC success stories, toppers interview",
+    title: "Toppers' Copies & Strategies | Rajashree IAS Portal",
+    description: "Learn from UPSC toppers. Access toppers' answer copies, strategies, and preparation techniques.",
+    keywords: "UPSC toppers, toppers copies, toppers strategy, toppers interview",
 };
 
 const toppers2025 = [
@@ -143,8 +143,8 @@ const features = [
     },
     {
         icon: Users,
-        title: "Success Stories",
-        description: "Detailed interviews and preparation journeys"
+        title: "Preparation Strategies",
+        description: "Detailed preparation techniques and study plans"
     },
     {
         icon: Target,
@@ -160,8 +160,8 @@ const features = [
 
 const stats = [
     { label: "Toppers Featured", value: "500+", icon: Trophy },
-    { label: "Success Stories", value: "200+", icon: Users },
-    { label: "Strategy Guides", value: "50+", icon: Target },
+    { label: "Strategy Guides", value: "200+", icon: Users },
+    { label: "Study Materials", value: "50+", icon: Target },
     { label: "Average Marks", value: "1050+", icon: Star }
 ];
 
@@ -420,8 +420,8 @@ export default function ToppersResourcePage() {
                     </div>
                 </div>
 
-                {/* Topper Testimonials */}
-                <div className="max-w-6xl mx-auto mb-16">
+                {/* Topper Testimonials - Commented out for new institute */}
+                {/* <div className="max-w-6xl mx-auto mb-16">
                     <div className="text-center mb-12">
                         <h2 className="text-2xl md:text-3xl font-serif font-bold text-[#2D1B33] mb-4">
                             What Toppers Say
@@ -466,7 +466,7 @@ export default function ToppersResourcePage() {
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> */}
 
                 {/* CTA Section */}
                 <div className="max-w-4xl mx-auto text-center">
@@ -490,7 +490,7 @@ export default function ToppersResourcePage() {
                             </button>
                         </div>
                         <p className="text-xs text-white/60 mt-4">
-                            500+ toppers • Answer copies • Strategy guides • Mentorship calls
+                            Access to toppers' strategies • Answer copies • Mentorship guidance
                         </p>
                     </div>
                 </div>

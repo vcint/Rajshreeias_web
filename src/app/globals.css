@@ -47,6 +47,7 @@
   
   body {
     @apply bg-background text-foreground font-sans antialiased;
+    padding-bottom: env(safe-area-inset-bottom);
   }
   
   h1, h2, h3, h4, h5, h6 {
@@ -56,6 +57,23 @@
   /* Selection styling */
   ::selection {
     @apply bg-secondary/30 text-primary;
+  }
+  
+  /* Mobile optimizations */
+  @media (max-width: 640px) {
+    .container {
+      @apply px-3;
+    }
+    
+    /* Ensure minimum touch targets */
+    button, a, input, select, textarea {
+      min-height: 44px;
+    }
+    
+    /* Better text scaling on mobile */
+    h1 { @apply text-2xl; }
+    h2 { @apply text-xl; }
+    h3 { @apply text-lg; }
   }
 }
 

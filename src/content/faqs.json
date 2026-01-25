@@ -1,0 +1,52 @@
+{
+  "faqs": [
+    {
+      "id": 1,
+      "question": "Why choose Rajashree's IAS Portal coaching in Latur for UPSC preparation?",
+      "answer": "Rajashree's IAS Portal is Latur's premier coaching institute for UPSC Civil Services Exam preparation. We offer personalized mentorship, expert faculty with 10+ years experience, comprehensive study materials, and proven track record with 85% success rate. Our location in Latur makes quality IAS coaching accessible to Maharashtra students.",
+      "category": "About Institute"
+    },
+    {
+      "id": 2,
+      "question": "What is the best IAS coaching institute in Latur for UPSC CSE?",
+      "answer": "Rajashree's IAS Portal coaching institute in Latur is recognized as the best for UPSC preparation in Maharashtra. We provide complete GS coverage, daily current affairs, regular mock tests, and interview guidance. Our small batch sizes (max 30 students) ensure personalized attention and better results.",
+      "category": "About Institute"
+    },
+    {
+      "id": 3,
+      "question": "Do you offer both online and offline IAS coaching classes in Latur?",
+      "answer": "Yes! We provide flexible learning options - offline classes at our Latur center and live online classes for students who prefer remote learning. Both modes include same study materials, faculty interaction, and test series. Offline students get additional benefits like library access and group discussions.",
+      "category": "Courses"
+    },
+    {
+      "id": 4,
+      "question": "What is the course fee for IAS coaching in Latur?",
+      "answer": "Our UPSC CSE Complete Course fees start from ₹45,000 for offline mode and ₹35,000 for online mode. We offer installment options and scholarships for deserving students. The fee includes study materials, test series, doubt clearing sessions, and interview preparation. Contact us for current offers.",
+      "category": "Fees"
+    },
+    {
+      "id": 5,
+      "question": "How experienced are the faculty at Rajashree's IAS Portal coaching Latur?",
+      "answer": "Our faculty consists of experienced educators with 10-15 years in UPSC teaching. Many have cleared UPSC themselves and have guided hundreds of successful candidates. We have subject experts for History, Geography, Polity, Economics, and Current Affairs, ensuring comprehensive preparation.",
+      "category": "Faculty"
+    },
+    {
+      "id": 6,
+      "question": "Do you provide MPSC coaching along with UPSC preparation in Latur?",
+      "answer": "Yes, we offer integrated UPSC + MPSC coaching programs in Latur. Our courses cover both examinations with separate test series, study materials, and guidance. This dual preparation approach helps Maharashtra students prepare for both state and central services simultaneously.",
+      "category": "Courses"
+    },
+    {
+      "id": 7,
+      "question": "What is the batch size and teaching methodology at Rajashree's IAS Portal Latur?",
+      "answer": "We maintain small batch sizes (25-30 students) for better interaction. Our teaching methodology includes concept-based learning, regular assessments, daily answer writing practice, weekly mock tests, and personalized doubt clearing. We focus on conceptual clarity rather than rote learning.",
+      "category": "Teaching"
+    },
+    {
+      "id": 8,
+      "question": "Do you provide hostel facilities for outstation IAS aspirants in Latur?",
+      "answer": "While we don't provide hostel facilities directly, we can help you find safe and affordable PG accommodations near our institute. Latur has good connectivity and several student-friendly areas. Our counseling team assists with accommodation arrangements for serious aspirants.",
+      "category": "Infrastructure"
+    }
+  ]
+}

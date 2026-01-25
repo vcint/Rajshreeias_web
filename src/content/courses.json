@@ -1,0 +1,518 @@
+{
+  "courses": [
+    {
+      "id": "upsc-cse",
+      "title": "Sankalp 2027 Foundation Batch (Pre + Mains)",
+      "shortDescription": "Complete UPSC CSE preparation covering Prelims and Mains with comprehensive syllabus coverage",
+      "duration": "11 Months",
+      "mode": "Online + Offline",
+      "price": "₹36,000",
+      "originalPrice": "₹40,000",
+      "featured": true,
+      "category": "Complete Package",
+      "detailsPage": "/courses/upsc-cse",
+      "razorpayUrl": "https://rzp.io/rzp/m9KOioF",
+      "features": [
+        "Complete Prelims + Mains preparation",
+        "Comprehensive syllabus coverage",
+        "Regular mock tests and assessments",
+        "Personalized mentorship",
+        "Study material and resources",
+        "Validity till Mains 2027"
+      ],
+      "courseHighlights": [
+        "Structured 11-month program",
+        "Expert faculty guidance",
+        "Regular doubt clearing sessions",
+        "Performance tracking and analysis",
+        "Interview preparation included",
+        "10% discount on total fees"
+      ],
+      "courseStructure": [
+        {
+          "phase": "Foundation Building (Months 1-3)",
+          "topics": ["Basic concepts in Polity, History, Geography", "NCERT coverage", "Basic current affairs", "Test series foundation"]
+        },
+        {
+          "phase": "Subject-wise Coverage (Months 4-8)",
+          "topics": ["In-depth subject analysis", "Answer writing practice", "Mock tests", "Revision sessions"]
+        },
+        {
+          "phase": "Revision & Practice (Months 9-10)",
+          "topics": ["Full syllabus revision", "Intensive mock tests", "Previous year questions", "Strategy sessions"]
+        },
+        {
+          "phase": "Interview Preparation (Month 11)",
+          "topics": ["DAF analysis", "Mock interviews", "Personality development", "Current affairs for interview"]
+        }
+      ],
+      "faculty": [
+        {
+          "name": "Expert Faculty Team",
+          "designation": "UPSC Faculty",
+          "experience": "10+ years",
+          "subjects": ["Polity", "History", "Geography", "Current Affairs"]
+        }
+      ]
+    },
+    {
+      "id": "dharohar",
+      "title": "Dharohar (धरोहर) - History Special",
+      "shortDescription": "Comprehensive History module covering Ancient, Medieval, Modern and World History for UPSC CSE",
+      "duration": "50 Days",
+      "mode": "Online",
+      "price": "₹4,499",
+      "originalPrice": "₹4,999",
+      "featured": false,
+      "category": "Subject Module",
+      "detailsPage": "/courses/dharohar",
+      "razorpayUrl": "https://razorpay.me/@rajashreeias/dharohar",
+      "features": [
+        "Complete History syllabus coverage",
+        "Ancient, Medieval, Modern History",
+        "World History integration",
+        "PYQ analysis and practice",
+        "6 months validity or 3 views",
+        "10% discount on fees"
+      ],
+      "courseHighlights": [
+        "Intensive 50-day program",
+        "Expert faculty lectures",
+        "Comprehensive study material",
+        "Regular assessments",
+        "Doubt clearing sessions",
+        "Flexible viewing options"
+      ],
+      "courseStructure": [
+        {
+          "phase": "Ancient & Medieval History",
+          "topics": ["Indus Valley Civilization", "Mauryan Empire", "Delhi Sultanate", "Mughal Empire"]
+        },
+        {
+          "phase": "Modern History",
+          "topics": ["British Raj", "Freedom Struggle", "Constitutional Development", "Post-independence India"]
+        },
+        {
+          "phase": "World History",
+          "topics": ["Industrial Revolution", "World Wars", "Cold War", "Contemporary World"]
+        }
+      ],
+      "faculty": [
+        {
+          "name": "History Expert",
+          "designation": "UPSC History Faculty",
+          "experience": "8+ years",
+          "subjects": ["History"]
+        }
+      ]
+    },
+    {
+      "id": "vasundhara",
+      "title": "Vasundhara (वसुंधरा) - Geography + Environment",
+      "shortDescription": "Complete Geography and Environment module covering physical, human geography and environmental studies",
+      "duration": "2 Months",
+      "mode": "Online",
+      "price": "₹4,499",
+      "originalPrice": "₹4,999",
+      "featured": false,
+      "category": "Subject Module",
+      "detailsPage": "/courses/vasundhara",
+      "razorpayUrl": "https://razorpay.me/@rajashreeias/vasundhara",
+      "features": [
+        "Physical Geography coverage",
+        "Human Geography concepts",
+        "Environmental studies",
+        "Map-based learning",
+        "6 months validity or 3 views",
+        "10% discount on fees"
+      ],
+      "courseHighlights": [
+        "Comprehensive 2-month program",
+        "Interactive map sessions",
+        "Case studies and examples",
+        "Regular doubt clearing",
+        "Practice questions",
+        "Flexible learning options"
+      ],
+      "courseStructure": [
+        {
+          "phase": "Physical Geography",
+          "topics": ["Geomorphology", "Climatology", "Oceanography", "Biogeography"]
+        },
+        {
+          "phase": "Human Geography",
+          "topics": ["Population", "Settlements", "Economic Geography", "Political Geography"]
+        },
+        {
+          "phase": "Environment & Ecology",
+          "topics": ["Ecosystems", "Biodiversity", "Environmental Issues", "Climate Change"]
+        }
+      ],
+      "faculty": [
+        {
+          "name": "Geography Expert",
+          "designation": "UPSC Geography Faculty",
+          "experience": "7+ years",
+          "subjects": ["Geography", "Environment"]
+        }
+      ]
+    },
+    {
+      "id": "rajya-niti",
+      "title": "Rajya Niti - The GS 2 Module",
+      "shortDescription": "Complete GS Paper 2 preparation covering Governance, Constitution, Polity, and International Relations",
+      "duration": "2 Months",
+      "mode": "Online",
+      "price": "₹4,499",
+      "originalPrice": "₹4,999",
+      "featured": false,
+      "category": "Subject Module",
+      "detailsPage": "/courses/rajya-niti",
+      "razorpayUrl": "https://razorpay.me/@rajashreeias/rajya-niti",
+      "features": [
+        "Complete GS Paper 2 syllabus",
+        "Governance and Polity",
+        "International Relations",
+        "Constitutional framework",
+        "6 months validity or 3 views",
+        "10% discount on fees"
+      ],
+      "courseHighlights": [
+        "Focused 2-month program",
+        "Constitutional law experts",
+        "Case studies and examples",
+        "Answer writing practice",
+        "Current affairs integration",
+        "Flexible viewing options"
+      ],
+      "courseStructure": [
+        {
+          "phase": "Constitution & Polity",
+          "topics": ["Constitutional Framework", "Fundamental Rights", "Directive Principles", "Federal Structure"]
+        },
+        {
+          "phase": "Governance & Administration",
+          "topics": ["Public Administration", "Governance Issues", "E-governance", "Civil Services"]
+        },
+        {
+          "phase": "International Relations",
+          "topics": ["India's Foreign Policy", "International Organizations", "Bilateral Relations", "Global Issues"]
+        }
+      ],
+      "faculty": [
+        {
+          "name": "Polity Expert",
+          "designation": "UPSC Polity Faculty",
+          "experience": "9+ years",
+          "subjects": ["Polity", "Governance"]
+        }
+      ]
+    },
+    {
+      "id": "economy-module",
+      "title": "Economy Module (GS 3 Module)",
+      "shortDescription": "Complete Economics preparation for GS Paper 3 covering Indian Economy, Agriculture, Industry, and Infrastructure",
+      "duration": "3 Months",
+      "mode": "Online",
+      "price": "₹4,499",
+      "originalPrice": "₹4,999",
+      "featured": false,
+      "category": "Subject Module",
+      "detailsPage": "/courses/economy-module",
+      "razorpayUrl": "https://razorpay.me/@rajashreeias/economy-module",
+      "features": [
+        "Complete GS Paper 3 Economics",
+        "Indian Economic Development",
+        "Agriculture and Food Security",
+        "Industry and Infrastructure",
+        "6 months validity or 3 views",
+        "10% discount on fees"
+      ],
+      "courseHighlights": [
+        "Comprehensive 3-month program",
+        "Economic data analysis",
+        "Policy framework understanding",
+        "Current economic issues",
+        "Answer writing practice",
+        "Flexible learning options"
+      ],
+      "courseStructure": [
+        {
+          "phase": "Indian Economy Basics",
+          "topics": ["Economic Planning", "Poverty & Inequality", "Employment", "Human Development"]
+        },
+        {
+          "phase": "Agriculture & Food Security",
+          "topics": ["Agricultural Development", "Food Security", "Land Reforms", "Sustainable Agriculture"]
+        },
+        {
+          "phase": "Industry & Infrastructure",
+          "topics": ["Industrial Policy", "Infrastructure Development", "Investment Models", "External Sector"]
+        }
+      ],
+      "faculty": [
+        {
+          "name": "Economics Expert",
+          "designation": "UPSC Economics Faculty",
+          "experience": "8+ years",
+          "subjects": ["Economics", "Indian Economy"]
+        }
+      ]
+    },
+    {
+      "id": "ethics-module",
+      "title": "Ethics Module (GS 4)",
+      "shortDescription": "Complete Ethics, Integrity and Aptitude preparation for GS Paper 4 with case studies and value-based questions",
+      "duration": "45 Days",
+      "mode": "Online",
+      "price": "₹4,499",
+      "originalPrice": "₹4,999",
+      "featured": false,
+      "category": "Subject Module",
+      "detailsPage": "/courses/ethics-module",
+      "razorpayUrl": "https://razorpay.me/@rajashreeias/ethics-module",
+      "features": [
+        "Complete GS Paper 4 syllabus",
+        "Ethics and Human Values",
+        "Case studies practice",
+        "Aptitude development",
+        "6 months validity or 3 views",
+        "10% discount on fees"
+      ],
+      "courseHighlights": [
+        "Intensive 45-day program",
+        "Value-based learning",
+        "Case study discussions",
+        "Ethical dilemma analysis",
+        "Answer writing practice",
+        "Flexible viewing options"
+      ],
+      "courseStructure": [
+        {
+          "phase": "Ethics & Human Values",
+          "topics": ["Ethical Theories", "Human Values", "Moral Philosophy", "Public Service Values"]
+        },
+        {
+          "phase": "Integrity & Aptitude",
+          "topics": ["Emotional Intelligence", "Work Culture", "Ethical Governance", "Probity in Governance"]
+        },
+        {
+          "phase": "Case Studies & Practice",
+          "topics": ["Real-life case studies", "Answer writing", "Value conflicts", "Decision making"]
+        }
+      ],
+      "faculty": [
+        {
+          "name": "Ethics Expert",
+          "designation": "UPSC Ethics Faculty",
+          "experience": "6+ years",
+          "subjects": ["Ethics", "Aptitude"]
+        }
+      ]
+    },
+    {
+      "id": "lekhni",
+      "title": "Answer Writing – Lekhni (लेखनी)",
+      "shortDescription": "Daily answer writing practice program to master Mains answer writing skills with personalized feedback",
+      "duration": "15 Months",
+      "mode": "Online",
+      "price": "₹9,999",
+      "originalPrice": "₹9,999",
+      "featured": false,
+      "category": "Skill Development",
+      "detailsPage": "/courses/lekhni",
+      "razorpayUrl": "https://razorpay.me/@rajashreeias/lekhni",
+      "features": [
+        "Daily answer writing practice",
+        "Personalized feedback",
+        "Essay writing workshops",
+        "Time management skills",
+        "15-month comprehensive program",
+        "Expert evaluation"
+      ],
+      "courseHighlights": [
+        "Daily writing practice",
+        "Individual feedback",
+        "Essay development",
+        "Presentation skills",
+        "Mock test series",
+        "Performance improvement"
+      ],
+      "courseStructure": [
+        {
+          "phase": "Foundation (Months 1-3)",
+          "topics": ["Basic answer structure", "Content organization", "Time management", "Basic essay writing"]
+        },
+        {
+          "phase": "Advanced Practice (Months 4-12)",
+          "topics": ["Complex questions", "Essay writing", "Case studies", "Interdisciplinary topics"]
+        },
+        {
+          "phase": "Perfection (Months 13-15)",
+          "topics": ["Mock tests", "Final revisions", "Strategy sessions", "Performance analysis"]
+        }
+      ],
+      "faculty": [
+        {
+          "name": "Answer Writing Experts",
+          "designation": "UPSC Mains Faculty",
+          "experience": "10+ years",
+          "subjects": ["Answer Writing", "Essay"]
+        }
+      ]
+    },
+    {
+      "id": "disha",
+      "title": "Disha (दिशा) – Mentorship Programme",
+      "shortDescription": "Personalized mentorship program providing one-on-one guidance throughout your UPSC preparation journey",
+      "duration": "Till Mains 2027",
+      "mode": "Online",
+      "price": "₹12,999",
+      "originalPrice": "₹12,999",
+      "featured": false,
+      "category": "Mentorship",
+      "detailsPage": "/courses/disha",
+      "razorpayUrl": "https://razorpay.me/@rajashreeias/disha",
+      "features": [
+        "One-on-one mentorship",
+        "Personalized study plan",
+        "Regular progress tracking",
+        "Doubt clearing sessions",
+        "Strategy guidance",
+        "Validity till Mains 2027"
+      ],
+      "courseHighlights": [
+        "Individual mentor assignment",
+        "Customized preparation plan",
+        "Weekly check-ins",
+        "Motivational support",
+        "Exam strategy planning",
+        "Long-term guidance"
+      ],
+      "courseStructure": [
+        {
+          "phase": "Assessment & Planning",
+          "topics": ["Initial assessment", "Study plan creation", "Goal setting", "Resource identification"]
+        },
+        {
+          "phase": "Regular Mentorship",
+          "topics": ["Weekly sessions", "Progress monitoring", "Strategy adjustments", "Motivation"]
+        },
+        {
+          "phase": "Exam Preparation",
+          "topics": ["Prelims strategy", "Mains preparation", "Interview guidance", "Final preparations"]
+        }
+      ],
+      "faculty": [
+        {
+          "name": "Mentorship Team",
+          "designation": "UPSC Mentors",
+          "experience": "5+ years",
+          "subjects": ["All Subjects", "Strategy"]
+        }
+      ]
+    },
+    {
+      "id": "manthan",
+      "title": "Manthan – Test Series Module (Prelims)",
+      "shortDescription": "Comprehensive Prelims test series with detailed analysis and performance tracking",
+      "duration": "3.5 Months",
+      "mode": "Online",
+      "price": "₹999",
+      "originalPrice": "₹999",
+      "featured": false,
+      "category": "Test Series",
+      "detailsPage": "/courses/manthan",
+      "razorpayUrl": "https://razorpay.me/@rajashreeias/manthan",
+      "features": [
+        "Complete Prelims test series",
+        "Detailed performance analysis",
+        "All India ranking",
+        "Subject-wise tests",
+        "Validity till Prelims 2026",
+        "Comprehensive evaluation"
+      ],
+      "courseHighlights": [
+        "35+ mock tests",
+        "Detailed solutions",
+        "Performance analytics",
+        "Peer comparison",
+        "Revision tests",
+        "Strategy sessions"
+      ],
+      "courseStructure": [
+        {
+          "phase": "Foundation Tests",
+          "topics": ["Basic concept tests", "Subject-wise assessments", "Current affairs tests"]
+        },
+        {
+          "phase": "Full Length Tests",
+          "topics": ["Complete Prelims simulation", "Time management", "Accuracy improvement"]
+        },
+        {
+          "phase": "Revision & Practice",
+          "topics": ["Previous year questions", "Mixed topic tests", "Final practice sessions"]
+        }
+      ],
+      "faculty": [
+        {
+          "name": "Test Series Team",
+          "designation": "UPSC Test Experts",
+          "experience": "7+ years",
+          "subjects": ["All Subjects", "Test Analysis"]
+        }
+      ]
+    },
+    {
+      "id": "tark",
+      "title": "CSAT Module – Tark (तर्क)",
+      "shortDescription": "Complete CSAT preparation covering comprehension, logical reasoning, and quantitative aptitude",
+      "duration": "2.5 Months",
+      "mode": "Online",
+      "price": "₹4,999",
+      "originalPrice": "₹4,999",
+      "featured": false,
+      "category": "CSAT",
+      "detailsPage": "/courses/tark",
+      "razorpayUrl": "https://razorpay.me/@rajashreeias/tark",
+      "features": [
+        "Complete CSAT syllabus",
+        "Logical reasoning practice",
+        "Quantitative aptitude",
+        "Comprehension skills",
+        "Test series included",
+        "Validity till Prelims 2026"
+      ],
+      "courseHighlights": [
+        "Comprehensive 2.5-month program",
+        "Daily practice sessions",
+        "Mock test series",
+        "Shortcut techniques",
+        "Performance tracking",
+        "Starts February 15th"
+      ],
+      "courseStructure": [
+        {
+          "phase": "Comprehension & Reasoning",
+          "topics": ["Reading comprehension", "Logical reasoning", "Analytical ability", "Decision making"]
+        },
+        {
+          "phase": "Quantitative Aptitude",
+          "topics": ["Basic numeracy", "Data interpretation", "Mathematical skills", "Problem solving"]
+        },
+        {
+          "phase": "Practice & Testing",
+          "topics": ["Mock tests", "Time management", "Accuracy improvement", "Strategy development"]
+        }
+      ],
+      "faculty": [
+        {
+          "name": "CSAT Expert",
+          "designation": "CSAT Faculty",
+          "experience": "6+ years",
+          "subjects": ["CSAT", "Aptitude"]
+        }
+      ]
+    }
+  ]
+}

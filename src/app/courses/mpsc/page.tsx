@@ -7,7 +7,7 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-    title: "MPSC State Services Course | Rajshree IAS Portal",
+    title: "MPSC State Services Course | Rajashree IAS Portal",
     description: "Comprehensive MPSC State Services preparation for Maharashtra PSC aspirants. Complete coverage of all papers with Maharashtra-specific content and Marathi medium support.",
     keywords: "MPSC coaching, Maharashtra PSC, state services exam, MPSC preparation, MPSC Portal Latur, state civil services",
 };
@@ -87,26 +87,26 @@ const faculty = [
     }
 ];
 
-const successStories = [
-    {
-        name: "Sneha Patil",
-        rank: "MPSC Rank 23",
-        year: "2024",
-        quote: "The Maharashtra-specific content and Marathi medium support were invaluable for my preparation."
-    },
-    {
-        name: "Vikram Jadhav",
-        rank: "MPSC Rank 45",
-        year: "2023",
-        quote: "Regular mock tests and personalized feedback helped me improve consistently."
-    },
-    {
-        name: "Kavita Sharma",
-        rank: "MPSC Rank 67",
-        year: "2024",
-        quote: "The bilingual approach made complex topics much easier to understand."
-    }
-];
+// const successStories = [
+//     {
+//         name: "Sneha Patil",
+//         rank: "MPSC Rank 23",
+//         year: "2024",
+//         quote: "The Maharashtra-specific content and Marathi medium support were invaluable for my preparation."
+//     },
+//     {
+//         name: "Vikram Jadhav",
+//         rank: "MPSC Rank 45",
+//         year: "2023",
+//         quote: "Regular mock tests and personalized feedback helped me improve consistently."
+//     },
+//     {
+//         name: "Kavita Sharma",
+//         rank: "MPSC Rank 67",
+//         year: "2024",
+//         quote: "The bilingual approach made complex topics much easier to understand."
+//     }
+// ];
 
 export default function MPSCPage() {
     return (
@@ -156,15 +156,17 @@ export default function MPSCPage() {
                         </div>
 
                         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                            <Link href="/enroll">
-                                <button className="w-full sm:w-auto px-8 py-4 bg-[#2D1B33] text-white font-semibold rounded-lg hover:bg-[#2D1B33]/90 transition-colors flex items-center justify-center gap-2">
-                                    Enroll Now
+                            <a href="https://razorpay.me/@rajshreeias/mpsc" target="_blank" rel="noopener noreferrer">
+                                <button className="w-full sm:w-auto px-8 py-4 bg-[#D9A15B] text-white font-semibold rounded-lg hover:bg-[#c4923f] transition-colors flex items-center justify-center gap-2">
+                                    Buy Now
                                     <ArrowRight className="w-5 h-5" />
                                 </button>
+                            </a>
+                            <Link href="/enroll">
+                                <button className="w-full sm:w-auto px-8 py-4 border-2 border-[#2D1B33] text-[#2D1B33] font-semibold rounded-lg hover:bg-[#2D1B33]/5 transition-colors">
+                                    Free Counseling
+                                </button>
                             </Link>
-                            <button className="w-full sm:w-auto px-8 py-4 border-2 border-[#2D1B33] text-[#2D1B33] font-semibold rounded-lg hover:bg-[#2D1B33]/5 transition-colors">
-                                Download Brochure
-                            </button>
                         </div>
                     </div>
                 </div>
@@ -276,7 +278,8 @@ export default function MPSCPage() {
                     </div>
                 </div>
 
-                {/* Success Stories */}
+                {/* Success Stories - Commented out for new institute */}
+                {/*
                 <div className="max-w-6xl mx-auto mb-16">
                     <div className="text-center mb-12">
                         <h2 className="text-2xl md:text-3xl font-serif font-bold text-[#2D1B33] mb-4">
@@ -305,6 +308,7 @@ export default function MPSCPage() {
                         ))}
                     </div>
                 </div>
+                */}
 
                 {/* CTA Section */}
                 <div className="max-w-4xl mx-auto text-center">
@@ -317,14 +321,14 @@ export default function MPSCPage() {
                             Limited seats available for March 2026 batch.
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                            <Link href="/enroll">
+                            <a href="https://razorpay.me/@rajshreeias/mpsc" target="_blank" rel="noopener noreferrer">
                                 <button className="w-full sm:w-auto px-8 py-4 bg-[#D9A15B] text-white font-semibold rounded-lg hover:bg-[#c4923f] transition-colors flex items-center justify-center gap-2">
-                                    Enroll Now
+                                    Buy Now
                                     <ArrowRight className="w-5 h-5" />
                                 </button>
-                            </Link>
+                            </a>
                             <a href="tel:+918668275251" className="w-full sm:w-auto px-8 py-4 border-2 border-white/30 text-white font-semibold rounded-lg hover:bg-white/10 transition-colors flex items-center justify-center gap-2">
-                                Call: +91 98765 43210
+                                Call: +91 86682 75251
                             </a>
                         </div>
                         <p className="text-xs text-white/60 mt-4">

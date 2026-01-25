@@ -3,7 +3,7 @@ import { Inter, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
-import WhatsAppButton from "@/components/shared/WhatsAppButton";
+import ScrollCTA from "@/components/shared/ScrollCTA";
 
 // Initial placeholder simple imports to avoid errors before components exist
 // In a real flow I'd create components first, but layout is central.
@@ -22,33 +22,40 @@ const playfair = Playfair_Display({
     display: "swap",
 });
 
+export const viewport = {
+    width: "device-width",
+    initialScale: 1,
+    maximumScale: 1,
+    userScalable: false,
+};
+
 export const metadata: Metadata = {
     title: {
-        default: "Rajshree IAS Portal | Best UPSC & MPSC Coaching in Latur",
-        template: "%s | Rajshree IAS Portal",
+        default: "Rajashree IAS Portal | Best UPSC & MPSC Coaching in Latur",
+        template: "%s | Rajashree IAS Portal",
     },
-    description: "Join Rajshree IAS Portal for comprehensive UPSC Civil Services and MPSC coaching in Latur. Expert faculty, personalized mentorship, complete study material and test series.",
+    description: "Join Rajashree IAS Portal for comprehensive UPSC Civil Services and MPSC coaching in Latur. Expert faculty, personalized mentorship, complete study material and test series.",
     keywords: ["UPSC coaching Latur", "MPSC coaching Latur", "IAS coaching", "civil services preparation", "best UPSC institute Latur", "IAS Portal", "Rajshree IAS", "UPSC classes Latur", "IAS preparation"],
-    authors: [{ name: "Rajshree IAS Portal" }],
-    creator: "Rajshree IAS Portal",
-    publisher: "Rajshree IAS Portal",
+    authors: [{ name: "Rajashree IAS Portal" }],
+    creator: "Rajashree IAS Portal",
+    publisher: "Rajashree IAS Portal",
     formatDetection: {
         email: false,
         address: false,
         telephone: false,
     },
     openGraph: {
-        title: "Rajshree IAS Portal | Best UPSC & MPSC Coaching in Latur",
-        description: "Join Rajshree IAS Portal for comprehensive UPSC Civil Services and MPSC coaching. Expert faculty, personalized mentorship, complete study material.",
+        title: "Rajashree IAS Portal | Best UPSC & MPSC Coaching in Latur",
+        description: "Join Rajashree IAS Portal for comprehensive UPSC Civil Services and MPSC coaching. Expert faculty, personalized mentorship, complete study material.",
         url: "https://rajashreeiasPortal.com",
-        siteName: "Rajshree IAS Portal",
+        siteName: "Rajashree IAS Portal",
         locale: "en_IN",
         type: "website",
     },
     twitter: {
         card: "summary_large_image",
-        title: "Rajshree IAS Portal | Best UPSC & MPSC Coaching",
-        description: "Join Rajshree IAS Portal for comprehensive UPSC Civil Services and MPSC coaching in Latur.",
+        title: "Rajashree IAS Portal | Best UPSC & MPSC Coaching",
+        description: "Join Rajashree IAS Portal for comprehensive UPSC Civil Services and MPSC coaching in Latur.",
     },
     robots: {
         index: true,
@@ -80,7 +87,7 @@ export default function RootLayout({
                 </main>
 
                 <Footer />
-                <WhatsAppButton />
+                <ScrollCTA />
             </body>
         </html>
     );

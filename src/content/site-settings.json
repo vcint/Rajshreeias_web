@@ -1,0 +1,37 @@
+{
+  "siteName": "Rajashree's IAS Portal - Best IAS Coaching in Latur",
+  "tagline": "🏆 #1 IAS Coaching Institute in Latur | UPSC & MPSC Preparation",
+  "contact": {
+    "phone": "+91 86682 75251",
+    "email": "info@rajashreeias.com",
+    "address": "Education Hub, Latur, Maharashtra 413512"
+  },
+  "social": {
+    "facebook": "https://facebook.com/rajashreeias",
+    "twitter": "https://twitter.com/rajashreeias",
+    "instagram": "https://instagram.com/rajashreeias",
+    "youtube": "https://youtube.com/@rajashreeias",
+    "linkedin": "https://linkedin.com/company/rajashreeias"
+  },
+  "whatsapp": {
+    "number": "+918668275251",
+    "message": "Hello! I want to join IAS coaching classes in Latur. Please share course details."
+  },
+  "stats": {
+    "coursesOffered": "8+",
+    "expertFaculty": "10+",
+    "studyMaterials": "Comprehensive",
+    "successRate": "95%",
+    "studentsPlaced": "500+"
+  },
+  "hero": {
+    "title": "Best IAS Coaching in Latur | Clear UPSC & MPSC with Confidence",
+    "subtitle": "🏆 #1 IAS Coaching Institute in Latur. Expert faculty, personalized mentorship, comprehensive study material. Join 500+ successful students. Start your IAS journey today!",
+    "primaryCTA": "Enroll Now - Limited Seats",
+    "secondaryCTA": "Free Demo Class"
+  },
+  "enrollmentForm": {
+    "counselingNote": "Get FREE career counseling from UPSC toppers and expert faculty. Choose the perfect course for your IAS preparation.",
+    "callbackTime": "Expert counselor will call you within 2 hours"
+  }
+}

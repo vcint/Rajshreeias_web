@@ -1,0 +1,98 @@
+{
+  "currentAffairs": {
+    "title": "Current Affairs Updates",
+    "description": "Stay updated with daily news analysis and monthly compilations",
+    "items": [
+      {
+        "id": "ca-jan-2026",
+        "title": "January 2026 Current Affairs",
+        "type": "Monthly Magazine",
+        "date": "2026-01-18",
+        "downloadUrl": "/downloads/current-affairs-jan-2026.pdf",
+        "featured": true
+      },
+      {
+        "id": "ca-dec-2025",
+        "title": "December 2025 Current Affairs",
+        "type": "Monthly Magazine",
+        "date": "2025-12-31",
+        "downloadUrl": "/downloads/current-affairs-dec-2025.pdf",
+        "featured": false
+      }
+    ]
+  },
+  "previousYearQuestions": {
+    "title": "Previous Year Questions",
+    "description": "Comprehensive collection of UPSC previous year questions with solutions",
+    "items": [
+      {
+        "id": "pyq-prelims-2025",
+        "title": "UPSC Prelims 2025 Question Paper",
+        "exam": "Prelims",
+        "year": 2025,
+        "downloadUrl": "/downloads/upsc-prelims-2025.pdf",
+        "solutionsUrl": "/downloads/upsc-prelims-2025-solutions.pdf"
+      },
+      {
+        "id": "pyq-mains-2024",
+        "title": "UPSC Mains 2024 GS Papers",
+        "exam": "Mains",
+        "year": 2024,
+        "downloadUrl": "/downloads/upsc-mains-2024.pdf",
+        "solutionsUrl": "/downloads/upsc-mains-2024-solutions.pdf"
+      }
+    ]
+  },
+  "studyNotes": {
+    "title": "Free Study Notes",
+    "description": "High-quality notes prepared by our expert faculty",
+    "items": [
+      {
+        "id": "notes-polity",
+        "title": "Indian Polity Complete Notes",
+        "subject": "Polity",
+        "pages": 250,
+        "downloadUrl": "/downloads/polity-notes.pdf"
+      },
+      {
+        "id": "notes-history",
+        "title": "Modern Indian History Notes",
+        "subject": "History",
+        "pages": 180,
+        "downloadUrl": "/downloads/history-notes.pdf"
+      }
+    ]
+  },
+  "syllabus": {
+    "title": "Exam Syllabus",
+    "description": "Complete and updated syllabus for all major exams",
+    "items": [
+      {
+        "id": "syllabus-upsc-prelims",
+        "title": "UPSC Prelims Syllabus 2026",
+        "exam": "UPSC Prelims",
+        "downloadUrl": "/downloads/upsc-prelims-syllabus.pdf"
+      },
+      {
+        "id": "syllabus-upsc-mains",
+        "title": "UPSC Mains Syllabus 2026",
+        "exam": "UPSC Mains",
+        "downloadUrl": "/downloads/upsc-mains-syllabus.pdf"
+      }
+    ]
+  },
+  "toppers": {
+    "title": "Toppers' Corner",
+    "description": "Success stories and strategies from our successful candidates",
+    "items": [
+      {
+        "id": "topper-priya",
+        "name": "Priya Sharma",
+        "rank": "AIR 45",
+        "year": 2023,
+        "strategyUrl": "/downloads/priya-sharma-strategy.pdf",
+        "interviewUrl": "https://youtube.com/watch?v=example"
+      }
+    ]
+  }
+}

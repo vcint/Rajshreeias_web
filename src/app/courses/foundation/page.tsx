@@ -7,7 +7,7 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-    title: "UPSC Foundation Course (1 Year) | Rajshree IAS Portal",
+    title: "UPSC Foundation Course (1 Year) | Rajashree IAS Portal",
     description: "Complete GS coverage from basics to advanced for serious aspirants. Ideal for beginners and those seeking a strong foundation in civil services preparation.",
     keywords: "UPSC foundation course, IAS foundation, civil services foundation, UPSC beginners course, IAS preparation foundation",
 };
@@ -152,15 +152,17 @@ export default function FoundationPage() {
                         </div>
 
                         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                            <Link href="/enroll">
-                                <button className="w-full sm:w-auto px-8 py-4 bg-[#2D1B33] text-white font-semibold rounded-lg hover:bg-[#2D1B33]/90 transition-colors flex items-center justify-center gap-2">
-                                    Enroll Now
+                            <a href="https://razorpay.me/@rajshreeias/foundation" target="_blank" rel="noopener noreferrer">
+                                <button className="w-full sm:w-auto px-8 py-4 bg-[#D9A15B] text-white font-semibold rounded-lg hover:bg-[#c4923f] transition-colors flex items-center justify-center gap-2">
+                                    Buy Now
                                     <ArrowRight className="w-5 h-5" />
                                 </button>
+                            </a>
+                            <Link href="/enroll">
+                                <button className="w-full sm:w-auto px-8 py-4 border-2 border-[#2D1B33] text-[#2D1B33] font-semibold rounded-lg hover:bg-[#2D1B33]/5 transition-colors">
+                                    Free Counseling
+                                </button>
                             </Link>
-                            <button className="w-full sm:w-auto px-8 py-4 border-2 border-[#2D1B33] text-[#2D1B33] font-semibold rounded-lg hover:bg-[#2D1B33]/5 transition-colors">
-                                Download Brochure
-                            </button>
                         </div>
                     </div>
                 </div>
@@ -352,14 +354,14 @@ export default function FoundationPage() {
                             Next batch starts on February 15, 2026.
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                            <Link href="/enroll">
+                            <a href="https://razorpay.me/@rajshreeias/foundation" target="_blank" rel="noopener noreferrer">
                                 <button className="w-full sm:w-auto px-8 py-4 bg-[#D9A15B] text-white font-semibold rounded-lg hover:bg-[#c4923f] transition-colors flex items-center justify-center gap-2">
-                                    Enroll Now
+                                    Buy Now
                                     <ArrowRight className="w-5 h-5" />
                                 </button>
-                            </Link>
+                            </a>
                             <a href="tel:+918668275251" className="w-full sm:w-auto px-8 py-4 border-2 border-white/30 text-white font-semibold rounded-lg hover:bg-white/10 transition-colors flex items-center justify-center gap-2">
-                                Call: +91 98765 43210
+                                Call: +91 86682 75251
                             </a>
                         </div>
                         <p className="text-xs text-white/60 mt-4">

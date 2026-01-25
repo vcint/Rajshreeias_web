@@ -54,7 +54,7 @@ const resourceCategories = [
         title: "Topper's Strategy",
         description: "Learn from successful candidates - their strategy, booklist, and preparation timeline.",
         color: "bg-yellow-500",
-        features: ["Success Stories", "Book Lists", "Time Management"],
+        features: ["Preparation Strategies", "Book Lists", "Time Management"],
         cta: "Read Strategies"
     },
     {

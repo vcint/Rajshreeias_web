@@ -1,33 +1,14 @@
 "use client";
 
 import { Quote } from "lucide-react";
+import testimonialsData from "@/content/testimonials.json";
 
-const testimonials = [
-    {
-        name: "Priya Sharma",
-        role: "UPSC Aspirant",
-        content: "The faculty at Rajshree IAS Portal really understands the UPSC exam pattern. Their current affairs program is exceptional - it connects daily news with the syllabus in a way that makes retention easy. The small batch size means you actually get personal attention.",
-        initials: "PS"
-    },
-    {
-        name: "Rahul Deshmukh",
-        role: "MPSC Student",
-        content: "Being from a Marathi medium background, I was worried about coaching. But the faculty here explains concepts in both Hindi and Marathi, making it easier to understand. The study material is comprehensive and saves a lot of time.",
-        initials: "RD"
-    },
-    {
-        name: "Anjali Patil",
-        role: "Working Professional",
-        content: "The weekend batch and online classes are a blessing for working professionals like me. I can attend live sessions when possible and catch up with recordings otherwise. The test series helps me benchmark my preparation effectively.",
-        initials: "AP"
-    },
-    {
-        name: "Vikram Singh",
-        role: "UPSC Aspirant",
-        content: "What I appreciate most is the honest guidance. They don't make false promises but focus on building a strong foundation. The answer writing practice with personalized feedback has significantly improved my Mains preparation.",
-        initials: "VS"
-    }
-];
+const testimonials = testimonialsData.testimonials.map(testimonial => ({
+    name: testimonial.name,
+    role: `${testimonial.course} - ${testimonial.rank}`,
+    content: testimonial.text,
+    initials: testimonial.name.split(' ').map(n => n[0]).join('')
+}));
 
 export default function Testimonials() {
     return (

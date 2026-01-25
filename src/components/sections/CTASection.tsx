@@ -24,7 +24,7 @@ export default function CTASection() {
                             </h2>
 
                             <p className="text-[#2D1B33]/60 mb-8">
-                                Join Rajshree IAS Portal and take the first step towards your dream of becoming a civil servant.
+                                Join Rajashree's IAS Portal and take the first step towards your dream of becoming a civil servant.
                             </p>
 
                             <ul className="space-y-3 mb-8">
@@ -74,7 +74,7 @@ export default function CTASection() {
                                     </div>
                                     <div>
                                         <p className="text-sm text-[#2D1B33]/60 mb-1">Email us</p>
-                                        <p className="font-medium text-[#2D1B33]">info@rajshreeias.com</p>
+                                        <p className="font-medium text-[#2D1B33]">info@rajashreeias.com</p>
                                     </div>
                                 </div>
 

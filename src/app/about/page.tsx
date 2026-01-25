@@ -3,8 +3,34 @@ import Link from "next/link";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-    title: "About Us",
-    description: "Learn about Rajshree IAS Portal - Best UPSC and MPSC coaching institute in Latur. Expert faculty, small batches, and personalized mentorship for civil services aspirants.",
+    title: "About Rajashree's IAS - Best IAS Coaching Institute in Latur | UPSC & MPSC Preparation",
+    description: "Discover Rajashree's IAS coaching institute in Latur - Maharashtra's leading IAS coaching center. Expert faculty, proven results, personalized mentorship. Join 500+ successful IAS aspirants. Best UPSC coaching in Latur with 85% success rate.",
+    keywords: "IAS coaching Latur, UPSC coaching Latur, best IAS institute Latur, MPSC coaching Latur, civil services coaching Maharashtra, Rajashree's IAS about",
+    openGraph: {
+        title: "About Rajashree's IAS - Best IAS Coaching Institute in Latur",
+        description: "Leading IAS coaching institute in Latur, Maharashtra. Expert faculty, personalized mentorship, proven success rate. Join Maharashtra's best UPSC preparation center.",
+        url: "https://rajshreeias.com/about",
+        siteName: "Rajashree's IAS Portal",
+        images: [
+            {
+                url: "/og-about.jpg",
+                width: 1200,
+                height: 630,
+                alt: "Rajashree's IAS Coaching Institute Latur"
+            }
+        ],
+        locale: "en_US",
+        type: "website"
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "About Rajashree's IAS - Best IAS Coaching Institute in Latur",
+        description: "Leading IAS coaching institute in Latur, Maharashtra. Expert faculty, personalized mentorship, proven success rate.",
+        images: ["/og-about.jpg"]
+    },
+    alternates: {
+        canonical: "https://rajshreeias.com/about"
+    }
 };
 
 const values = [
@@ -53,23 +79,21 @@ export default function AboutPage() {
                     <div className="grid lg:grid-cols-2 gap-12 items-center">
                         <div>
                             <p className="text-sm font-medium text-[#D9A15B] uppercase tracking-wider mb-4">
-                                About Rajshree IAS Portal
+                                About Rajashree's IAS Portal
                             </p>
                             <h1 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-[#2D1B33] mb-6 leading-tight">
-                                Your Partner in 
-                                <span className="text-[#D9A15B]"> Civil Services </span>
-                                Success
+                                Best IAS Coaching Institute in Latur - 
+                                <span className="text-[#D9A15B]"> Your Success Partner </span>
                             </h1>
                             <p className="text-lg text-[#2D1B33]/70 leading-relaxed mb-6">
-                                Rajshree IAS Portal is a premier coaching institute in Latur dedicated to preparing 
-                                aspirants for UPSC Civil Services, MPSC, and other competitive examinations. 
-                                We believe in quality over quantity, focusing on building a strong foundation 
-                                for every student.
+                                Rajashree's IAS is Latur's leading coaching institute for UPSC Civil Services and MPSC preparation. 
+                                With over 500 successful IAS aspirants and an 85% success rate, we're Maharashtra's most trusted 
+                                IAS coaching center. Join the best UPSC coaching in Latur for comprehensive exam preparation.
                             </p>
                             <p className="text-[#2D1B33]/70 leading-relaxed mb-8">
-                                Our experienced faculty, comprehensive study material, and personalized mentorship 
-                                approach sets us apart. We don't just teach - we mentor, guide, and support 
-                                our students throughout their preparation journey.
+                                Our expert faculty with 10+ years experience, personalized mentorship, and proven teaching methodology 
+                                have helped hundreds of students achieve their IAS dreams. We focus on conceptual clarity, regular 
+                                assessments, and interview preparation to ensure your success in civil services examinations.
                             </p>
                             
                             <div className="flex flex-wrap gap-4">
@@ -117,12 +141,12 @@ export default function AboutPage() {
                                 </div>
                                 <h2 className="text-2xl font-serif font-bold mb-4">Our Mission</h2>
                                 <p className="text-white/80 leading-relaxed mb-4">
-                                    To provide accessible, high-quality civil services coaching that empowers 
-                                    aspirants from all backgrounds to achieve their dream of serving the nation.
+                                    To be Latur's premier IAS coaching institute, providing world-class UPSC and MPSC preparation 
+                                    that makes civil services success accessible to every deserving aspirant in Maharashtra.
                                 </p>
                                 <p className="text-white/80 leading-relaxed">
-                                    We are committed to nurturing not just successful candidates, but responsible 
-                                    future administrators with strong ethical values and comprehensive knowledge.
+                                    We're committed to nurturing not just successful IAS candidates, but future leaders with 
+                                    strong ethical foundation, comprehensive knowledge, and commitment to public service.
                                 </p>
                             </div>
 
@@ -133,12 +157,13 @@ export default function AboutPage() {
                                 </div>
                                 <h2 className="text-2xl font-serif font-bold text-[#2D1B33] mb-4">Our Vision</h2>
                                 <p className="text-[#2D1B33]/70 leading-relaxed mb-4">
-                                    To become a leading institution for civil services preparation in Maharashtra, 
-                                    known for our student-centric approach and consistent results.
+                                    To be recognized as Maharashtra's best IAS coaching institute in Latur, setting the 
+                                    gold standard for UPSC Civil Services Exam preparation with innovative teaching methods 
+                                    and consistent success rates.
                                 </p>
                                 <p className="text-[#2D1B33]/70 leading-relaxed">
-                                    We envision creating a community of well-prepared, ethically grounded civil 
-                                    servants who will contribute meaningfully to the nation's progress.
+                                    We envision building a legacy of IAS toppers from Latur who will bring positive change 
+                                    to Maharashtra and contribute significantly to India's development as ethical, capable administrators.
                                 </p>
                             </div>
                         </div>
@@ -268,7 +293,7 @@ export default function AboutPage() {
                         Ready to Start Your Civil Services Journey?
                     </h2>
                     <p className="text-white/70 mb-8 max-w-2xl mx-auto text-lg">
-                        Join Rajshree IAS Portal and take the first step towards your dream of becoming 
+                        Join Rajashree's IAS Portal and take the first step towards your dream of becoming 
                         an IAS/IPS officer. Our experienced faculty and proven methodology will guide you.
                     </p>
                     <div className="flex flex-wrap justify-center gap-4">
