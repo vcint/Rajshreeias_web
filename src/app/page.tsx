@@ -3,6 +3,7 @@ import WhyChooseUs from "@/components/sections/WhyChooseUs";
 import CoursesOverview from "@/components/sections/CoursesOverview";
 import FAQ from "@/components/sections/FAQ";
 // import Testimonials from "@/components/sections/Testimonials";
+import StudentReviews from "@/components/sections/StudentReviews";
 import UPSCInfo from "@/components/sections/UPSCInfo";
 import CTASection from "@/components/sections/CTASection";
 import { Metadata } from "next";
@@ -64,6 +65,7 @@ export default function Home() {
             <WhyChooseUs />
             <CoursesOverview />
             <UPSCInfo />
+            <StudentReviews />
             {/* <Testimonials /> */}
             <FAQ />
             <CTASection />

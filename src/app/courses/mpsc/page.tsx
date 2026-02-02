@@ -21,7 +21,7 @@ const courseHighlights = [
     {
         icon: BookOpen,
         title: "Bilingual Teaching",
-        description: "Classes available in both English and Marathi medium for better understanding"
+        description: "Bilingual classes delivered in English + Marathi for comprehensive understanding"
     },
     {
         icon: Target,

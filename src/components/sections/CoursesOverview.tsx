@@ -33,7 +33,7 @@ const courses = [
             "State service interview guidance",
             "Local governance & rural development"
         ],
-        description: "Specialized MPSC preparation course with Maharashtra focus. Expert faculty with state service experience. Marathi medium available. Complete preparation for Maharashtra Public Service Commission examinations.",
+        description: "Specialized MPSC preparation course with Maharashtra focus. Expert faculty with state service experience. Bilingual delivery in English + Marathi. Complete preparation for Maharashtra Public Service Commission examinations.",
         tag: "Regional Focus"
     },
     {

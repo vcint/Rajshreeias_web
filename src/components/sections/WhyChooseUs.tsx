@@ -11,7 +11,7 @@ const reasons = [
     {
         icon: BookOpen,
         title: "Bilingual Excellence",
-        description: "Learn in mixed language, but get high-quality notes SEPARATELY in English & Marathi."
+        description: "Bilingual delivery in English + Marathi with high-quality notes in both languages."
     },
     {
         icon: FileText,

@@ -29,6 +29,7 @@ const courses = [
 export default function EnrollPage() {
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [isSuccess, setIsSuccess] = useState(false);
+    const [error, setError] = useState("");
     const [formData, setFormData] = useState({
         fullName: "",
         email: "",
@@ -44,10 +45,36 @@ export default function EnrollPage() {
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         setIsSubmitting(true);
-        // Simulate API call
-        await new Promise((resolve) => setTimeout(resolve, 1500));
-        setIsSubmitting(false);
-        setIsSuccess(true);
+        setError("");
+
+        try {
+            const response = await fetch('/api/submit-enrollment', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData),
+            });
+
+            const data = await response.json();
+
+            if (response.ok) {
+                setIsSuccess(true);
+            } else {
+                const errorData = data.error;
+                const errorDetails = data.details;
+                
+                if (errorDetails && Array.isArray(errorDetails)) {
+                    setError(errorDetails.join('. '));
+                } else {
+                    setError(errorData || 'Failed to submit enrollment');
+                }
+            }
+        } catch (err) {
+            setError('Network error. Please try again.');
+        } finally {
+            setIsSubmitting(false);
+        }
     };
 
     if (isSuccess) {
@@ -237,6 +264,18 @@ export default function EnrollPage() {
                                 </h3>
                                 
                                 <form onSubmit={handleSubmit} className="space-y-5">
+                                    {error && (
+                                        <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-xl">
+                                            <div className="flex items-start gap-2">
+                                                <div className="w-4 h-4 rounded-full bg-red-500 flex-shrink-0 mt-0.5"></div>
+                                                <div>
+                                                    <p className="text-sm font-medium mb-1">Please fix the following issues:</p>
+                                                    <p className="text-sm">{error}</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    )}
+
                                     <div className="grid md:grid-cols-2 gap-5">
                                         <div>
                                             <label className="block text-sm font-medium text-[#2D1B33] mb-2">

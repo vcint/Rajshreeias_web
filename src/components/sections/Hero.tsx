@@ -6,30 +6,30 @@ import siteSettings from "@/content/site-settings.json";
 
 const upcomingBatches = [
     {
-        title: "UPSC CSE 2026 Foundation Batch",
-        subtitle: "Complete UPSC Preparation",
+        title: "Sankalp 2027 Foundation Batch",
+        subtitle: "Complete UPSC + MPSC Preparation",
         date: "Starting February 2026",
-        duration: "15 Months",
-        mode: "Offline + Online",
-        features: ["Complete GS Syllabus", "CSAT Preparation", "Daily Answer Writing", "Weekly Mock Tests"],
+        duration: "11 Months",
+        mode: "Online",
+        features: ["UPSC + MPSC Syllabus", "Prelims + Mains", "Answer Writing Practice", "Interview Preparation"],
         highlight: true,
     },
     {
-        title: "MPSC 2026 State Services",
-        subtitle: "Maharashtra Special Focus",
+        title: "Civil Services Foundation 2026",
+        subtitle: "UPSC & MPSC Combined Program",
         date: "Starting March 2026",
         duration: "12 Months",
-        mode: "Offline + Online",
-        features: ["State-specific Syllabus", "Marathi Medium", "MPSC Pattern Tests", "Interview Guidance"],
+        mode: "Online",
+        features: ["Dual Exam Preparation", "State & Central Focus", "Mock Tests", "Mentorship"],
         highlight: false,
     },
     {
-        title: "UPSC Prelims Crash Course 2026",
-        subtitle: "Last Minute Preparation",
+        title: "Prelims Intensive 2026",
+        subtitle: "UPSC + MPSC Prelims Focus",
         date: "Starting April 2026",
-        duration: "3 Months",
-        mode: "Online + Offline",
-        features: ["60+ Mock Tests", "Current Affairs", "Revision Notes", "Performance Analytics"],
+        duration: "4 Months",
+        mode: "Online",
+        features: ["Combined Test Series", "Current Affairs", "Revision Sessions", "Performance Analytics"],
         highlight: false,
     },
 ];
@@ -113,7 +113,6 @@ export default function Hero() {
 
                         {/* Trust Indicators */}
                         <div className="mt-8 sm:mt-10 pt-6 sm:pt-8 border-t border-[#2D1B33]/10">
-                            <p className="text-xs sm:text-sm text-[#2D1B33]/50 mb-2 sm:mb-3">🏆 Trusted by 500+ IAS Aspirants in Latur</p>
                             <div className="flex flex-wrap gap-2 sm:gap-3">
                                 {["UPSC CSE", "MPSC", "SSC CGL", "Banking Exams", "RRB", "State PSC"].map((exam) => (
                                     <span 
