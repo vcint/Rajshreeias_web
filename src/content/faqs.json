@@ -3,7 +3,7 @@
     {
       "id": 1,
       "question": "Why choose Rajashree's IAS Portal coaching in Latur for UPSC preparation?",
-      "answer": "Rajashree's IAS Portal is Latur's premier coaching institute for UPSC Civil Services Exam preparation. We offer personalized mentorship, expert faculty with 10+ years experience, comprehensive study materials, and proven track record with 85% success rate. Our location in Latur makes quality IAS coaching accessible to Maharashtra students.",
+      "answer": "Rajashree's IAS Portal is Latur's premier coaching institute for UPSC Civil Services Exam preparation. We offer personalized mentorship, expert faculty with 10+ years experience, comprehensive study materials, and proven teaching methodology. Our location in Latur makes quality IAS coaching accessible to Maharashtra students.",
       "category": "About Institute"
     },
     {
@@ -14,14 +14,14 @@
     },
     {
       "id": 3,
-      "question": "Do you offer both online and offline IAS coaching classes in Latur?",
-      "answer": "Yes! We provide flexible learning options - offline classes at our Latur center and live online classes for students who prefer remote learning. Both modes include same study materials, faculty interaction, and test series. Offline students get additional benefits like library access and group discussions.",
+      "question": "What type of IAS coaching classes do you offer?",
+      "answer": "We provide comprehensive online IAS coaching classes with live interactive sessions. Our digital platform offers real-time doubt clearing, recorded lectures for revision, online test series, and digital study materials. Students can attend from anywhere and get the same quality education as traditional classroom coaching.",
       "category": "Courses"
     },
     {
       "id": 4,
-      "question": "What is the course fee for IAS coaching in Latur?",
-      "answer": "Our UPSC CSE Complete Course fees start from ₹45,000 for offline mode and ₹35,000 for online mode. We offer installment options and scholarships for deserving students. The fee includes study materials, test series, doubt clearing sessions, and interview preparation. Contact us for current offers.",
+      "question": "What is the course fee for online IAS coaching?",
+      "answer": "Our UPSC CSE Complete Online Course starts from ₹35,000 with flexible payment options and installments available. The fee includes comprehensive study materials, live online classes, recorded lectures, test series, doubt clearing sessions, and interview preparation. Contact us for current offers and scholarship details.",
       "category": "Fees"
     },
     {
@@ -38,15 +38,33 @@
     },
     {
       "id": 7,
-      "question": "What is the batch size and teaching methodology at Rajashree's IAS Portal Latur?",
-      "answer": "We maintain small batch sizes (25-30 students) for better interaction. Our teaching methodology includes concept-based learning, regular assessments, daily answer writing practice, weekly mock tests, and personalized doubt clearing. We focus on conceptual clarity rather than rote learning.",
+      "question": "What is the batch size and teaching methodology for online classes?",
+      "answer": "Our online batches maintain small sizes (25-30 students) for personalized attention through live interactive sessions. Our methodology includes concept-based teaching, regular online assessments, daily answer writing practice with digital submission, weekly online mock tests, and dedicated doubt clearing sessions via video calls.",
       "category": "Teaching"
     },
     {
       "id": 8,
-      "question": "Do you provide hostel facilities for outstation IAS aspirants in Latur?",
-      "answer": "While we don't provide hostel facilities directly, we can help you find safe and affordable PG accommodations near our institute. Latur has good connectivity and several student-friendly areas. Our counseling team assists with accommodation arrangements for serious aspirants.",
-      "category": "Infrastructure"
+      "question": "What technical requirements are needed for online classes?",
+      "answer": "Students need a stable internet connection, a smartphone/laptop/tablet with camera and microphone for interactive sessions. We provide easy-to-use learning platform access, digital study materials in PDF format, and technical support for smooth online learning experience.",
+      "category": "Technology"
+    },
+    {
+      "id": 9,
+      "question": "How do you ensure quality in online IAS coaching?",
+      "answer": "We maintain the same high teaching standards through live interactive classes, recorded sessions for revision, regular online assessments with immediate feedback, personalized mentorship via video calls, and continuous student progress tracking. Our online platform ensures seamless learning experience.",
+      "category": "Quality"
+    },
+    {
+      "id": 10,
+      "question": "Can I access recorded lectures after live classes?",
+      "answer": "Yes! All live sessions are recorded and available on our learning platform within 24 hours. Students get lifetime access to recordings, allowing them to revise concepts multiple times. We also provide downloadable study materials and notes for offline studying.",
+      "category": "Learning Resources"
+    },
+    {
+      "id": 11,
+      "question": "How do you conduct online mock tests and evaluations?",
+      "answer": "Our comprehensive online test series includes weekly mock tests, subject-wise assessments, and full-length UPSC simulation tests. Students receive instant results, detailed performance analytics, and personalized feedback. Answer writing practice is evaluated by faculty with video feedback sessions.",
+      "category": "Evaluation"
     }
   ]
 }

@@ -122,7 +122,7 @@ export default function ContentDashboard() {
                             </div>
                             <div className="flex items-center gap-3 text-sm">
                                 <BookOpen className="w-4 h-4 text-[#D9A15B]" />
-                                <span className="text-[#2D1B33]/70">85% Success Rate</span>
+                                <span className="text-[#2D1B33]/70">Quality Education</span>
                             </div>
                         </div>
 

@@ -10,7 +10,7 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
     title: "Best IAS Coaching in Latur | Rajashree's IAS Portal - UPSC & MPSC Classes",
-    description: "🏆 #1 IAS Coaching Institute in Latur. Join Rajashree's IAS Portal for expert UPSC & MPSC coaching. Small batches, personalized mentorship, complete study material. 95% success rate. Enroll now!",
+    description: "🏆 #1 IAS Coaching Institute in Latur. Join Rajashree's IAS Portal for expert UPSC & MPSC coaching. Small batches, personalized mentorship, complete study material. Quality education guaranteed. Enroll now!",
     keywords: "IAS coaching Latur, UPSC coaching Latur, MPSC coaching Latur, best IAS institute Latur, civil services coaching Latur, UPSC classes Latur, IAS preparation Latur, Rajashree's IAS Portal, top IAS coaching Maharashtra",
     authors: [{ name: "Rajashree's IAS Portal" }],
     creator: "Rajashree's IAS Portal",
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     twitter: {
         card: "summary_large_image",
         title: "Best IAS Coaching in Latur | Rajashree IAS Portal",
-        description: "🏆 #1 IAS Coaching Institute in Latur. Expert UPSC & MPSC coaching with 95% success rate. Small batches, personalized mentorship. Enroll now!",
+        description: "🏆 #1 IAS Coaching Institute in Latur. Expert UPSC & MPSC coaching with dedicated support. Small batches, personalized mentorship. Enroll now!",
         images: ["/twitter-image.jpg"],
     },
     robots: {

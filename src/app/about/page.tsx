@@ -4,7 +4,7 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
     title: "About Rajashree's IAS - Best IAS Coaching Institute in Latur | UPSC & MPSC Preparation",
-    description: "Discover Rajashree's IAS coaching institute in Latur - Maharashtra's leading IAS coaching center. Expert faculty, proven results, personalized mentorship. Join 500+ successful IAS aspirants. Best UPSC coaching in Latur with 85% success rate.",
+    description: "Discover Rajashree's IAS coaching institute in Latur - Maharashtra's leading IAS coaching center. Expert faculty, proven results, personalized mentorship. Quality UPSC coaching in Latur with dedicated support.",
     keywords: "IAS coaching Latur, UPSC coaching Latur, best IAS institute Latur, MPSC coaching Latur, civil services coaching Maharashtra, Rajashree's IAS about",
     openGraph: {
         title: "About Rajashree's IAS - Best IAS Coaching Institute in Latur",
@@ -87,7 +87,7 @@ export default function AboutPage() {
                             </h1>
                             <p className="text-lg text-[#2D1B33]/70 leading-relaxed mb-6">
                                 Rajashree's IAS is Latur's leading coaching institute for UPSC Civil Services and MPSC preparation. 
-                                With over 500 successful IAS aspirants and an 85% success rate, we're Maharashtra's most trusted 
+                                We're Maharashtra's most trusted 
                                 IAS coaching center. Join the best UPSC coaching in Latur for comprehensive exam preparation.
                             </p>
                             <p className="text-[#2D1B33]/70 leading-relaxed mb-8">

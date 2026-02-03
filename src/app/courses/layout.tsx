@@ -2,7 +2,7 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
     title: "IAS Coaching Courses in Latur | UPSC & MPSC Preparation | Rajashree's IAS Portal",
-    description: "Best IAS coaching courses in Latur, Maharashtra. Comprehensive UPSC Civil Services & MPSC preparation with expert faculty. Join 500+ successful aspirants. Enroll now for guaranteed success.",
+    description: "Best IAS coaching courses in Latur, Maharashtra. Comprehensive UPSC Civil Services & MPSC preparation with expert faculty. Quality education for serious aspirants. Enroll now for dedicated support.",
     keywords: "IAS coaching courses Latur, UPSC courses Latur, MPSC coaching Latur, civil services preparation Maharashtra, best IAS institute Latur, UPSC coaching fees",
     openGraph: {
         title: "IAS Coaching Courses in Latur | UPSC & MPSC Preparation",

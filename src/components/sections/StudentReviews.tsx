@@ -88,8 +88,26 @@ export default function StudentReviews() {
     const [selectedReview, setSelectedReview] = useState<typeof studentReviews[0] | null>(null);
     const [isAutoScrolling, setIsAutoScrolling] = useState(true);
     const [isPaused, setIsPaused] = useState(false);
+    const [itemsPerSlide, setItemsPerSlide] = useState(3);
 
-    const maxSlides = Math.ceil(studentReviews.length / 3);
+    // Update items per slide based on screen size
+    useEffect(() => {
+        const updateItemsPerSlide = () => {
+            const newItemsPerSlide = window.innerWidth < 768 ? 1 : window.innerWidth < 1024 ? 2 : 3;
+            
+            if (newItemsPerSlide !== itemsPerSlide) {
+                setItemsPerSlide(newItemsPerSlide);
+                // Reset current index to avoid out of bounds
+                setCurrentIndex(0);
+            }
+        };
+
+        updateItemsPerSlide();
+        window.addEventListener('resize', updateItemsPerSlide);
+        return () => window.removeEventListener('resize', updateItemsPerSlide);
+    }, [itemsPerSlide]);
+
+    const maxSlides = Math.ceil(studentReviews.length / itemsPerSlide);
 
     // Auto-scroll functionality
     useEffect(() => {
@@ -118,7 +136,7 @@ export default function StudentReviews() {
         setIsAutoScrolling(!isAutoScrolling);
     };
 
-    const visibleReviews = studentReviews.slice(currentIndex * 3, currentIndex * 3 + 3);
+    const visibleReviews = studentReviews.slice(currentIndex * itemsPerSlide, currentIndex * itemsPerSlide + itemsPerSlide);
 
     return (
         <>
@@ -174,7 +192,7 @@ export default function StudentReviews() {
                     </button>
 
                     {/* Reviews Grid */}
-                    <div className="grid md:grid-cols-3 gap-6">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                         {visibleReviews.map((review) => (
                             <div
                                 key={review.id}
