@@ -1,7 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
-
+import { useState, useEffect } from 'react';import { useAdminAuth } from "@/hooks/useAdminAuth";
 interface StudentReview {
   id: number;
   studentName: string;
@@ -18,6 +17,7 @@ interface StudentReviewData {
 }
 
 export default function TestimonialEditor() {
+  const { isAuthenticated, isLoading } = useAdminAuth();
   const [reviewData, setReviewData] = useState<StudentReviewData>({ studentReviews: [] });
   const [selectedReview, setSelectedReview] = useState<StudentReview | null>(null);
   const [isEditing, setIsEditing] = useState(false);
@@ -32,6 +32,18 @@ export default function TestimonialEditor() {
   });
   const [uploadedFile, setUploadedFile] = useState<File | null>(null);
   const [isUploading, setIsUploading] = useState(false);
+
+  if (isLoading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="text-lg">Loading...</div>
+      </div>
+    );
+  }
+
+  if (!isAuthenticated) {
+    return null; // Will redirect to login
+  }
 
   const loadReviewData = async () => {
     try {
@@ -50,8 +62,10 @@ export default function TestimonialEditor() {
   };
 
   useEffect(() => {
-    loadReviewData();
-  }, []);
+    if (isAuthenticated) {
+      loadReviewData();
+    }
+  }, [isAuthenticated]);
 
   const saveReviewData = async (updatedData: StudentReviewData) => {
     try {

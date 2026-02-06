@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import { useAdminAuth } from "@/hooks/useAdminAuth";
 
 interface FAQ {
   id: number;
@@ -14,6 +15,7 @@ interface FAQData {
 }
 
 export default function FAQEditor() {
+  const { isAuthenticated, isLoading } = useAdminAuth();
   const [faqData, setFaqData] = useState<FAQData>({ faqs: [] });
   const [selectedFAQ, setSelectedFAQ] = useState<FAQ | null>(null);
   const [isEditing, setIsEditing] = useState(false);
@@ -23,9 +25,23 @@ export default function FAQEditor() {
     category: ''
   });
 
+  if (isLoading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="text-lg">Loading...</div>
+      </div>
+    );
+  }
+
+  if (!isAuthenticated) {
+    return null; // Will redirect to login
+  }
+
   useEffect(() => {
-    loadFAQData();
-  }, []);
+    if (isAuthenticated) {
+      loadFAQData();
+    }
+  }, [isAuthenticated]);
 
   const loadFAQData = async () => {
     try {

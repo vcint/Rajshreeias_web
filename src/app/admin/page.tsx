@@ -1,22 +1,41 @@
-import Link from "next/link";
-import { Metadata } from "next";
-import { ArrowLeft, FileText, Settings, MessageSquare, HelpCircle, BookOpen, Users, Phone } from "lucide-react";
+"use client";
 
-export const metadata: Metadata = {
-    title: "Content Management Dashboard | Rajashree's IAS Portal",
-    description: "Easy content management dashboard for Rajashree's IAS Portal website",
-};
+import { useAdminAuth } from "@/hooks/useAdminAuth";
+import Link from "next/link";
+import { ArrowLeft, FileText, Settings, MessageSquare, HelpCircle, BookOpen, Users, Phone, LogOut } from "lucide-react";
 
 export default function ContentDashboard() {
+    const { isAuthenticated, isLoading, logout } = useAdminAuth();
+
+    if (isLoading) {
+        return (
+            <div className="min-h-screen flex items-center justify-center">
+                <div className="text-lg">Loading...</div>
+            </div>
+        );
+    }
+
+    if (!isAuthenticated) {
+        return null; // Will redirect to login
+    }
     return (
         <div className="min-h-screen bg-[#FAF9F6] py-12">
             <div className="container mx-auto px-4">
                 {/* Header */}
                 <div className="mb-8">
-                    <Link href="/" className="inline-flex items-center gap-2 text-[#2D1B33]/60 hover:text-[#D9A15B] mb-4">
-                        <ArrowLeft className="w-4 h-4" />
-                        Back to Website
-                    </Link>
+                    <div className="flex justify-between items-start mb-4">
+                        <Link href="/" className="inline-flex items-center gap-2 text-[#2D1B33]/60 hover:text-[#D9A15B]">
+                            <ArrowLeft className="w-4 h-4" />
+                            Back to Website
+                        </Link>
+                        <button 
+                            onClick={logout}
+                            className="inline-flex items-center gap-2 text-[#2D1B33]/60 hover:text-red-600 px-3 py-1 rounded-lg hover:bg-red-50"
+                        >
+                            <LogOut className="w-4 h-4" />
+                            Logout
+                        </button>
+                    </div>
                     <h1 className="text-3xl md:text-4xl font-serif font-bold text-[#2D1B33] mb-2">
                         Content Management Dashboard
                     </h1>
