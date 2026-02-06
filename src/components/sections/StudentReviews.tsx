@@ -4,79 +4,29 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import { ChevronLeft, ChevronRight, MessageSquare, Instagram, Star, Play, Pause } from "lucide-react";
 
-// Sample data structure - you can add your actual review images here
-const studentReviews = [
-    {
-        id: 1,
-        studentName: "Asawari Mamadge",
-        course: "UPSC CSE",
-        platform: "WhatsApp",
-        imageUrl: "/reviews/AsawariM.jpeg", // Add your actual image path
-        rating: 5,
-        preview: " ",
-        isVideo: false,
-    },
-    {
-        id: 2,
-        studentName: "Pallavi Navgire",
-        course: "MPSC",
-        platform: "WhatsApp",
-        imageUrl: "/reviews/PallaviN.jpeg",
-        rating: 5,
-        preview: " ",
-        isVideo: false,
-    },
-    {
-        id: 3,
-        studentName: "Almas Bagwan",
-        course: "History Optional",
-        platform: "WhatsApp",
-        imageUrl: "/reviews/AlmasB.jpeg",
-        rating: 5,
-        preview: " ",
-        isVideo: false,
-    },
-    {
-        id: 4,
-        studentName: "Bhairavi",
-        course: "Foundation Course",
-        platform: "WhatsApp",
-        imageUrl: "/reviews/Bhairavi.jpeg",
-        rating: 5,
-        preview: " ",
-        isVideo: false,
-    },
-    {
-        id: 5,
-        studentName: "Meraj Khanapure",
-        course: "UPSC CSE",
-        platform: "Notepad",
-        imageUrl: "/reviews/MerajK.jpeg",
-        rating: 5,
-        preview: " ",
-        isVideo: false,
-    },
-    {
-        id: 6,
-        studentName: "Priya Sangle",
-        course: "Answer Writing",
-        platform: "WhatsApp",
-        imageUrl: "/reviews/PriyaS.jpeg",
-        rating: 5,
-        preview: " ",
-        isVideo: false,
-    },
-    {
-        id: 7,
-        studentName: "Pranav Lohiya",
-        course: "Answer Writing",
-        platform: "WhatsApp",
-        imageUrl: "/reviews/PranavL.jpeg",
-        rating: 5,
-        preview: " ",
-        isVideo: false,
-    },
-];
+// Define types
+interface StudentReview {
+    id: number;
+    studentName: string;
+    course: string;
+    platform: string;
+    imageUrl: string;
+    rating: number;
+    preview: string;
+    isVideo: boolean;
+}
+
+// Get data from API
+const loadStudentReviews = async (): Promise<StudentReview[]> => {
+  try {
+    const response = await fetch('/api/get-content?type=student-reviews');
+    const result = await response.json();
+    return result.success ? result.data.studentReviews : [];
+  } catch (error) {
+    console.error('Error loading student reviews:', error);
+    return [];
+  }
+};
 
 const platformIcons = {
     WhatsApp: <MessageSquare className="w-4 h-4 text-green-500" />,
@@ -84,11 +34,21 @@ const platformIcons = {
 };
 
 export default function StudentReviews() {
+    const [studentReviews, setStudentReviews] = useState<StudentReview[]>([]);
     const [currentIndex, setCurrentIndex] = useState(0);
-    const [selectedReview, setSelectedReview] = useState<typeof studentReviews[0] | null>(null);
+    const [selectedReview, setSelectedReview] = useState<StudentReview | null>(null);
     const [isAutoScrolling, setIsAutoScrolling] = useState(true);
     const [isPaused, setIsPaused] = useState(false);
     const [itemsPerSlide, setItemsPerSlide] = useState(3);
+
+    // Load student reviews on component mount
+    useEffect(() => {
+        const fetchReviews = async () => {
+            const reviews = await loadStudentReviews();
+            setStudentReviews(reviews);
+        };
+        fetchReviews();
+    }, []);
 
     // Update items per slide based on screen size
     useEffect(() => {

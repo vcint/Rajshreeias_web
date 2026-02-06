@@ -94,9 +94,9 @@ export default function ContentDashboard() {
                             </div>
                         </div>
 
-                        <button className="w-full px-4 py-3 bg-[#2D1B33] text-white font-semibold rounded-lg hover:bg-[#2D1B33]/90 transition-colors">
+                        <Link href="/admin/courses" className="block w-full px-4 py-3 bg-[#2D1B33] text-white font-semibold rounded-lg hover:bg-[#2D1B33]/90 transition-colors text-center">
                             Edit Courses
-                        </button>
+                        </Link>
                     </div>
 
                     {/* Site Settings */}
@@ -126,9 +126,9 @@ export default function ContentDashboard() {
                             </div>
                         </div>
 
-                        <button className="w-full px-4 py-3 bg-[#2D1B33] text-white font-semibold rounded-lg hover:bg-[#2D1B33]/90 transition-colors">
+                        <Link href="/admin/settings" className="block w-full px-4 py-3 bg-[#2D1B33] text-white font-semibold rounded-lg hover:bg-[#2D1B33]/90 transition-colors text-center">
                             Edit Settings
-                        </button>
+                        </Link>
                     </div>
 
                     {/* Testimonials */}
@@ -155,9 +155,9 @@ export default function ContentDashboard() {
                             </div>
                         </div>
 
-                        <button className="w-full px-4 py-3 bg-[#2D1B33] text-white font-semibold rounded-lg hover:bg-[#2D1B33]/90 transition-colors">
+                        <Link href="/admin/testimonials" className="block w-full px-4 py-3 bg-[#2D1B33] text-white font-semibold rounded-lg hover:bg-[#2D1B33]/90 transition-colors text-center">
                             Edit Testimonials
-                        </button>
+                        </Link>
                     </div>
 
                     {/* FAQs */}
@@ -184,9 +184,9 @@ export default function ContentDashboard() {
                             </div>
                         </div>
 
-                        <button className="w-full px-4 py-3 bg-[#2D1B33] text-white font-semibold rounded-lg hover:bg-[#2D1B33]/90 transition-colors">
+                        <Link href="/admin/faqs" className="block w-full px-4 py-3 bg-[#2D1B33] text-white font-semibold rounded-lg hover:bg-[#2D1B33]/90 transition-colors text-center">
                             Edit FAQs
-                        </button>
+                        </Link>
                     </div>
 
                     {/* Resources */}
@@ -203,19 +203,19 @@ export default function ContentDashboard() {
 
                         <div className="space-y-3 mb-6">
                             <div className="text-sm text-[#2D1B33]/70">
-                                "Current Affairs - January 2026"
+                                📚 Upload PDFs, study notes, and materials
                             </div>
                             <div className="text-sm text-[#2D1B33]/70">
-                                "UPSC Prelims 2025 Question Paper"
+                                📄 Previous year questions with solutions
                             </div>
                             <div className="text-sm text-[#2D1B33]/70">
-                                "Indian Polity Complete Notes"
+                                📰 Current affairs monthly compilations
                             </div>
                         </div>
 
-                        <button className="w-full px-4 py-3 bg-[#2D1B33] text-white font-semibold rounded-lg hover:bg-[#2D1B33]/90 transition-colors">
-                            Edit Resources
-                        </button>
+                        <Link href="/admin/resources" className="block w-full px-4 py-3 bg-[#D9A15B] text-white font-semibold rounded-lg hover:bg-[#B8873E] transition-colors text-center">
+                            Manage Resources
+                        </Link>
                     </div>
 
                     {/* Help & Guide */}

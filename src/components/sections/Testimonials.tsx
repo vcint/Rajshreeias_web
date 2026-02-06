@@ -1,16 +1,49 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import { Quote } from "lucide-react";
-import testimonialsData from "@/content/testimonials.json";
 
-const testimonials = testimonialsData.testimonials.map(testimonial => ({
-    name: testimonial.name,
-    role: `${testimonial.course} - ${testimonial.rank}`,
-    content: testimonial.text,
-    initials: testimonial.name.split(' ').map(n => n[0]).join('')
-}));
+// Define types
+interface TestimonialData {
+    id: number;
+    name: string;
+    rank: string;
+    image: string;
+    text: string;
+    rating: number;
+    course: string;
+}
+
+interface FormattedTestimonial {
+    name: string;
+    role: string;
+    content: string;
+    initials: string;
+}
 
 export default function Testimonials() {
+    const [testimonials, setTestimonials] = useState<FormattedTestimonial[]>([]);
+
+    useEffect(() => {
+        const fetchTestimonials = async () => {
+            try {
+                const response = await fetch('/api/get-content?type=testimonials');
+                const result = await response.json();
+                if (result.success) {
+                    const formattedTestimonials = result.data.testimonials.map((testimonial: TestimonialData) => ({
+                        name: testimonial.name,
+                        role: `${testimonial.course} - ${testimonial.rank}`,
+                        content: testimonial.text,
+                        initials: testimonial.name.split(' ').map(n => n[0]).join('')
+                    }));
+                    setTestimonials(formattedTestimonials);
+                }
+            } catch (error) {
+                console.error('Error loading testimonials:', error);
+            }
+        };
+        fetchTestimonials();
+    }, []);
     return (
         <section className="py-20 bg-[#2D1B33]">
             <div className="container mx-auto px-4">

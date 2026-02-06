@@ -1,3 +1,14 @@
+/*
+ * IMPORTANT: This API route uses Google Cloud APIs which have costs and quotas.
+ * 
+ * For a FREE solution, use Google Apps Script instead:
+ * 1. Follow the setup guide in GOOGLE_APPS_SCRIPT_SETUP.md
+ * 2. Update the frontend to call the Apps Script web app URL directly
+ * 3. This will eliminate all costs and API quotas
+ * 
+ * Apps Script URL format: https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec
+ */
+
 import { NextRequest, NextResponse } from 'next/server';
 import { google } from 'googleapis';
 

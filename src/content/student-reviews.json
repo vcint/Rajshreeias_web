@@ -1,0 +1,74 @@
+{
+  "studentReviews": [
+    {
+      "id": 1,
+      "studentName": "Asawari Mamadge",
+      "course": "UPSC CSE",
+      "platform": "WhatsApp",
+      "imageUrl": "/reviews/AsawariM.jpeg",
+      "rating": 5,
+      "preview": " ",
+      "isVideo": false
+    },
+    {
+      "id": 2,
+      "studentName": "Pallavi Navgire",
+      "course": "MPSC",
+      "platform": "WhatsApp",
+      "imageUrl": "/reviews/PallaviN.jpeg",
+      "rating": 5,
+      "preview": " ",
+      "isVideo": false
+    },
+    {
+      "id": 3,
+      "studentName": "Almas Bagwan",
+      "course": "History Optional",
+      "platform": "WhatsApp",
+      "imageUrl": "/reviews/AlmasB.jpeg",
+      "rating": 5,
+      "preview": " ",
+      "isVideo": false
+    },
+    {
+      "id": 4,
+      "studentName": "Bhairavi",
+      "course": "Foundation Course",
+      "platform": "WhatsApp",
+      "imageUrl": "/reviews/Bhairavi.jpeg",
+      "rating": 5,
+      "preview": " ",
+      "isVideo": false
+    },
+    {
+      "id": 5,
+      "studentName": "Meraj Khanapure",
+      "course": "UPSC CSE",
+      "platform": "Notepad",
+      "imageUrl": "/reviews/MerajK.jpeg",
+      "rating": 5,
+      "preview": " ",
+      "isVideo": false
+    },
+    {
+      "id": 6,
+      "studentName": "Priya Sangle",
+      "course": "Answer Writing",
+      "platform": "WhatsApp",
+      "imageUrl": "/reviews/PriyaS.jpeg",
+      "rating": 5,
+      "preview": " ",
+      "isVideo": false
+    },
+    {
+      "id": 7,
+      "studentName": "Pranav Lohiya",
+      "course": "Answer Writing",
+      "platform": "WhatsApp",
+      "imageUrl": "/reviews/PranavL.jpeg",
+      "rating": 5,
+      "preview": " ",
+      "isVideo": false
+    }
+  ]
+}

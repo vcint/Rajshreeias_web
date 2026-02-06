@@ -17,6 +17,8 @@ const benefits = [
 
 const courses = [
     { value: "upsc-foundation", label: "UPSC CSE Foundation Course (12 Months)" },
+    { value: "Mentorship", label: "Mentorship Program" },
+    { value: "Ethics", label: "Ethics Optional (8 Months)" },
     { value: "mpsc-complete", label: "MPSC State Services Complete (10 Months)" },
     { value: "upsc-prelims", label: "UPSC Prelims Intensive (3 Months)" },
     { value: "mains-writing", label: "Mains Answer Writing Program (4 Months)" },
@@ -48,31 +50,75 @@ export default function EnrollPage() {
         setError("");
 
         try {
-            const response = await fetch('/api/submit-enrollment', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(formData),
+            const appsScriptUrl = process.env.NEXT_PUBLIC_APPS_SCRIPT_URL;
+            
+            console.log('Apps Script URL:', appsScriptUrl);
+            console.log('Form data:', formData);
+            
+            if (!appsScriptUrl) {
+                throw new Error('Apps Script URL not configured');
+            }
+
+            // Create hidden iframe for seamless submission
+            const iframe = document.createElement('iframe');
+            iframe.name = 'hidden_iframe';
+            iframe.style.display = 'none';
+            document.body.appendChild(iframe);
+
+            // Create form for submission
+            const form = document.createElement('form');
+            form.method = 'POST';
+            form.action = appsScriptUrl;
+            form.target = 'hidden_iframe';
+            form.style.display = 'none';
+
+            // Add form data as hidden inputs
+            Object.entries(formData).forEach(([key, value]) => {
+                const input = document.createElement('input');
+                input.type = 'hidden';
+                input.name = key;
+                input.value = value;
+                form.appendChild(input);
             });
 
-            const data = await response.json();
-
-            if (response.ok) {
-                setIsSuccess(true);
-            } else {
-                const errorData = data.error;
-                const errorDetails = data.details;
-                
-                if (errorDetails && Array.isArray(errorDetails)) {
-                    setError(errorDetails.join('. '));
-                } else {
-                    setError(errorData || 'Failed to submit enrollment');
+            document.body.appendChild(form);
+            
+            // Handle iframe load to detect completion
+            iframe.onload = () => {
+                try {
+                    // Try to read response from iframe
+                    const iframeDoc = iframe.contentDocument || iframe.contentWindow?.document;
+                    const responseText = iframeDoc?.body?.textContent?.trim();
+                    
+                    console.log('Response:', responseText);
+                    
+                    if (responseText === 'Success') {
+                        setIsSuccess(true);
+                    } else if (responseText && responseText.startsWith('Error:')) {
+                        setError('Submission failed. Please try again.');
+                    } else {
+                        // Assume success if we can't read response due to CORS
+                        setIsSuccess(true);
+                    }
+                } catch (err) {
+                    // Can't read iframe due to CORS, assume success
+                    console.log('Cannot read iframe response, assuming success');
+                    setIsSuccess(true);
                 }
-            }
+                
+                // Clean up
+                if (document.body.contains(form)) document.body.removeChild(form);
+                if (document.body.contains(iframe)) document.body.removeChild(iframe);
+                setIsSubmitting(false);
+            };
+
+            // Submit the form
+            console.log('Submitting form...');
+            form.submit();
+
         } catch (err) {
-            setError('Network error. Please try again.');
-        } finally {
+            console.error('Form submission error:', err);
+            setError('Network error. Please try again or contact us directly.');
             setIsSubmitting(false);
         }
     };
@@ -158,7 +204,7 @@ export default function EnrollPage() {
                                         <div>
                                             <p className="text-sm text-white/60 mb-1">Email us</p>
                                             <p className="font-medium group-hover:text-[#D9A15B] transition-colors">
-                                                info@rajshreeias.com
+                                                info@rajashreeias.com
                                             </p>
                                         </div>
                                     </a>
