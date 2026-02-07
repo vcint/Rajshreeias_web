@@ -339,7 +339,7 @@ export default function AboutPage() {
                                         <div>
                                             <p className="font-medium">Email Us</p>
                                             <a href="mailto:info@rajshreeias.com" className="text-white/70 text-sm hover:text-[#D9A15B]">
-                                                info@rajshreeias.com
+                                                info@rajashreeias.com
                                             </a>
                                         </div>
                                     </div>
