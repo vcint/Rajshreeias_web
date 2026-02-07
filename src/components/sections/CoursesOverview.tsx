@@ -5,9 +5,9 @@ import { ArrowRight, Clock, BookOpen, Users } from "lucide-react";
 
 const courses = [
     {
-        title: "UPSC CSE Foundation Course - Latur",
+        title: "UPSC & MPSC Foundation Course - Latur",
         duration: "15 Months",
-        mode: "Offline + Online",
+        mode: "Online",
         highlights: [
             "Complete General Studies (GS) Paper 1, 2, 3, 4 coverage",
             "CSAT (Paper 2) - Quantitative Aptitude & Reasoning",
@@ -23,7 +23,7 @@ const courses = [
     {
         title: "MPSC State Services Course - Maharashtra",
         duration: "12 Months",
-        mode: "Offline + Online",
+        mode: " Online",
         highlights: [
             "Maharashtra state-specific syllabus & geography",
             "State economy, polity & administration",
@@ -39,7 +39,7 @@ const courses = [
     {
         title: "UPSC Prelims Intensive Program",
         duration: "4 Months",
-        mode: "Offline + Online",
+        mode: "Online",
         highlights: [
             "Rapid revision of entire prelims syllabus",
             "2000+ MCQ practice questions",
@@ -55,7 +55,7 @@ const courses = [
     {
         title: "Mains Answer Writing Mastery Program",
         duration: "6 Months",
-        mode: "Offline + Online",
+        mode: "Online",
         highlights: [
             "Daily answer writing practice for all GS papers",
             "Personalized feedback from expert evaluators",

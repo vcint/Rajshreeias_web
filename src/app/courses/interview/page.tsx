@@ -77,27 +77,6 @@ const interviewComponents = [
     "Improvement Action Plan"
 ];
 
-const faculty = [
-    {
-        name: "Dr. Rajesh Gupta",
-        qualification: "Former UPSC Interview Panel Member, PhD Psychology",
-        experience: "25+ years",
-        specialization: "Interview Techniques & Psychology"
-    },
-    {
-        name: "Ms. Kavita Singh",
-        qualification: "Former IAS Officer, Communication Expert",
-        experience: "18+ years",
-        specialization: "Personality Development"
-    },
-    {
-        name: "Shri Amit Kumar",
-        qualification: "Former IPS Officer, Current Affairs Expert",
-        experience: "15+ years",
-        specialization: "Current Affairs & Contemporary Issues"
-    }
-];
-
 // const successStories = [
 //     {
 //         name: "Rahul Sharma",
@@ -281,37 +260,58 @@ export default function InterviewPage() {
                     </div>
                 </div>
 
-                {/* Faculty */}
+                {/* Interview Training Team */}
                 <div className="max-w-6xl mx-auto mb-16">
                     <div className="text-center mb-12">
                         <h2 className="text-2xl md:text-3xl font-serif font-bold text-[#2D1B33] mb-4">
-                            Meet Your Interview Panel
+                            Interview Training Team
                         </h2>
                         <p className="text-[#2D1B33]/60 max-w-2xl mx-auto">
-                            Learn from former UPSC panel members and civil servants
+                            Learn from experienced civil servants and interview specialists with proven track record
                         </p>
                     </div>
 
-                    <div className="grid md:grid-cols-3 gap-6">
-                        {faculty.map((member, index) => (
-                            <div key={index} className="bg-white rounded-2xl p-6 shadow-sm border border-[#2D1B33]/10 text-center">
-                                <div className="w-16 h-16 rounded-full bg-gradient-to-br from-[#2D1B33] to-[#4a2d4f] flex items-center justify-center mx-auto mb-4">
-                                    <span className="text-white font-bold text-xl">{member.name.split(' ')[0][0]}{member.name.split(' ')[1][0]}</span>
-                                </div>
-                                <h3 className="text-lg font-bold text-[#2D1B33] font-serif mb-1">
-                                    {member.name}
+                    <div className="bg-white rounded-2xl p-8 shadow-sm border border-[#2D1B33]/10">
+                        <div className="grid md:grid-cols-2 gap-8">
+                            <div className="space-y-4">
+                                <h3 className="text-xl font-serif font-bold text-[#2D1B33] mb-4">
+                                    Expert Panel
                                 </h3>
-                                <p className="text-sm text-[#D9A15B] font-medium mb-2">
-                                    {member.qualification}
-                                </p>
-                                <p className="text-sm text-[#2D1B33]/60 mb-3">
-                                    {member.experience} Experience
-                                </p>
-                                <p className="text-sm text-[#2D1B33]/70">
-                                    {member.specialization}
-                                </p>
+                                <div className="space-y-3">
+                                    <div className="flex items-start gap-3">
+                                        <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
+                                        <span className="text-sm text-[#2D1B33]/70">Retired civil servants with UPSC interview experience</span>
+                                    </div>
+                                    <div className="flex items-start gap-3">
+                                        <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
+                                        <span className="text-sm text-[#2D1B33]/70">Senior faculty with 20+ years coaching experience</span>
+                                    </div>
+                                    <div className="flex items-start gap-3">
+                                        <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
+                                        <span className="text-sm text-[#2D1B33]/70">Psychology and personality development experts</span>
+                                    </div>
+                                </div>
                             </div>
-                        ))}
+                            <div className="space-y-4">
+                                <h3 className="text-xl font-serif font-bold text-[#2D1B33] mb-4">
+                                    Training Approach
+                                </h3>
+                                <div className="space-y-3">
+                                    <div className="flex items-start gap-3">
+                                        <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
+                                        <span className="text-sm text-[#2D1B33]/70">Realistic mock interview simulations</span>
+                                    </div>
+                                    <div className="flex items-start gap-3">
+                                        <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
+                                        <span className="text-sm text-[#2D1B33]/70">Personalized feedback and improvement plans</span>
+                                    </div>
+                                    <div className="flex items-start gap-3">
+                                        <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
+                                        <span className="text-sm text-[#2D1B33]/70">Confidence building and communication enhancement</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 

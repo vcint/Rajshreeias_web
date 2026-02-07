@@ -7,8 +7,8 @@ import {
 
 export const metadata: Metadata = {
     title: "UPSC Syllabus | Rajashree IAS Portal",
-    description: "Complete UPSC CSE syllabus breakdown. Detailed topic-wise syllabus for prelims and mains with preparation strategy.",
-    keywords: "UPSC syllabus, UPSC CSE syllabus, prelims syllabus, mains syllabus, UPSC exam pattern",
+    description: "Complete UPSC & MPSC syllabus breakdown. Detailed topic-wise syllabus for prelims and mains with preparation strategy for both exams.",
+    keywords: "UPSC syllabus, MPSC syllabus, UPSC CSE syllabus, MPSC prelims syllabus, mains syllabus, UPSC exam pattern, MPSC exam pattern",
 };
 
 const prelimsSyllabus = [

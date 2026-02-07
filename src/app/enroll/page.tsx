@@ -18,7 +18,7 @@ const benefits = [
 const courses = [
     { value: "upsc-foundation", label: "UPSC CSE Foundation Course (12 Months)" },
     { value: "Mentorship", label: "Mentorship Program" },
-    { value: "Ethics", label: "Ethics Optional (8 Months)" },
+    { value: "Ethics", label: "Ethics GS4 (55 DAYS)" },
     { value: "mpsc-complete", label: "MPSC State Services Complete (10 Months)" },
     { value: "upsc-prelims", label: "UPSC Prelims Intensive (3 Months)" },
     { value: "mains-writing", label: "Mains Answer Writing Program (4 Months)" },

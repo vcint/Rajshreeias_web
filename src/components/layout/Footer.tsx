@@ -30,33 +30,6 @@ const company = [
 export default function Footer() {
     return (
         <footer className="w-full bg-[#2D1B33]">
-            {/* Newsletter Section */}
-            <div className="border-b border-white/10">
-                <div className="container mx-auto px-4 py-10">
-                    <div className="flex flex-col lg:flex-row items-center justify-between gap-6">
-                        <div>
-                            <h3 className="text-xl font-bold text-white font-serif">
-                                Stay Updated with UPSC Preparation Tips
-                            </h3>
-                            <p className="text-white/60 text-sm mt-1">
-                                Get daily current affairs and study material directly in your inbox
-                            </p>
-                        </div>
-                        <div className="flex gap-3 w-full lg:w-auto">
-                            <input 
-                                type="email" 
-                                placeholder="Enter your email"
-                                className="flex-1 lg:w-72 px-4 py-3 rounded-lg bg-white/10 border border-white/10 text-white placeholder:text-white/40 focus:outline-none focus:border-[#D9A15B] transition-colors"
-                            />
-                            <button className="px-6 py-3 bg-[#D9A15B] text-white font-semibold rounded-lg hover:bg-[#c4923f] transition-colors flex items-center gap-2">
-                                Subscribe
-                                <ArrowRight className="w-4 h-4" />
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
             {/* Main Footer */}
             <div className="container mx-auto px-4 py-12">
                 <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-5">

@@ -6,7 +6,7 @@ export const metadata: Metadata = {
     keywords: "IAS coaching courses Latur, UPSC courses Latur, MPSC coaching Latur, civil services preparation Maharashtra, best IAS institute Latur, UPSC coaching fees",
     openGraph: {
         title: "IAS Coaching Courses in Latur | UPSC & MPSC Preparation",
-        description: "Leading IAS coaching institute in Latur offering comprehensive UPSC & MPSC courses. Expert faculty, personalized mentorship, proven success rate.",
+        description: "Leading IAS coaching institute in Latur offering comprehensive UPSC & MPSC courses. Expert faculty, personalized mentorship, quality education.",
         url: "https://rajshreeias.com/courses",
         siteName: "Rajashree's IAS Portal",
         images: [

@@ -77,42 +77,18 @@ const evaluationProcess = [
     "One-on-one doubt clearing sessions"
 ];
 
-const faculty = [
+const programBenefits = [
     {
-        name: "Dr. Meera Singh",
-        qualification: "PhD Public Administration, Former UPSC Board Member",
-        experience: "20+ years",
-        specialization: "Answer Evaluation & Essay Writing"
+        benefit: "Structured Feedback",
+        description: "Detailed evaluation and improvement suggestions for every answer"
     },
     {
-        name: "Shri Arvind Kumar",
-        qualification: "MA Philosophy, Ethics Expert",
-        experience: "15+ years",
-        specialization: "Ethics & Case Studies"
+        benefit: "Regular Practice",
+        description: "Consistent writing practice with diverse question patterns"
     },
     {
-        name: "Ms. Priya Sharma",
-        qualification: "MA English Literature, UPSC Topper",
-        experience: "10+ years",
-        specialization: "Essay Writing & Language"
-    }
-];
-
-const successMetrics = [
-    {
-        metric: "Average Score Improvement",
-        value: "120 marks",
-        description: "Students improve their mains scores by average 120 marks"
-    },
-    {
-        metric: "Essay Writing Success",
-        value: "85%",
-        description: "85% students score above 120 in essay paper"
-    },
-    {
-        metric: "Answer Quality Rating",
-        value: "4.2/5",
-        description: "Average rating for answer quality improvement"
+        benefit: "Expert Guidance",
+        description: "Mentorship from experienced UPSC preparation specialists"
     }
 ];
 
@@ -279,61 +255,82 @@ export default function MainsWritingPage() {
                 <div className="max-w-6xl mx-auto mb-16">
                     <div className="text-center mb-12">
                         <h2 className="text-2xl md:text-3xl font-serif font-bold text-[#2D1B33] mb-4">
-                            Success Metrics
+                            Program Benefits
                         </h2>
                         <p className="text-[#2D1B33]/60 max-w-2xl mx-auto">
-                            Proven results from our mains answer writing program
+                            How our answer writing program helps improve your preparation
                         </p>
                     </div>
 
                     <div className="grid md:grid-cols-3 gap-6">
-                        {successMetrics.map((metric, index) => (
+                        {programBenefits.map((benefit, index) => (
                             <div key={index} className="bg-white rounded-2xl p-6 shadow-sm border border-[#2D1B33]/10 text-center">
-                                <div className="text-3xl font-bold text-[#2D1B33] mb-2">
-                                    {metric.value}
+                                <div className="w-12 h-12 rounded-full bg-[#D9A15B]/10 flex items-center justify-center mx-auto mb-4">
+                                    <CheckCircle className="w-6 h-6 text-[#D9A15B]" />
                                 </div>
                                 <h3 className="text-lg font-bold text-[#2D1B33] font-serif mb-2">
-                                    {metric.metric}
+                                    {benefit.benefit}
                                 </h3>
-                                <p className="text-sm text-[#2D1B33]/60">
-                                    {metric.description}
+                                <p className="text-sm text-[#2D1B33]/70">
+                                    {benefit.description}
                                 </p>
                             </div>
                         ))}
                     </div>
                 </div>
 
-                {/* Faculty */}
+                {/* Expert Evaluation Team */}
                 <div className="max-w-6xl mx-auto mb-16">
                     <div className="text-center mb-12">
                         <h2 className="text-2xl md:text-3xl font-serif font-bold text-[#2D1B33] mb-4">
-                            Meet Your Evaluators
+                            Expert Evaluation Team
                         </h2>
                         <p className="text-[#2D1B33]/60 max-w-2xl mx-auto">
-                            Learn from former UPSC board members and toppers
+                            Your answers are evaluated by experienced UPSC mentors and subject matter experts
                         </p>
                     </div>
 
-                    <div className="grid md:grid-cols-3 gap-6">
-                        {faculty.map((member, index) => (
-                            <div key={index} className="bg-white rounded-2xl p-6 shadow-sm border border-[#2D1B33]/10 text-center">
-                                <div className="w-16 h-16 rounded-full bg-gradient-to-br from-[#2D1B33] to-[#4a2d4f] flex items-center justify-center mx-auto mb-4">
-                                    <span className="text-white font-bold text-xl">{member.name.split(' ')[0][0]}{member.name.split(' ')[1][0]}</span>
-                                </div>
-                                <h3 className="text-lg font-bold text-[#2D1B33] font-serif mb-1">
-                                    {member.name}
+                    <div className="bg-white rounded-2xl p-8 shadow-sm border border-[#2D1B33]/10">
+                        <div className="grid md:grid-cols-2 gap-8">
+                            <div className="space-y-4">
+                                <h3 className="text-xl font-serif font-bold text-[#2D1B33] mb-4">
+                                    Evaluation Excellence
                                 </h3>
-                                <p className="text-sm text-[#D9A15B] font-medium mb-2">
-                                    {member.qualification}
-                                </p>
-                                <p className="text-sm text-[#2D1B33]/60 mb-3">
-                                    {member.experience} Experience
-                                </p>
-                                <p className="text-sm text-[#2D1B33]/70">
-                                    {member.specialization}
-                                </p>
+                                <div className="space-y-3">
+                                    <div className="flex items-start gap-3">
+                                        <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
+                                        <span className="text-sm text-[#2D1B33]/70">Evaluators with 15+ years UPSC coaching experience</span>
+                                    </div>
+                                    <div className="flex items-start gap-3">
+                                        <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
+                                        <span className="text-sm text-[#2D1B33]/70">Former civil servants and UPSC toppers on evaluation panel</span>
+                                    </div>
+                                    <div className="flex items-start gap-3">
+                                        <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
+                                        <span className="text-sm text-[#2D1B33]/70">Detailed feedback with improvement suggestions</span>
+                                    </div>
+                                </div>
                             </div>
-                        ))}
+                            <div className="space-y-4">
+                                <h3 className="text-xl font-serif font-bold text-[#2D1B33] mb-4">
+                                    Quality Assurance
+                                </h3>
+                                <div className="space-y-3">
+                                    <div className="flex items-start gap-3">
+                                        <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
+                                        <span className="text-sm text-[#2D1B33]/70">Standardized evaluation criteria following UPSC pattern</span>
+                                    </div>
+                                    <div className="flex items-start gap-3">
+                                        <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
+                                        <span className="text-sm text-[#2D1B33]/70">Multiple evaluations for comprehensive feedback</span>
+                                    </div>
+                                    <div className="flex items-start gap-3">
+                                        <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
+                                        <span className="text-sm text-[#2D1B33]/70">Regular quality checks and calibration sessions</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 

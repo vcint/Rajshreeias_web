@@ -16,10 +16,10 @@ const coursesMenu = [
     {
         title: "By Program Type",
         items: [
-            { name: "Foundation Course (1 Year)", href: "/courses#foundation", icon: GraduationCap },
-            { name: "Mains Answer Writing", href: "/courses#mains", icon: FileText },
-            { name: "Interview Guidance", href: "/courses#interview", icon: Users },
-            { name: "Current Affairs Program", href: "/courses#current-affairs", icon: Newspaper },
+            { name: "Foundation Course (1 Year)", href: "/courses/foundation", icon: GraduationCap },
+            { name: "Mains Answer Writing", href: "/courses/mains-writing", icon: FileText },
+            { name: "Interview Guidance", href: "/courses/interview", icon: Users },
+            { name: "Current Affairs Program", href: "/courses/current-affairs", icon: Newspaper },
         ]
     }
 ];
@@ -60,7 +60,7 @@ export default function Navbar() {
                     <span className="flex items-center gap-1.5 sm:gap-2">
                         <Phone className="w-3 h-3 sm:w-4 sm:h-4 text-[#D9A15B]" />
                         <a href={`tel:+91${siteSettings.contact.phone.replace(/\s+/g, '')}`} className="hover:text-[#D9A15B] transition-colors text-xs sm:text-sm">
-                            +91 {siteSettings.contact.phone}
+                                {siteSettings.contact.phone}
                         </a>
                     </span>
                     <span className="hidden sm:inline text-white/60">|</span>
@@ -95,7 +95,7 @@ export default function Navbar() {
                                     Rajashree's IAS Portal
                                 </span>
                                 <span className="text-[10px] sm:text-xs lg:text-xs text-[#D9A15B] font-medium tracking-wide">
-                                    The digital Gurukul
+                                    The Digital Gurukul
                                 </span>
                             </div>
                         </Link>

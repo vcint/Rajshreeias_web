@@ -83,22 +83,18 @@ export default function UPSCCSEPage() {
                                 <div className="text-sm text-[#2D1B33]/60">Duration</div>
                             </div>
                             <div className="bg-white rounded-xl p-4 shadow-sm border border-[#2D1B33]/10">
-                                <div className="text-2xl font-bold text-[#2D1B33]">{course.mode}</div>
-                                <div className="text-sm text-[#2D1B33]/60">Mode</div>
-                            </div>
-                            <div className="bg-white rounded-xl p-4 shadow-sm border border-[#2D1B33]/10">
                                 <div className="text-2xl font-bold text-[#2D1B33]">50</div>
                                 <div className="text-sm text-[#2D1B33]/60">Batch Size</div>
                             </div>
                         </div>
 
                         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                            <a href={course.razorpayUrl} target="_blank" rel="noopener noreferrer">
+                            <Link href="/enroll">
                                 <button className="w-full sm:w-auto px-8 py-4 bg-[#D9A15B] text-white font-semibold rounded-lg hover:bg-[#c4923f] transition-colors flex items-center justify-center gap-2">
-                                    Buy Now
+                                    Contact for Enrollment
                                     <ArrowRight className="w-5 h-5" />
                                 </button>
-                            </a>
+                            </Link>
                             <Link href="/enroll">
                                 <button className="w-full sm:w-auto px-8 py-4 border-2 border-[#2D1B33] text-[#2D1B33] font-semibold rounded-lg hover:bg-[#2D1B33]/5 transition-colors">
                                     Free Counseling

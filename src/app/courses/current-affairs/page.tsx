@@ -83,42 +83,18 @@ const studyMaterial = [
     "Infographics & Flowcharts"
 ];
 
-const faculty = [
+const programHighlights = [
     {
-        name: "Dr. Meera Kapoor",
-        qualification: "PhD International Relations, Current Affairs Expert",
-        experience: "12+ years",
-        specialization: "International Relations & Foreign Policy"
+        highlight: "Daily Updates",
+        description: "Fresh content updated daily from reliable sources"
     },
     {
-        name: "Shri Rajan Verma",
-        qualification: "MA Economics, Budget Analyst",
-        experience: "10+ years",
-        specialization: "Economy & Budget Analysis"
+        highlight: "UPSC Focused",
+        description: "Content curated specifically for UPSC examination pattern"
     },
     {
-        name: "Ms. Priya Jain",
-        qualification: "MA Political Science, Polity Expert",
-        experience: "8+ years",
-        specialization: "Governance & Polity Updates"
-    }
-];
-
-const successMetrics = [
-    {
-        metric: "Content Coverage",
-        value: "98%",
-        description: "98% coverage of UPSC relevant current affairs"
-    },
-    {
-        metric: "Student Satisfaction",
-        value: "4.8/5",
-        description: "Average rating from enrolled students"
-    },
-    {
-        metric: "Prelims Success Rate",
-        value: "89%",
-        description: "Students who cleared prelims using our current affairs"
+        highlight: "Multiple Formats",
+        description: "Available in various formats for effective learning"
     }
 ];
 
@@ -164,8 +140,8 @@ export default function CurrentAffairsPage() {
                                 <div className="text-sm text-[#2D1B33]/60">Weekly Quizzes</div>
                             </div>
                             <div className="bg-white rounded-xl p-4 shadow-sm border border-[#2D1B33]/10">
-                                <div className="text-2xl font-bold text-[#2D1B33]">89%</div>
-                                <div className="text-sm text-[#2D1B33]/60">Success Rate</div>
+                                <div className="text-2xl font-bold text-[#2D1B33]">Expert</div>
+                                <div className="text-sm text-[#2D1B33]/60">Analysis</div>
                             </div>
                         </div>
 
@@ -284,24 +260,24 @@ export default function CurrentAffairsPage() {
                 <div className="max-w-6xl mx-auto mb-16">
                     <div className="text-center mb-12">
                         <h2 className="text-2xl md:text-3xl font-serif font-bold text-[#2D1B33] mb-4">
-                            Success Metrics
+                            Program Highlights
                         </h2>
                         <p className="text-[#2D1B33]/60 max-w-2xl mx-auto">
-                            Proven results from our current affairs program
+                            What makes our current affairs program comprehensive and effective
                         </p>
                     </div>
 
                     <div className="grid md:grid-cols-3 gap-6">
-                        {successMetrics.map((metric, index) => (
+                        {programHighlights.map((highlight, index) => (
                             <div key={index} className="bg-white rounded-2xl p-6 shadow-sm border border-[#2D1B33]/10 text-center">
-                                <div className="text-3xl font-bold text-[#2D1B33] mb-2">
-                                    {metric.value}
+                                <div className="w-12 h-12 rounded-full bg-[#D9A15B]/10 flex items-center justify-center mx-auto mb-4">
+                                    <CheckCircle className="w-6 h-6 text-[#D9A15B]" />
                                 </div>
                                 <h3 className="text-lg font-bold text-[#2D1B33] font-serif mb-2">
-                                    {metric.metric}
+                                    {highlight.highlight}
                                 </h3>
-                                <p className="text-sm text-[#2D1B33]/60">
-                                    {metric.description}
+                                <p className="text-sm text-[#2D1B33]/70">
+                                    {highlight.description}
                                 </p>
                             </div>
                         ))}
@@ -312,33 +288,49 @@ export default function CurrentAffairsPage() {
                 <div className="max-w-6xl mx-auto mb-16">
                     <div className="text-center mb-12">
                         <h2 className="text-2xl md:text-3xl font-serif font-bold text-[#2D1B33] mb-4">
-                            Meet Your Faculty
+                            Expert Faculty Team
                         </h2>
                         <p className="text-[#2D1B33]/60 max-w-2xl mx-auto">
-                            Learn from current affairs experts and analysts
+                            Learn from experienced current affairs experts and analysts
                         </p>
                     </div>
 
-                    <div className="grid md:grid-cols-3 gap-6">
-                        {faculty.map((member, index) => (
-                            <div key={index} className="bg-white rounded-2xl p-6 shadow-sm border border-[#2D1B33]/10 text-center">
+                    <div className="bg-white rounded-2xl p-8 shadow-sm border border-[#2D1B33]/10">
+                        <div className="grid md:grid-cols-3 gap-8 text-center">
+                            <div>
                                 <div className="w-16 h-16 rounded-full bg-gradient-to-br from-[#2D1B33] to-[#4a2d4f] flex items-center justify-center mx-auto mb-4">
-                                    <span className="text-white font-bold text-xl">{member.name.split(' ')[0][0]}{member.name.split(' ')[1][0]}</span>
+                                    <Newspaper className="w-8 h-8 text-white" />
                                 </div>
-                                <h3 className="text-lg font-bold text-[#2D1B33] font-serif mb-1">
-                                    {member.name}
+                                <h3 className="text-lg font-bold text-[#2D1B33] font-serif mb-2">
+                                    News Analysis Experts
                                 </h3>
-                                <p className="text-sm text-[#D9A15B] font-medium mb-2">
-                                    {member.qualification}
-                                </p>
-                                <p className="text-sm text-[#2D1B33]/60 mb-3">
-                                    {member.experience} Experience
-                                </p>
                                 <p className="text-sm text-[#2D1B33]/70">
-                                    {member.specialization}
+                                    Daily analysis by experienced faculty with deep understanding of current affairs trends
                                 </p>
                             </div>
-                        ))}
+                            <div>
+                                <div className="w-16 h-16 rounded-full bg-gradient-to-br from-[#2D1B33] to-[#4a2d4f] flex items-center justify-center mx-auto mb-4">
+                                    <TrendingUp className="w-8 h-8 text-white" />
+                                </div>
+                                <h3 className="text-lg font-bold text-[#2D1B33] font-serif mb-2">
+                                    Policy Analysts
+                                </h3>
+                                <p className="text-sm text-[#2D1B33]/70">
+                                    Subject matter experts specializing in government policies, budget analysis, and economic trends
+                                </p>
+                            </div>
+                            <div>
+                                <div className="w-16 h-16 rounded-full bg-gradient-to-br from-[#2D1B33] to-[#4a2d4f] flex items-center justify-center mx-auto mb-4">
+                                    <Award className="w-8 h-8 text-white" />
+                                </div>
+                                <h3 className="text-lg font-bold text-[#2D1B33] font-serif mb-2">
+                                    15+ Years Experience
+                                </h3>
+                                <p className="text-sm text-[#2D1B33]/70">
+                                    Our faculty team has guided hundreds of successful UPSC candidates with proven teaching methodology
+                                </p>
+                            </div>
+                        </div>
                     </div>
                 </div>
 

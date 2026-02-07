@@ -76,42 +76,18 @@ const studyMaterial = [
     "Formula Sheets & Mnemonics"
 ];
 
-const faculty = [
+const programFeatures = [
     {
-        name: "Dr. Amit Kumar",
-        qualification: "PhD Mathematics, CSAT Expert",
-        experience: "8+ years",
-        specialization: "CSAT & Quantitative Aptitude"
+        feature: "Comprehensive Coverage",
+        description: "Complete syllabus coverage with regular assessments"
     },
     {
-        name: "Ms. Priya Singh",
-        qualification: "MA Political Science, Prelims Topper",
-        experience: "6+ years",
-        specialization: "General Studies & Current Affairs"
+        feature: "Mock Test Series",
+        description: "Regular practice tests following UPSC pattern"
     },
     {
-        name: "Shri Rajan Gupta",
-        qualification: "MSc Physics, Test Series Director",
-        experience: "10+ years",
-        specialization: "Mock Tests & Performance Analysis"
-    }
-];
-
-const successMetrics = [
-    {
-        metric: "Average Score Improvement",
-        value: "35%",
-        description: "Students improve their mock test scores by average 35%"
-    },
-    {
-        metric: "CSAT Qualification Rate",
-        value: "92%",
-        description: "92% of our students qualify CSAT in first attempt"
-    },
-    {
-        metric: "Prelims Clearance Rate",
-        value: "78%",
-        description: "78% of enrolled students clear UPSC Prelims"
+        feature: "Expert Guidance",
+        description: "Experienced faculty with proven teaching methodology"
     }
 ];
 
@@ -157,8 +133,8 @@ export default function PrelimsPage() {
                                 <div className="text-sm text-[#2D1B33]/60">Mock Tests</div>
                             </div>
                             <div className="bg-white rounded-xl p-4 shadow-sm border border-[#2D1B33]/10">
-                                <div className="text-2xl font-bold text-[#2D1B33]">78%</div>
-                                <div className="text-sm text-[#2D1B33]/60">Success Rate</div>
+                                <div className="text-2xl font-bold text-[#2D1B33]">Expert</div>
+                                <div className="text-sm text-[#2D1B33]/60">Faculty</div>
                             </div>
                         </div>
 
@@ -262,28 +238,28 @@ export default function PrelimsPage() {
                     </div>
                 </div>
 
-                {/* Success Metrics */}
+                {/* Program Features */}
                 <div className="max-w-6xl mx-auto mb-16">
                     <div className="text-center mb-12">
                         <h2 className="text-2xl md:text-3xl font-serif font-bold text-[#2D1B33] mb-4">
-                            Success Metrics
+                            Program Features
                         </h2>
                         <p className="text-[#2D1B33]/60 max-w-2xl mx-auto">
-                            Proven results from our prelims intensive program
+                            Key aspects of our comprehensive UPSC Prelims preparation program
                         </p>
                     </div>
 
                     <div className="grid md:grid-cols-3 gap-6">
-                        {successMetrics.map((metric, index) => (
+                        {programFeatures.map((feature, index) => (
                             <div key={index} className="bg-white rounded-2xl p-6 shadow-sm border border-[#2D1B33]/10 text-center">
-                                <div className="text-3xl font-bold text-[#2D1B33] mb-2">
-                                    {metric.value}
+                                <div className="w-12 h-12 rounded-full bg-[#D9A15B]/10 flex items-center justify-center mx-auto mb-4">
+                                    <CheckCircle className="w-6 h-6 text-[#D9A15B]" />
                                 </div>
                                 <h3 className="text-lg font-bold text-[#2D1B33] font-serif mb-2">
-                                    {metric.metric}
+                                    {feature.feature}
                                 </h3>
-                                <p className="text-sm text-[#2D1B33]/60">
-                                    {metric.description}
+                                <p className="text-sm text-[#2D1B33]/70">
+                                    {feature.description}
                                 </p>
                             </div>
                         ))}
@@ -294,33 +270,49 @@ export default function PrelimsPage() {
                 <div className="max-w-6xl mx-auto mb-16">
                     <div className="text-center mb-12">
                         <h2 className="text-2xl md:text-3xl font-serif font-bold text-[#2D1B33] mb-4">
-                            Meet Your Faculty
+                            Expert Faculty Team
                         </h2>
                         <p className="text-[#2D1B33]/60 max-w-2xl mx-auto">
-                            Learn from prelims experts and toppers
+                            Learn from experienced UPSC mentors with 15+ years of teaching expertise
                         </p>
                     </div>
 
-                    <div className="grid md:grid-cols-3 gap-6">
-                        {faculty.map((member, index) => (
-                            <div key={index} className="bg-white rounded-2xl p-6 shadow-sm border border-[#2D1B33]/10 text-center">
+                    <div className="bg-white rounded-2xl p-8 shadow-sm border border-[#2D1B33]/10">
+                        <div className="grid md:grid-cols-3 gap-8 text-center">
+                            <div>
                                 <div className="w-16 h-16 rounded-full bg-gradient-to-br from-[#2D1B33] to-[#4a2d4f] flex items-center justify-center mx-auto mb-4">
-                                    <span className="text-white font-bold text-xl">{member.name.split(' ')[0][0]}{member.name.split(' ')[1][0]}</span>
+                                    <BookOpen className="w-8 h-8 text-white" />
                                 </div>
-                                <h3 className="text-lg font-bold text-[#2D1B33] font-serif mb-1">
-                                    {member.name}
+                                <h3 className="text-lg font-bold text-[#2D1B33] font-serif mb-2">
+                                    CSAT Experts
                                 </h3>
-                                <p className="text-sm text-[#D9A15B] font-medium mb-2">
-                                    {member.qualification}
-                                </p>
-                                <p className="text-sm text-[#2D1B33]/60 mb-3">
-                                    {member.experience} Experience
-                                </p>
                                 <p className="text-sm text-[#2D1B33]/70">
-                                    {member.specialization}
+                                    Specialized faculty for quantitative aptitude, reasoning, and comprehension skills
                                 </p>
                             </div>
-                        ))}
+                            <div>
+                                <div className="w-16 h-16 rounded-full bg-gradient-to-br from-[#2D1B33] to-[#4a2d4f] flex items-center justify-center mx-auto mb-4">
+                                    <FileText className="w-8 h-8 text-white" />
+                                </div>
+                                <h3 className="text-lg font-bold text-[#2D1B33] font-serif mb-2">
+                                    GS Specialists
+                                </h3>
+                                <p className="text-sm text-[#2D1B33]/70">
+                                    Subject matter experts covering all areas of General Studies for Prelims
+                                </p>
+                            </div>
+                            <div>
+                                <div className="w-16 h-16 rounded-full bg-gradient-to-br from-[#2D1B33] to-[#4a2d4f] flex items-center justify-center mx-auto mb-4">
+                                    <Target className="w-8 h-8 text-white" />
+                                </div>
+                                <h3 className="text-lg font-bold text-[#2D1B33] font-serif mb-2">
+                                    Test Series Experts
+                                </h3>
+                                <p className="text-sm text-[#2D1B33]/70">
+                                    Experienced faculty for mock tests, performance analysis, and strategy guidance
+                                </p>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -332,15 +324,15 @@ export default function PrelimsPage() {
                         </h2>
                         <p className="text-white/80 mb-6 max-w-2xl mx-auto">
                             Join our intensive prelims program and clear UPSC Prelims in your first attempt.
-                            Next batch starts in April 2026.
+                            Contact us for course details and admission.
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                            <a href="https://razorpay.me/@rajshreeias/prelims" target="_blank" rel="noopener noreferrer">
+                            <Link href="/enroll">
                                 <button className="w-full sm:w-auto px-8 py-4 bg-[#D9A15B] text-white font-semibold rounded-lg hover:bg-[#c4923f] transition-colors flex items-center justify-center gap-2">
-                                    Buy Now
+                                    Enroll Now
                                     <ArrowRight className="w-5 h-5" />
                                 </button>
-                            </a>
+                            </Link>
                             <a href="tel:+918668275251" className="w-full sm:w-auto px-8 py-4 border-2 border-white/30 text-white font-semibold rounded-lg hover:bg-white/10 transition-colors flex items-center justify-center gap-2">
                                 Call: +91 86682 75251
                             </a>

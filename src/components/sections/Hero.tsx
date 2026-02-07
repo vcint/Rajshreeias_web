@@ -15,7 +15,7 @@ const upcomingBatches = [
         highlight: true,
     },
     {
-        title: "Civil Services Foundation 2026",
+        title: "Civil Services Foundation 2027",
         subtitle: "UPSC & MPSC Combined Program",
         date: "Starting March 2026",
         duration: "12 Months",

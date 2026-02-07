@@ -74,36 +74,6 @@ const includedServices = [
     "Performance Analysis Reports"
 ];
 
-const faculty = [
-    {
-        name: "Dr. Amit Sharma",
-        qualification: "PhD Political Science, Former UPSC Mentor",
-        experience: "18+ years",
-        specialization: "Polity & Governance"
-    },
-    {
-        name: "Prof. Priya Desai",
-        qualification: "MA Economics, Published Author",
-        experience: "15+ years",
-        specialization: "Economy & Current Affairs"
-    },
-    {
-        name: "Shri Rajesh Kumar",
-        qualification: "MA History, UPSC Topper",
-        experience: "12+ years",
-        specialization: "History & Culture"
-    }
-];
-
-const batchInfo = {
-    startDate: "February 15, 2026",
-    duration: "12 Months",
-    classSchedule: "Monday to Saturday (6 days/week)",
-    classTimings: "9:00 AM - 1:00 PM",
-    fee: "₹1,25,000 (including GST)",
-    earlyBirdDiscount: "₹10,000 off if paid before Jan 31, 2026"
-};
-
 export default function FoundationPage() {
     return (
         <div className="bg-[#FAF9F6] min-h-screen">
@@ -146,8 +116,8 @@ export default function FoundationPage() {
                                 <div className="text-sm text-[#2D1B33]/60">Class Hours</div>
                             </div>
                             <div className="bg-white rounded-xl p-4 shadow-sm border border-[#2D1B33]/10">
-                                <div className="text-2xl font-bold text-[#2D1B33]">82%</div>
-                                <div className="text-sm text-[#2D1B33]/60">Success Rate</div>
+                                <div className="text-2xl font-bold text-[#2D1B33]">Expert</div>
+                                <div className="text-sm text-[#2D1B33]/60">Guidance</div>
                             </div>
                         </div>
 
@@ -266,77 +236,87 @@ export default function FoundationPage() {
                 <div className="max-w-6xl mx-auto mb-16">
                     <div className="text-center mb-12">
                         <h2 className="text-2xl md:text-3xl font-serif font-bold text-[#2D1B33] mb-4">
-                            Meet Your Faculty
+                            Expert Faculty Team
                         </h2>
                         <p className="text-[#2D1B33]/60 max-w-2xl mx-auto">
-                            Learn from experienced educators and UPSC mentors
+                            Learn from experienced educators and UPSC mentors with 15+ years of teaching expertise
                         </p>
                     </div>
 
-                    <div className="grid md:grid-cols-3 gap-6">
-                        {faculty.map((member, index) => (
-                            <div key={index} className="bg-white rounded-2xl p-6 shadow-sm border border-[#2D1B33]/10 text-center">
+                    <div className="bg-white rounded-2xl p-8 shadow-sm border border-[#2D1B33]/10">
+                        <div className="grid md:grid-cols-3 gap-8 text-center">
+                            <div>
                                 <div className="w-16 h-16 rounded-full bg-gradient-to-br from-[#2D1B33] to-[#4a2d4f] flex items-center justify-center mx-auto mb-4">
-                                    <span className="text-white font-bold text-xl">{member.name.split(' ')[0][0]}{member.name.split(' ')[1][0]}</span>
+                                    <BookOpen className="w-8 h-8 text-white" />
                                 </div>
-                                <h3 className="text-lg font-bold text-[#2D1B33] font-serif mb-1">
-                                    {member.name}
+                                <h3 className="text-lg font-bold text-[#2D1B33] font-serif mb-2">
+                                    Subject Experts
                                 </h3>
-                                <p className="text-sm text-[#D9A15B] font-medium mb-2">
-                                    {member.qualification}
-                                </p>
-                                <p className="text-sm text-[#2D1B33]/60 mb-3">
-                                    {member.experience} Experience
-                                </p>
                                 <p className="text-sm text-[#2D1B33]/70">
-                                    {member.specialization}
+                                    Experienced faculty specializing in all UPSC subjects with deep conceptual knowledge
                                 </p>
                             </div>
-                        ))}
+                            <div>
+                                <div className="w-16 h-16 rounded-full bg-gradient-to-br from-[#2D1B33] to-[#4a2d4f] flex items-center justify-center mx-auto mb-4">
+                                    <Users className="w-8 h-8 text-white" />
+                                </div>
+                                <h3 className="text-lg font-bold text-[#2D1B33] font-serif mb-2">
+                                    Mentorship Approach
+                                </h3>
+                                <p className="text-sm text-[#2D1B33]/70">
+                                    Personal guidance and mentorship throughout your UPSC preparation journey
+                                </p>
+                            </div>
+                            <div>
+                                <div className="w-16 h-16 rounded-full bg-gradient-to-br from-[#2D1B33] to-[#4a2d4f] flex items-center justify-center mx-auto mb-4">
+                                    <Award className="w-8 h-8 text-white" />
+                                </div>
+                                <h3 className="text-lg font-bold text-[#2D1B33] font-serif mb-2">
+                                    Proven Results
+                                </h3>
+                                <p className="text-sm text-[#2D1B33]/70">
+                                    Our faculty has guided hundreds of successful candidates with proven teaching methodology
+                                </p>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                {/* Batch Information */}
+                {/* Course Information */}
                 <div className="max-w-4xl mx-auto mb-16">
                     <div className="bg-white rounded-2xl p-8 shadow-sm border border-[#2D1B33]/10">
                         <div className="text-center mb-8">
                             <h2 className="text-2xl md:text-3xl font-serif font-bold text-[#2D1B33] mb-4">
-                                Batch Information
+                                Course Information
                             </h2>
-                            <p className="text-[#2D1B33]/60">Next batch starting soon - Limited seats available</p>
+                            <p className="text-[#2D1B33]/60">Comprehensive foundation course for UPSC preparation</p>
                         </div>
 
-                        <div className="grid md:grid-cols-2 gap-6">
-                            <div className="space-y-4">
-                                <div className="flex justify-between items-center py-2 border-b border-[#2D1B33]/10">
-                                    <span className="text-sm text-[#2D1B33]/70">Start Date</span>
-                                    <span className="text-sm font-medium text-[#2D1B33]">{batchInfo.startDate}</span>
-                                </div>
-                                <div className="flex justify-between items-center py-2 border-b border-[#2D1B33]/10">
-                                    <span className="text-sm text-[#2D1B33]/70">Duration</span>
-                                    <span className="text-sm font-medium text-[#2D1B33]">{batchInfo.duration}</span>
-                                </div>
-                                <div className="flex justify-between items-center py-2 border-b border-[#2D1B33]/10">
-                                    <span className="text-sm text-[#2D1B33]/70">Class Schedule</span>
-                                    <span className="text-sm font-medium text-[#2D1B33]">{batchInfo.classSchedule}</span>
-                                </div>
-                                <div className="flex justify-between items-center py-2">
-                                    <span className="text-sm text-[#2D1B33]/70">Class Timings</span>
-                                    <span className="text-sm font-medium text-[#2D1B33]">{batchInfo.classTimings}</span>
+                        <div className="grid md:grid-cols-2 gap-8">
+                            <div className="space-y-6">
+                                <div className="text-center">
+                                    <div className="w-16 h-16 rounded-full bg-gradient-to-br from-[#2D1B33] to-[#4a2d4f] flex items-center justify-center mx-auto mb-4">
+                                        <Calendar className="w-8 h-8 text-white" />
+                                    </div>
+                                    <h3 className="text-lg font-bold text-[#2D1B33] font-serif mb-2">
+                                        12-Month Program
+                                    </h3>
+                                    <p className="text-sm text-[#2D1B33]/70">
+                                        Comprehensive coverage of entire UPSC syllabus with regular assessments
+                                    </p>
                                 </div>
                             </div>
-                            <div className="space-y-4">
-                                <div className="bg-[#D9A15B]/10 rounded-lg p-4">
-                                    <div className="text-center">
-                                        <div className="text-2xl font-bold text-[#2D1B33] mb-1">{batchInfo.fee}</div>
-                                        <div className="text-sm text-[#2D1B33]/60">Course Fee</div>
+                            <div className="space-y-6">
+                                <div className="text-center">
+                                    <div className="w-16 h-16 rounded-full bg-gradient-to-br from-[#2D1B33] to-[#4a2d4f] flex items-center justify-center mx-auto mb-4">
+                                        <Users className="w-8 h-8 text-white" />
                                     </div>
-                                </div>
-                                <div className="bg-green-50 rounded-lg p-4">
-                                    <div className="text-center">
-                                        <div className="text-sm font-medium text-green-700 mb-1">{batchInfo.earlyBirdDiscount}</div>
-                                        <div className="text-xs text-green-600">Early Bird Offer</div>
-                                    </div>
+                                    <h3 className="text-lg font-bold text-[#2D1B33] font-serif mb-2">
+                                        Small Batch Size
+                                    </h3>
+                                    <p className="text-sm text-[#2D1B33]/70">
+                                        Limited seats to ensure personalized attention and quality education
+                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -351,21 +331,21 @@ export default function FoundationPage() {
                         </h2>
                         <p className="text-white/80 mb-6 max-w-2xl mx-auto">
                             Join our foundation course and build a strong base for your civil services preparation.
-                            Next batch starts on February 15, 2026.
+                            Contact us for admission details and course information.
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                            <a href="https://razorpay.me/@rajshreeias/foundation" target="_blank" rel="noopener noreferrer">
+                            <Link href="/enroll">
                                 <button className="w-full sm:w-auto px-8 py-4 bg-[#D9A15B] text-white font-semibold rounded-lg hover:bg-[#c4923f] transition-colors flex items-center justify-center gap-2">
-                                    Buy Now
+                                    Enroll Now
                                     <ArrowRight className="w-5 h-5" />
                                 </button>
-                            </a>
+                            </Link>
                             <a href="tel:+918668275251" className="w-full sm:w-auto px-8 py-4 border-2 border-white/30 text-white font-semibold rounded-lg hover:bg-white/10 transition-colors flex items-center justify-center gap-2">
                                 Call: +91 86682 75251
                             </a>
                         </div>
                         <p className="text-xs text-white/60 mt-4">
-                            Limited seats available • Early bird discount ends January 31, 2026
+                            Limited seats available • Contact for course details and fees
                         </p>
                     </div>
                 </div>

@@ -66,27 +66,6 @@ const courseStructure = [
     }
 ];
 
-const faculty = [
-    {
-        name: "Dr. Sunil Deshmukh",
-        qualification: "PhD in Maharashtra History, Former MPSC Faculty",
-        experience: "12+ years",
-        specialization: "Maharashtra History & Polity"
-    },
-    {
-        name: "Prof. Priya Kulkarni",
-        qualification: "MA Marathi Literature, Language Expert",
-        experience: "10+ years",
-        specialization: "Marathi Grammar & Essay Writing"
-    },
-    {
-        name: "Shri Rajesh Pawar",
-        qualification: "MPSC Topper, Administrative Officer",
-        experience: "8+ years",
-        specialization: "Current Affairs & Interview Guidance"
-    }
-];
-
 // const successStories = [
 //     {
 //         name: "Sneha Patil",
@@ -146,8 +125,8 @@ export default function MPSCPage() {
                                 <div className="text-sm text-[#2D1B33]/60">Students/Batch</div>
                             </div>
                             <div className="bg-white rounded-xl p-4 shadow-sm border border-[#2D1B33]/10">
-                                <div className="text-2xl font-bold text-[#2D1B33]">78%</div>
-                                <div className="text-sm text-[#2D1B33]/60">Success Rate</div>
+                                <div className="text-2xl font-bold text-[#2D1B33]">Expert</div>
+                                <div className="text-sm text-[#2D1B33]/60">Faculty</div>
                             </div>
                             <div className="bg-white rounded-xl p-4 shadow-sm border border-[#2D1B33]/10">
                                 <div className="text-2xl font-bold text-[#2D1B33]">300+</div>
@@ -248,33 +227,49 @@ export default function MPSCPage() {
                 <div className="max-w-6xl mx-auto mb-16">
                     <div className="text-center mb-12">
                         <h2 className="text-2xl md:text-3xl font-serif font-bold text-[#2D1B33] mb-4">
-                            Meet Your Faculty
+                            Expert Faculty Team
                         </h2>
                         <p className="text-[#2D1B33]/60 max-w-2xl mx-auto">
-                            Learn from experienced MPSC educators and toppers
+                            Learn from experienced MPSC educators with deep understanding of Maharashtra service exams
                         </p>
                     </div>
 
-                    <div className="grid md:grid-cols-3 gap-6">
-                        {faculty.map((member, index) => (
-                            <div key={index} className="bg-white rounded-2xl p-6 shadow-sm border border-[#2D1B33]/10 text-center">
+                    <div className="bg-white rounded-2xl p-8 shadow-sm border border-[#2D1B33]/10">
+                        <div className="grid md:grid-cols-3 gap-8 text-center">
+                            <div>
                                 <div className="w-16 h-16 rounded-full bg-gradient-to-br from-[#2D1B33] to-[#4a2d4f] flex items-center justify-center mx-auto mb-4">
-                                    <span className="text-white font-bold text-xl">{member.name.split(' ')[0][0]}{member.name.split(' ')[1][0]}</span>
+                                    <BookOpen className="w-8 h-8 text-white" />
                                 </div>
-                                <h3 className="text-lg font-bold text-[#2D1B33] font-serif mb-1">
-                                    {member.name}
+                                <h3 className="text-lg font-bold text-[#2D1B33] font-serif mb-2">
+                                    Maharashtra Experts
                                 </h3>
-                                <p className="text-sm text-[#D9A15B] font-medium mb-2">
-                                    {member.qualification}
-                                </p>
-                                <p className="text-sm text-[#2D1B33]/60 mb-3">
-                                    {member.experience} Experience
-                                </p>
                                 <p className="text-sm text-[#2D1B33]/70">
-                                    {member.specialization}
+                                    Faculty specialized in Maharashtra history, geography, and state-specific topics
                                 </p>
                             </div>
-                        ))}
+                            <div>
+                                <div className="w-16 h-16 rounded-full bg-gradient-to-br from-[#2D1B33] to-[#4a2d4f] flex items-center justify-center mx-auto mb-4">
+                                    <FileText className="w-8 h-8 text-white" />
+                                </div>
+                                <h3 className="text-lg font-bold text-[#2D1B33] font-serif mb-2">
+                                    Marathi Medium
+                                </h3>
+                                <p className="text-sm text-[#2D1B33]/70">
+                                    Experienced teachers for Marathi language support and regional content delivery
+                                </p>
+                            </div>
+                            <div>
+                                <div className="w-16 h-16 rounded-full bg-gradient-to-br from-[#2D1B33] to-[#4a2d4f] flex items-center justify-center mx-auto mb-4">
+                                    <Award className="w-8 h-8 text-white" />
+                                </div>
+                                <h3 className="text-lg font-bold text-[#2D1B33] font-serif mb-2">
+                                    15+ Years Experience
+                                </h3>
+                                <p className="text-sm text-[#2D1B33]/70">
+                                    Proven track record in MPSC coaching with hundreds of successful candidates
+                                </p>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
