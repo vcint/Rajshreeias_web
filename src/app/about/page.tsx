@@ -1,5 +1,6 @@
 import { BookOpen, Users, Target, Award, GraduationCap, FileText, MessageSquare, Clock, CheckCircle, MapPin, Phone, Mail } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -203,6 +204,81 @@ export default function AboutPage() {
                                 </p>
                             </div>
                         ))}
+                    </div>
+                </div>
+            </section>
+
+            {/* Faculty Section */}
+            <section id="faculty" className="py-16 bg-white">
+                <div className="container mx-auto px-4">
+                    <div className="max-w-3xl mx-auto text-center mb-12">
+                        <p className="text-sm font-medium text-[#D9A15B] uppercase tracking-wider mb-4">
+                            Our Faculty
+                        </p>
+                        <h2 className="text-3xl font-serif font-bold text-[#2D1B33] mb-4">
+                            Meet Our Expert Faculty Team
+                        </h2>
+                        <p className="text-[#2D1B33]/60 text-lg">
+                            Experienced educators with 10+ years in UPSC & MPSC coaching who have guided hundreds of successful candidates
+                        </p>
+                    </div>
+
+                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                        {/* Faculty Card 1 - Rajashree */}
+                        <div className="bg-white rounded-2xl overflow-hidden shadow-lg border border-[#2D1B33]/10 hover:shadow-xl hover:border-[#D9A15B]/30 transition-all group">
+                            <Image
+                                src="/faculties/Rajashree.jpg"
+                                alt="Prof. Rajashree Faculty Card"
+                                width={400}
+                                height={500}
+                                className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-300"
+                            />
+                        </div>
+
+                        {/* Faculty Card 2 - Falguni */}
+                        <div className="bg-white rounded-2xl overflow-hidden shadow-lg border border-[#2D1B33]/10 hover:shadow-xl hover:border-[#D9A15B]/30 transition-all group">
+                            <Image
+                                src="/faculties/Falguni.jpg"
+                                alt="Prof. Falguni Faculty Card"
+                                width={400}
+                                height={500}
+                                className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-300"
+                            />
+                        </div>
+
+                        {/* Faculty Card 3 - Sameer */}
+                        <div className="bg-white rounded-2xl overflow-hidden shadow-lg border border-[#2D1B33]/10 hover:shadow-xl hover:border-[#D9A15B]/30 transition-all group">
+                            <Image
+                                src="/faculties/Sameer.jpg"
+                                alt="Prof. Sameer Faculty Card"
+                                width={400}
+                                height={500}
+                                className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-300"
+                            />
+                        </div>
+                    </div>
+
+                    {/* Faculty Stats */}
+                    <div className="mt-16 bg-gradient-to-r from-[#2D1B33] to-[#4a2d4f] rounded-2xl p-8 text-white">
+                        <h3 className="text-2xl font-serif font-bold text-center mb-8">Our Faculty Excellence</h3>
+                        <div className="grid md:grid-cols-4 gap-6 text-center">
+                            <div>
+                                <div className="text-3xl font-bold text-[#D9A15B] mb-2">15+</div>
+                                <div className="text-white/70">Years Average Experience</div>
+                            </div>
+                            <div>
+                                <div className="text-3xl font-bold text-[#D9A15B] mb-2">500+</div>
+                                <div className="text-white/70">Successful Students</div>
+                            </div>
+                            <div>
+                                <div className="text-3xl font-bold text-[#D9A15B] mb-2">100%</div>
+                                <div className="text-white/70">Updated Curriculum</div>
+                            </div>
+                            <div>
+                                <div className="text-3xl font-bold text-[#D9A15B] mb-2">24/7</div>
+                                <div className="text-white/70">Doubt Support</div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
