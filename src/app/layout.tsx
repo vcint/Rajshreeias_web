@@ -5,11 +5,6 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import ScrollCTA from "@/components/shared/ScrollCTA";
 
-// Initial placeholder simple imports to avoid errors before components exist
-// In a real flow I'd create components first, but layout is central.
-// I will create empty placeholder components inline or just comment them out then uncomment.
-// Actually, I'll assume I'll create them shortly and just structure the imports.
-
 const inter = Inter({
     subsets: ["latin"],
     variable: "--font-inter",

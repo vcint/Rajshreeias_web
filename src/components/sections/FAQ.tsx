@@ -1,14 +1,41 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { ChevronDown } from "lucide-react";
 import { cn } from "@/lib/utils";
 import faqsData from "@/content/faqs.json";
 
-const faqs = faqsData.faqs;
+interface FAQItem {
+    id: number;
+    question: string;
+    answer: string;
+    category: string;
+}
 
 export default function FAQ() {
     const [openIndex, setOpenIndex] = useState<number | null>(0);
+    const [faqs, setFaqs] = useState<FAQItem[]>(faqsData.faqs);
+
+    useEffect(() => {
+        const fetchFaqs = async () => {
+            try {
+                const response = await fetch('/api/get-content?type=faqs');
+                if (!response.ok) {
+                    return;
+                }
+
+                const result = await response.json();
+                if (result.success && result.data?.faqs && Array.isArray(result.data.faqs)) {
+                    setFaqs(result.data.faqs);
+                }
+            } catch (error) {
+                // Keep static FAQ fallback if API is unavailable.
+                console.error('Failed to load FAQs from API:', error);
+            }
+        };
+
+        fetchFaqs();
+    }, []);
 
     return (
         <section className="py-20 bg-white">

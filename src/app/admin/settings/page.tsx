@@ -19,11 +19,75 @@ interface SiteSettings {
     youtube: string;
     linkedin: string;
   };
+  whatsapp: {
+    number: string;
+    message: string;
+  };
   stats: {
     coursesOffered: string;
     expertFaculty: string;
     studyMaterials: string;
     successRate: string;
+  };
+  hero: {
+    title: string;
+    subtitle: string;
+    primaryCTA: string;
+    secondaryCTA: string;
+  };
+  enrollmentForm: {
+    counselingNote: string;
+    callbackTime: string;
+  };
+}
+
+const defaultSettings: SiteSettings = {
+  siteName: '',
+  tagline: '',
+  contact: {
+    phone: '',
+    email: '',
+    address: ''
+  },
+  social: {
+    facebook: '',
+    twitter: '',
+    instagram: '',
+    youtube: '',
+    linkedin: ''
+  },
+  whatsapp: {
+    number: '',
+    message: ''
+  },
+  stats: {
+    coursesOffered: '',
+    expertFaculty: '',
+    studyMaterials: '',
+    successRate: ''
+  },
+  hero: {
+    title: '',
+    subtitle: '',
+    primaryCTA: '',
+    secondaryCTA: ''
+  },
+  enrollmentForm: {
+    counselingNote: '',
+    callbackTime: ''
+  }
+};
+
+function normalizeSettings(data: any): SiteSettings {
+  return {
+    ...defaultSettings,
+    ...data,
+    contact: { ...defaultSettings.contact, ...(data?.contact || {}) },
+    social: { ...defaultSettings.social, ...(data?.social || {}) },
+    whatsapp: { ...defaultSettings.whatsapp, ...(data?.whatsapp || {}) },
+    stats: { ...defaultSettings.stats, ...(data?.stats || {}) },
+    hero: { ...defaultSettings.hero, ...(data?.hero || {}) },
+    enrollmentForm: { ...defaultSettings.enrollmentForm, ...(data?.enrollmentForm || {}) }
   };
 }
 
@@ -42,7 +106,7 @@ export default function SettingsEditor() {
       const result = await response.json();
       
       if (result.success) {
-        setSettings(result.data);
+        setSettings(normalizeSettings(result.data));
       } else {
         console.error('Failed to fetch settings:', result.error);
       }
@@ -88,6 +152,9 @@ export default function SettingsEditor() {
     let current: any = newSettings;
     
     for (let i = 0; i < pathArray.length - 1; i++) {
+      if (typeof current[pathArray[i]] !== 'object' || current[pathArray[i]] === null) {
+        current[pathArray[i]] = {};
+      }
       current = current[pathArray[i]];
     }
     current[pathArray[pathArray.length - 1]] = value;
@@ -224,6 +291,16 @@ export default function SettingsEditor() {
                 />
               </div>
               <div>
+                <label className="block text-sm font-medium text-[#2D1B33]/80 mb-2">Twitter URL</label>
+                <input
+                  type="url"
+                  value={settings.social.twitter}
+                  onChange={(e) => updateSettings('social.twitter', e.target.value)}
+                  className="w-full px-3 py-2 border border-[#2D1B33]/20 rounded-lg focus:outline-none focus:border-[#D9A15B]"
+                  placeholder="https://twitter.com/yourhandle"
+                />
+              </div>
+              <div>
                 <label className="block text-sm font-medium text-[#2D1B33]/80 mb-2">YouTube URL</label>
                 <input
                   type="url"
@@ -241,6 +318,31 @@ export default function SettingsEditor() {
                   onChange={(e) => updateSettings('social.linkedin', e.target.value)}
                   className="w-full px-3 py-2 border border-[#2D1B33]/20 rounded-lg focus:outline-none focus:border-[#D9A15B]"
                   placeholder="https://linkedin.com/company/yourcompany"
+                />
+              </div>
+            </div>
+          </div>
+
+          {/* WhatsApp */}
+          <div className="bg-white rounded-xl p-6 shadow-sm border border-[#2D1B33]/10">
+            <h2 className="text-xl font-semibold text-[#2D1B33] mb-4">WhatsApp Settings</h2>
+            <div className="space-y-4">
+              <div>
+                <label className="block text-sm font-medium text-[#2D1B33]/80 mb-2">WhatsApp Number</label>
+                <input
+                  type="text"
+                  value={settings.whatsapp.number}
+                  onChange={(e) => updateSettings('whatsapp.number', e.target.value)}
+                  className="w-full px-3 py-2 border border-[#2D1B33]/20 rounded-lg focus:outline-none focus:border-[#D9A15B]"
+                  placeholder="+918668275251"
+                />
+              </div>
+              <div>
+                <label className="block text-sm font-medium text-[#2D1B33]/80 mb-2">Default WhatsApp Message</label>
+                <textarea
+                  value={settings.whatsapp.message}
+                  onChange={(e) => updateSettings('whatsapp.message', e.target.value)}
+                  className="w-full px-3 py-2 border border-[#2D1B33]/20 rounded-lg focus:outline-none focus:border-[#D9A15B] h-24"
                 />
               </div>
             </div>
@@ -288,6 +390,73 @@ export default function SettingsEditor() {
                   onChange={(e) => updateSettings('stats.successRate', e.target.value)}
                   className="w-full px-3 py-2 border border-[#2D1B33]/20 rounded-lg focus:outline-none focus:border-[#D9A15B]"
                   placeholder="95%"
+                />
+              </div>
+            </div>
+          </div>
+
+          {/* Hero Section */}
+          <div className="bg-white rounded-xl p-6 shadow-sm border border-[#2D1B33]/10">
+            <h2 className="text-xl font-semibold text-[#2D1B33] mb-4">Homepage Hero Content</h2>
+            <div className="space-y-4">
+              <div>
+                <label className="block text-sm font-medium text-[#2D1B33]/80 mb-2">Hero Title</label>
+                <textarea
+                  value={settings.hero.title}
+                  onChange={(e) => updateSettings('hero.title', e.target.value)}
+                  className="w-full px-3 py-2 border border-[#2D1B33]/20 rounded-lg focus:outline-none focus:border-[#D9A15B] h-20"
+                />
+              </div>
+              <div>
+                <label className="block text-sm font-medium text-[#2D1B33]/80 mb-2">Hero Subtitle</label>
+                <textarea
+                  value={settings.hero.subtitle}
+                  onChange={(e) => updateSettings('hero.subtitle', e.target.value)}
+                  className="w-full px-3 py-2 border border-[#2D1B33]/20 rounded-lg focus:outline-none focus:border-[#D9A15B] h-28"
+                />
+              </div>
+              <div className="grid md:grid-cols-2 gap-4">
+                <div>
+                  <label className="block text-sm font-medium text-[#2D1B33]/80 mb-2">Primary CTA Text</label>
+                  <input
+                    type="text"
+                    value={settings.hero.primaryCTA}
+                    onChange={(e) => updateSettings('hero.primaryCTA', e.target.value)}
+                    className="w-full px-3 py-2 border border-[#2D1B33]/20 rounded-lg focus:outline-none focus:border-[#D9A15B]"
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-[#2D1B33]/80 mb-2">Secondary CTA Text</label>
+                  <input
+                    type="text"
+                    value={settings.hero.secondaryCTA}
+                    onChange={(e) => updateSettings('hero.secondaryCTA', e.target.value)}
+                    className="w-full px-3 py-2 border border-[#2D1B33]/20 rounded-lg focus:outline-none focus:border-[#D9A15B]"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Enrollment Form */}
+          <div className="bg-white rounded-xl p-6 shadow-sm border border-[#2D1B33]/10">
+            <h2 className="text-xl font-semibold text-[#2D1B33] mb-4">Enrollment Form Content</h2>
+            <div className="space-y-4">
+              <div>
+                <label className="block text-sm font-medium text-[#2D1B33]/80 mb-2">Counseling Note</label>
+                <textarea
+                  value={settings.enrollmentForm.counselingNote}
+                  onChange={(e) => updateSettings('enrollmentForm.counselingNote', e.target.value)}
+                  className="w-full px-3 py-2 border border-[#2D1B33]/20 rounded-lg focus:outline-none focus:border-[#D9A15B] h-24"
+                />
+              </div>
+              <div>
+                <label className="block text-sm font-medium text-[#2D1B33]/80 mb-2">Callback Time Text</label>
+                <input
+                  type="text"
+                  value={settings.enrollmentForm.callbackTime}
+                  onChange={(e) => updateSettings('enrollmentForm.callbackTime', e.target.value)}
+                  className="w-full px-3 py-2 border border-[#2D1B33]/20 rounded-lg focus:outline-none focus:border-[#D9A15B]"
                 />
               </div>
             </div>

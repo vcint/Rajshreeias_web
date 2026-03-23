@@ -1,4 +1,4 @@
-// Simple script to test database migration
+// Database migration test script
 const testMigration = async () => {
   try {
     const response = await fetch('http://localhost:3000/api/migrate-database', {
@@ -12,12 +12,12 @@ const testMigration = async () => {
     console.log('Migration Result:', JSON.stringify(result, null, 2));
     
     if (response.ok) {
-      console.log('✅ Migration successful!');
+      console.log('Migration completed successfully.');
     } else {
-      console.log('❌ Migration failed:', response.status);
+      console.log('Migration failed with status:', response.status);
     }
   } catch (error) {
-    console.error('❌ Error:', error.message);
+    console.error('Migration request failed:', error.message);
   }
 };
 

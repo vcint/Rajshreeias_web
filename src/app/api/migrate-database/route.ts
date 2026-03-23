@@ -23,7 +23,6 @@ export async function POST(request: NextRequest) {
     try {
       const coursesData = await fs.readFile(path.join(contentDir, 'courses.json'), 'utf8');
       await updateCourses(JSON.parse(coursesData));
-      console.log('Courses migrated successfully');
     } catch (error) {
       console.error('Error migrating courses:', error);
     }
@@ -32,7 +31,6 @@ export async function POST(request: NextRequest) {
     try {
       const settingsData = await fs.readFile(path.join(contentDir, 'site-settings.json'), 'utf8');
       await updateSiteSettings(JSON.parse(settingsData));
-      console.log('Site settings migrated successfully');
     } catch (error) {
       console.error('Error migrating site settings:', error);
     }
@@ -41,7 +39,6 @@ export async function POST(request: NextRequest) {
     try {
       const faqsData = await fs.readFile(path.join(contentDir, 'faqs.json'), 'utf8');
       await updateFaqs(JSON.parse(faqsData));
-      console.log('FAQs migrated successfully');
     } catch (error) {
       console.error('Error migrating FAQs:', error);
     }
@@ -50,7 +47,6 @@ export async function POST(request: NextRequest) {
     try {
       const testimonialsData = await fs.readFile(path.join(contentDir, 'testimonials.json'), 'utf8');
       await updateTestimonials(JSON.parse(testimonialsData));
-      console.log('Testimonials migrated successfully');
     } catch (error) {
       console.error('Error migrating testimonials:', error);
     }
@@ -59,7 +55,6 @@ export async function POST(request: NextRequest) {
     try {
       const reviewsData = await fs.readFile(path.join(contentDir, 'student-reviews.json'), 'utf8');
       await updateStudentReviews(JSON.parse(reviewsData));
-      console.log('Student reviews migrated successfully');
     } catch (error) {
       console.error('Error migrating student reviews:', error);
     }
@@ -68,7 +63,6 @@ export async function POST(request: NextRequest) {
     try {
       const resourcesData = await fs.readFile(path.join(contentDir, 'resources.json'), 'utf8');
       await updateResources(JSON.parse(resourcesData));
-      console.log('Resources migrated successfully');
     } catch (error) {
       console.error('Error migrating resources:', error);
     }

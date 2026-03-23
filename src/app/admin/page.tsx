@@ -16,7 +16,7 @@ export default function ContentDashboard() {
     }
 
     if (!isAuthenticated) {
-        return null; // Will redirect to login
+        return null;
     }
     return (
         <div className="min-h-screen bg-[#FAF9F6] py-12">
@@ -261,10 +261,8 @@ export default function ContentDashboard() {
                             </div>
                         </div>
 
-                        <Link href="/content/README.md" target="_blank">
-                            <button className="w-full px-4 py-3 bg-[#D9A15B] text-white font-semibold rounded-lg hover:bg-[#c4923f] transition-colors">
-                                View Full Guide
-                            </button>
+                        <Link href="/admin/guide" className="block w-full px-4 py-3 bg-[#D9A15B] text-white font-semibold rounded-lg hover:bg-[#c4923f] transition-colors text-center">
+                            View Full Guide
                         </Link>
                     </div>
                 </div>
@@ -279,9 +277,9 @@ export default function ContentDashboard() {
                             </div>
                             <h4 className="font-semibold text-[#2D1B33] mb-2">Update Course Prices</h4>
                             <p className="text-sm text-[#2D1B33]/60 mb-4">Change pricing and discounts</p>
-                            <button className="px-6 py-2 bg-[#D9A15B] text-white font-semibold rounded-lg hover:bg-[#c4923f] transition-colors">
+                            <Link href="/admin/courses" className="inline-block px-6 py-2 bg-[#D9A15B] text-white font-semibold rounded-lg hover:bg-[#c4923f] transition-colors">
                                 Edit Prices
-                            </button>
+                            </Link>
                         </div>
                         <div className="text-center">
                             <div className="w-16 h-16 bg-[#D9A15B]/10 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -289,9 +287,9 @@ export default function ContentDashboard() {
                             </div>
                             <h4 className="font-semibold text-[#2D1B33] mb-2">Update Contact Info</h4>
                             <p className="text-sm text-[#2D1B33]/60 mb-4">Change phone, email, address</p>
-                            <button className="px-6 py-2 bg-[#D9A15B] text-white font-semibold rounded-lg hover:bg-[#c4923f] transition-colors">
+                            <Link href="/admin/settings" className="inline-block px-6 py-2 bg-[#D9A15B] text-white font-semibold rounded-lg hover:bg-[#c4923f] transition-colors">
                                 Edit Contact
-                            </button>
+                            </Link>
                         </div>
                         <div className="text-center">
                             <div className="w-16 h-16 bg-[#D9A15B]/10 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -299,9 +297,9 @@ export default function ContentDashboard() {
                             </div>
                             <h4 className="font-semibold text-[#2D1B33] mb-2">Add New Testimonial</h4>
                             <p className="text-sm text-[#2D1B33]/60 mb-4">Add student success stories</p>
-                            <button className="px-6 py-2 bg-[#D9A15B] text-white font-semibold rounded-lg hover:bg-[#c4923f] transition-colors">
+                            <Link href="/admin/testimonials" className="inline-block px-6 py-2 bg-[#D9A15B] text-white font-semibold rounded-lg hover:bg-[#c4923f] transition-colors">
                                 Add Review
-                            </button>
+                            </Link>
                         </div>
                     </div>
                 </div>

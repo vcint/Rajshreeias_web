@@ -191,6 +191,10 @@ export default function CourseEditor() {
                   <div className="text-[#2D1B33]">{course.mode}</div>
                 </div>
               </div>
+              <div className="mt-4 text-sm">
+                <span className="font-medium text-[#2D1B33]/80">Razorpay Link:</span>
+                <div className="text-[#2D1B33] break-all">{course.razorpayUrl || 'Not set'}</div>
+              </div>
             </div>
           ))}
         </div>
@@ -265,6 +269,20 @@ export default function CourseEditor() {
                       className="w-full px-3 py-2 border border-[#2D1B33]/20 rounded-lg focus:outline-none focus:border-[#D9A15B]"
                     />
                   </div>
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium text-[#2D1B33]/80 mb-2">Razorpay Link</label>
+                  <input
+                    type="url"
+                    value={editingCourse.razorpayUrl || ''}
+                    onChange={(e) => setEditingCourse({...editingCourse, razorpayUrl: e.target.value})}
+                    className="w-full px-3 py-2 border border-[#2D1B33]/20 rounded-lg focus:outline-none focus:border-[#D9A15B]"
+                    placeholder="https://rzp.io/rzp/your-course-link"
+                  />
+                  <p className="text-xs text-[#2D1B33]/60 mt-1">
+                    Set a unique payment link for this course page.
+                  </p>
                 </div>
 
                 <div className="flex gap-4 pt-4">

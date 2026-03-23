@@ -1,37 +1,185 @@
-'use client';
+"use client";
 
-import { useState, useEffect } from 'react';import { useAdminAuth } from "@/hooks/useAdminAuth";
-interface StudentReview {
+import { useEffect, useState } from "react";
+import { useAdminAuth } from "@/hooks/useAdminAuth";
+
+interface Testimonial {
   id: number;
-  studentName: string;
-  course: string;
-  platform: string;
-  imageUrl: string;
+  name: string;
+  rank: string;
+  image: string;
+  text: string;
   rating: number;
-  preview: string;
-  isVideo: boolean;
+  course: string;
 }
 
-interface StudentReviewData {
-  studentReviews: StudentReview[];
+interface TestimonialsData {
+  testimonials: Testimonial[];
 }
 
-export default function TestimonialEditor() {
+const emptyForm: Omit<Testimonial, "id"> = {
+  name: "",
+  rank: "",
+  image: "",
+  text: "",
+  rating: 5,
+  course: ""
+};
+
+export default function TestimonialsEditor() {
   const { isAuthenticated, isLoading } = useAdminAuth();
-  const [reviewData, setReviewData] = useState<StudentReviewData>({ studentReviews: [] });
-  const [selectedReview, setSelectedReview] = useState<StudentReview | null>(null);
+  const [data, setData] = useState<TestimonialsData>({ testimonials: [] });
+  const [selected, setSelected] = useState<Testimonial | null>(null);
   const [isEditing, setIsEditing] = useState(false);
-  const [formData, setFormData] = useState<Omit<StudentReview, 'id'>>({
-    studentName: '',
-    course: '',
-    platform: 'WhatsApp',
-    imageUrl: '',
-    rating: 5,
-    preview: '',
-    isVideo: false
-  });
+  const [formData, setFormData] = useState<Omit<Testimonial, "id">>(emptyForm);
   const [uploadedFile, setUploadedFile] = useState<File | null>(null);
   const [isUploading, setIsUploading] = useState(false);
+
+  const loadTestimonials = async () => {
+    try {
+      const response = await fetch("/api/get-content?type=testimonials");
+      const result = await response.json();
+
+      if (result.success && result.data) {
+        setData({ testimonials: result.data.testimonials || [] });
+      } else {
+        console.error("Failed to load testimonials:", result.error);
+      }
+    } catch (error) {
+      console.error("Failed to load testimonials:", error);
+    }
+  };
+
+  useEffect(() => {
+    if (isAuthenticated) {
+      loadTestimonials();
+    }
+  }, [isAuthenticated]);
+
+  const saveTestimonials = async (updated: TestimonialsData) => {
+    try {
+      const response = await fetch("/api/update-content", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          type: "testimonials",
+          data: updated
+        })
+      });
+
+      const result = await response.json();
+      if (response.ok && result.success) {
+        setData(updated);
+        alert("Testimonials saved successfully.");
+      } else {
+        alert("Failed to save testimonials: " + (result.error || "Unknown error"));
+      }
+    } catch (error) {
+      console.error("Failed to save testimonials:", error);
+      alert("Failed to save testimonials.");
+    }
+  };
+
+  const handleEdit = (testimonial: Testimonial) => {
+    setSelected(testimonial);
+    setFormData({
+      name: testimonial.name,
+      rank: testimonial.rank,
+      image: testimonial.image,
+      text: testimonial.text,
+      rating: testimonial.rating,
+      course: testimonial.course
+    });
+    setIsEditing(true);
+  };
+
+  const handleAddNew = () => {
+    setSelected(null);
+    setFormData(emptyForm);
+    setUploadedFile(null);
+    setIsEditing(true);
+  };
+
+  const handleImageUpload = async (file: File) => {
+    setIsUploading(true);
+    try {
+      const payload = new FormData();
+      payload.append("file", file);
+
+      const response = await fetch("/api/upload-testimonial", {
+        method: "POST",
+        body: payload
+      });
+
+      const result = await response.json();
+      if (response.ok && result.success) {
+        setFormData((prev) => ({ ...prev, image: result.filePath }));
+        alert("Image uploaded successfully.");
+      } else {
+        alert("Upload failed: " + (result.error || "Unknown error"));
+      }
+    } catch (error) {
+      console.error("Image upload failed:", error);
+      alert("Image upload failed.");
+    } finally {
+      setIsUploading(false);
+    }
+  };
+
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (!file) {
+      return;
+    }
+
+    setUploadedFile(file);
+    handleImageUpload(file);
+  };
+
+  const handleDelete = async (id: number) => {
+    if (!confirm("Are you sure you want to delete this testimonial?")) {
+      return;
+    }
+
+    const updated = {
+      testimonials: data.testimonials.filter((item) => item.id !== id)
+    };
+
+    await saveTestimonials(updated);
+  };
+
+  const handleSave = async () => {
+    if (!formData.name || !formData.rank || !formData.course || !formData.text) {
+      alert("Please fill all required fields: Name, Rank, Course, and Testimonial Text.");
+      return;
+    }
+
+    const updated = [...data.testimonials];
+
+    if (selected) {
+      const index = updated.findIndex((item) => item.id === selected.id);
+      if (index !== -1) {
+        updated[index] = {
+          ...selected,
+          ...formData
+        };
+      }
+    } else {
+      const newId = Math.max(...updated.map((item) => item.id), 0) + 1;
+      updated.push({ id: newId, ...formData });
+    }
+
+    await saveTestimonials({ testimonials: updated });
+    setIsEditing(false);
+    setSelected(null);
+  };
+
+  const handleCancel = () => {
+    setIsEditing(false);
+    setSelected(null);
+    setFormData(emptyForm);
+    setUploadedFile(null);
+  };
 
   if (isLoading) {
     return (
@@ -42,252 +190,69 @@ export default function TestimonialEditor() {
   }
 
   if (!isAuthenticated) {
-    return null; // Will redirect to login
+    return null;
   }
-
-  const loadReviewData = async () => {
-    try {
-      const response = await fetch('/api/get-content?type=student-reviews');
-      if (response.ok) {
-        const result = await response.json();
-        if (result.success && result.data) {
-          setReviewData(result.data);
-        } else {
-          console.error('API returned error:', result.error);
-        }
-      }
-    } catch (error) {
-      console.error('Error loading student review data:', error);
-    }
-  };
-
-  useEffect(() => {
-    if (isAuthenticated) {
-      loadReviewData();
-    }
-  }, [isAuthenticated]);
-
-  const saveReviewData = async (updatedData: StudentReviewData) => {
-    try {
-      const response = await fetch('/api/update-content', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          type: 'student-reviews',
-          data: updatedData
-        }),
-      });
-
-      if (response.ok) {
-        const result = await response.json();
-        if (result.success) {
-          setReviewData(updatedData);
-          alert('Student review data saved successfully!');
-        } else {
-          alert('Error saving student review data: ' + result.error);
-        }
-      } else {
-        alert('Error saving student review data');
-      }
-    } catch (error) {
-      console.error('Error saving student review data:', error);
-      alert('Error saving student review data');
-    }
-  };
-
-  const handleEdit = (review: StudentReview) => {
-    setSelectedReview(review);
-    setFormData({
-      studentName: review.studentName,
-      course: review.course,
-      platform: review.platform,
-      imageUrl: review.imageUrl,
-      rating: review.rating,
-      preview: review.preview,
-      isVideo: review.isVideo
-    });
-    setUploadedFile(null);
-    setIsEditing(true);
-  };
-
-  const handleFileUpload = async (file: File) => {
-    setIsUploading(true);
-    try {
-      const formData = new FormData();
-      formData.append('file', file);
-
-      const response = await fetch('/api/upload-review', {
-        method: 'POST',
-        body: formData,
-      });
-
-      if (response.ok) {
-        const result = await response.json();
-        if (result.success) {
-          setFormData(prev => ({
-            ...prev,
-            imageUrl: result.filePath,
-            isVideo: result.isVideo
-          }));
-          alert('File uploaded successfully!');
-        } else {
-          alert('Upload failed: ' + result.error);
-        }
-      } else {
-        alert('Upload failed');
-      }
-    } catch (error) {
-      console.error('Upload error:', error);
-      alert('Upload failed');
-    } finally {
-      setIsUploading(false);
-    }
-  };
-
-  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0];
-    if (file) {
-      setUploadedFile(file);
-      handleFileUpload(file);
-    }
-  };
-
-  const handleAddNew = () => {
-    setSelectedReview(null);
-    setFormData({
-      studentName: '',
-      course: '',
-      platform: 'WhatsApp',
-      imageUrl: '',
-      rating: 5,
-      preview: '',
-      isVideo: false
-    });
-    setUploadedFile(null);
-    setIsEditing(true);
-  };
-
-  const handleSave = async () => {
-    if (!formData.studentName || !formData.course) {
-      alert('Please fill all required fields (Student Name and Course)');
-      return;
-    }
-
-    if (!formData.imageUrl) {
-      alert('Please upload a file or provide an image path');
-      return;
-    }
-
-    const updatedReviews = [...reviewData.studentReviews];
-    
-    if (selectedReview) {
-      // Edit existing review
-      const index = updatedReviews.findIndex(review => review.id === selectedReview.id);
-      if (index !== -1) {
-        updatedReviews[index] = {
-          ...selectedReview,
-          ...formData
-        };
-      }
-    } else {
-      // Add new review
-      const newId = Math.max(...updatedReviews.map(review => review.id), 0) + 1;
-      updatedReviews.push({
-        id: newId,
-        ...formData
-      });
-    }
-
-    await saveReviewData({ studentReviews: updatedReviews });
-    setIsEditing(false);
-  };
-
-  const handleDelete = async (id: number) => {
-    if (confirm('Are you sure you want to delete this student review?')) {
-      const updatedReviews = reviewData.studentReviews.filter(review => review.id !== id);
-      await saveReviewData({ studentReviews: updatedReviews });
-    }
-  };
-
-  const handleCancel = () => {
-    setIsEditing(false);
-    setSelectedReview(null);
-    setUploadedFile(null);
-  };
-
-  const courses = Array.from(new Set(reviewData.studentReviews.map(review => review.course)));
 
   return (
     <div className="p-6">
       <div className="flex justify-between items-center mb-6">
-        <h1 className="text-3xl font-bold text-gray-800">Student Review Management</h1>
+        <h1 className="text-3xl font-bold text-gray-800">Testimonials Management</h1>
         <button
           onClick={handleAddNew}
           className="bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-700 transition-colors"
         >
-          Add New Review
+          Add New Testimonial
         </button>
       </div>
 
       {isEditing ? (
         <div className="bg-white p-6 rounded-lg shadow-md mb-6">
           <h2 className="text-xl font-semibold mb-4">
-            {selectedReview ? 'Edit Student Review' : 'Add New Student Review'}
+            {selected ? "Edit Testimonial" : "Add New Testimonial"}
           </h2>
-          
+
           <div className="space-y-4">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div>
-                <label className="block text-sm font-medium mb-2">Student Name *</label>
+                <label className="block text-sm font-medium mb-2">Name *</label>
                 <input
                   type="text"
-                  value={formData.studentName}
-                  onChange={(e) => setFormData({...formData, studentName: e.target.value})}
+                  value={formData.name}
+                  onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                   className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                   placeholder="e.g., Priya Sharma"
                 />
               </div>
 
               <div>
-                <label className="block text-sm font-medium mb-2">Course *</label>
+                <label className="block text-sm font-medium mb-2">Rank / Achievement *</label>
                 <input
                   type="text"
-                  value={formData.course}
-                  onChange={(e) => setFormData({...formData, course: e.target.value})}
+                  value={formData.rank}
+                  onChange={(e) => setFormData({ ...formData, rank: e.target.value })}
                   className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                  placeholder="e.g., UPSC CSE, MPSC"
-                  list="courses"
+                  placeholder="e.g., AIR 45, UPSC CSE 2023"
                 />
-                <datalist id="courses">
-                  {courses.map(course => (
-                    <option key={course} value={course} />
-                  ))}
-                </datalist>
               </div>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div>
-                <label className="block text-sm font-medium mb-2">Platform *</label>
-                <select
-                  value={formData.platform}
-                  onChange={(e) => setFormData({...formData, platform: e.target.value})}
+                <label className="block text-sm font-medium mb-2">Course *</label>
+                <input
+                  type="text"
+                  value={formData.course}
+                  onChange={(e) => setFormData({ ...formData, course: e.target.value })}
                   className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                >
-                  <option value="WhatsApp">WhatsApp</option>
-                  <option value="Instagram">Instagram</option>
-                  <option value="Notepad">Notepad</option>
-                  <option value="Other">Other</option>
-                </select>
+                  placeholder="e.g., UPSC CSE Complete Course"
+                />
               </div>
 
               <div>
                 <label className="block text-sm font-medium mb-2">Rating *</label>
                 <select
                   value={formData.rating}
-                  onChange={(e) => setFormData({...formData, rating: parseInt(e.target.value)})}
+                  onChange={(e) => setFormData({ ...formData, rating: parseInt(e.target.value, 10) })}
                   className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                 >
                   <option value={5}>5 Stars</option>
@@ -300,71 +265,49 @@ export default function TestimonialEditor() {
             </div>
 
             <div>
-              <label className="block text-sm font-medium mb-2">Upload Review Image/Video</label>
+              <label className="block text-sm font-medium mb-2">Upload Image (Optional)</label>
               <div className="space-y-3">
                 <input
                   type="file"
-                  accept="image/*,video/*"
+                  accept="image/*"
                   onChange={handleFileChange}
                   disabled={isUploading}
                   className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 file:mr-4 file:py-2 file:px-4 file:rounded file:border-0 file:text-sm file:font-medium file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100"
                 />
-                {isUploading && (
-                  <p className="text-blue-600 text-sm">Uploading file...</p>
-                )}
+                {isUploading && <p className="text-blue-600 text-sm">Uploading image...</p>}
                 {uploadedFile && !isUploading && (
-                  <p className="text-green-600 text-sm">✓ {uploadedFile.name} uploaded successfully</p>
+                  <p className="text-green-600 text-sm">Uploaded: {uploadedFile.name}</p>
                 )}
-                <p className="text-sm text-gray-600">
-                  Supported formats: JPEG, PNG, GIF, WebP, MP4, AVI, MOV, WMV, WebM<br/>
-                  Max size: 10MB for images, 50MB for videos
-                </p>
+                <p className="text-sm text-gray-600">Supported formats: JPEG, PNG, GIF, WebP. Max size: 10MB. Uploaded file path will auto-fill below.</p>
               </div>
             </div>
 
-            <div className="relative">
-              <label className="block text-sm font-medium mb-2">
-                Review Image/Video Path {!formData.imageUrl && '*'}
-              </label>
+            <div>
+              <label className="block text-sm font-medium mb-2">Image Link or Path (Optional)</label>
               <input
                 type="text"
-                value={formData.imageUrl}
-                onChange={(e) => setFormData({...formData, imageUrl: e.target.value})}
+                value={formData.image}
+                onChange={(e) => setFormData({ ...formData, image: e.target.value })}
                 className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                placeholder="Upload a file above or enter path manually: /reviews/filename.jpg"
+                placeholder="Paste full URL (https://...) or local path (/testimonials/image.jpg)"
                 disabled={isUploading}
               />
               <p className="text-sm text-gray-600 mt-1">
-                {formData.imageUrl ? 
-                  'File will be available at: ' + formData.imageUrl : 
-                  'Upload a file above or manually enter the file path'
-                }
+                {formData.image
+                  ? `Current image value: ${formData.image}`
+                  : "You can either upload an image above or paste an image URL/path here."}
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div>
-                <label className="block text-sm font-medium mb-2">Preview Text</label>
-                <textarea
-                  value={formData.preview}
-                  onChange={(e) => setFormData({...formData, preview: e.target.value})}
-                  rows={3}
-                  className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                  placeholder="Short preview text (optional)"
-                />
-              </div>
-
-              <div className="flex items-center">
-                <label className="block text-sm font-medium mb-2">
-                  <input
-                    type="checkbox"
-                    checked={formData.isVideo}
-                    onChange={(e) => setFormData({...formData, isVideo: e.target.checked})}
-                    className="mr-2"
-                  />
-                  This is a video review
-                </label>
-              </div>
+            <div>
+              <label className="block text-sm font-medium mb-2">Testimonial Text *</label>
+              <textarea
+                value={formData.text}
+                onChange={(e) => setFormData({ ...formData, text: e.target.value })}
+                rows={5}
+                className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                placeholder="Write testimonial text"
+              />
             </div>
           </div>
 
@@ -373,7 +316,7 @@ export default function TestimonialEditor() {
               onClick={handleSave}
               className="bg-green-600 text-white px-6 py-2 rounded-md hover:bg-green-700 transition-colors"
             >
-              {selectedReview ? 'Update Review' : 'Add Review'}
+              {selected ? "Update Testimonial" : "Add Testimonial"}
             </button>
             <button
               onClick={handleCancel}
@@ -387,58 +330,40 @@ export default function TestimonialEditor() {
         <div className="bg-white rounded-lg shadow-md">
           <div className="p-6">
             <h2 className="text-xl font-semibold mb-4">
-              Current Student Reviews ({reviewData.studentReviews.length})
+              Current Testimonials ({data.testimonials.length})
             </h2>
-            
-            {reviewData.studentReviews.length === 0 ? (
-              <p className="text-gray-500">No student reviews found. Add some to get started!</p>
+
+            {data.testimonials.length === 0 ? (
+              <p className="text-gray-500">No testimonials found. Add one to get started.</p>
             ) : (
               <div className="space-y-4">
-                {reviewData.studentReviews.map((review) => (
-                  <div key={review.id} className="border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow">
-                    <div className="flex justify-between items-start">
+                {data.testimonials.map((item) => (
+                  <div key={item.id} className="border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow">
+                    <div className="flex justify-between items-start gap-4">
                       <div className="flex-1">
-                        <div className="flex items-center gap-3 mb-2">
-                          <h3 className="font-semibold text-gray-800">
-                            {review.studentName}
-                          </h3>
-                          <span className="bg-blue-100 text-blue-800 px-2 py-1 rounded text-sm font-medium">
-                            {review.course}
-                          </span>
-                          <span className="bg-green-100 text-green-800 px-2 py-1 rounded text-sm font-medium">
-                            {review.platform}
-                          </span>
+                        <div className="flex flex-wrap items-center gap-2 mb-2">
+                          <h3 className="font-semibold text-gray-800">{item.name}</h3>
+                          <span className="bg-blue-100 text-blue-800 px-2 py-1 rounded text-sm font-medium">{item.rank}</span>
+                          <span className="bg-green-100 text-green-800 px-2 py-1 rounded text-sm font-medium">{item.course}</span>
                           <div className="flex items-center">
-                            {[...Array(review.rating)].map((_, i) => (
+                            {[...Array(item.rating)].map((_, i) => (
                               <span key={i} className="text-yellow-400">★</span>
                             ))}
                           </div>
-                          <span className="text-gray-500 text-sm">ID: {review.id}</span>
                         </div>
-                        <p className="text-gray-600 text-sm mb-2">
-                          Image: {review.imageUrl}
-                        </p>
-                        {review.preview && (
-                          <p className="text-gray-600 text-sm mb-2">
-                            Preview: {review.preview}
-                          </p>
-                        )}
-                        {review.isVideo && (
-                          <span className="bg-red-100 text-red-800 px-2 py-1 rounded text-xs">
-                            Video Review
-                          </span>
-                        )}
+                        <p className="text-gray-700 text-sm mb-2">{item.text}</p>
+                        <p className="text-gray-500 text-xs">Image: {item.image || "Not set"}</p>
                       </div>
-                      
-                      <div className="flex gap-2 ml-4">
+
+                      <div className="flex gap-2">
                         <button
-                          onClick={() => handleEdit(review)}
+                          onClick={() => handleEdit(item)}
                           className="bg-yellow-500 text-white px-3 py-1 rounded text-sm hover:bg-yellow-600 transition-colors"
                         >
                           Edit
                         </button>
                         <button
-                          onClick={() => handleDelete(review.id)}
+                          onClick={() => handleDelete(item.id)}
                           className="bg-red-500 text-white px-3 py-1 rounded text-sm hover:bg-red-600 transition-colors"
                         >
                           Delete

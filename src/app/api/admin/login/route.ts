@@ -12,7 +12,7 @@ export async function POST(request: NextRequest) {
     }
 
     if (password === ADMIN_PASSWORD) {
-      // Create a simple token (in production, use proper JWT)
+      // Generate session token
       const token = crypto.randomBytes(32).toString('hex');
       
       const response = NextResponse.json({ 
@@ -27,7 +27,7 @@ export async function POST(request: NextRequest) {
         secure: process.env.NODE_ENV === 'production',
         sameSite: 'strict',
         maxAge: 60 * 60 * 24, // 24 hours
-        path: '/admin'
+        path: '/'
       });
 
       return response;

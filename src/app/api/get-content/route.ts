@@ -74,7 +74,6 @@ export async function GET(request: NextRequest) {
           throw new Error('Invalid data type');
       }
     } catch (dbError) {
-      console.log('Database not available, using JSON fallback');
       // Fallback to JSON files
       switch (dataType) {
         case 'courses':

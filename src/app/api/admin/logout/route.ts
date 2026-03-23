@@ -4,7 +4,7 @@ export async function POST(request: NextRequest) {
   const response = NextResponse.json({ success: true, message: 'Logged out successfully' });
   
   // Clear the admin token cookie
-  response.cookies.delete('admin_token');
+  response.cookies.delete({ name: 'admin_token', path: '/' });
   
   return response;
 }

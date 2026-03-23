@@ -52,9 +52,6 @@ export default function EnrollPage() {
         try {
             const appsScriptUrl = process.env.NEXT_PUBLIC_APPS_SCRIPT_URL;
             
-            console.log('Apps Script URL:', appsScriptUrl);
-            console.log('Form data:', formData);
-            
             if (!appsScriptUrl) {
                 throw new Error('Apps Script URL not configured');
             }
@@ -90,8 +87,6 @@ export default function EnrollPage() {
                     const iframeDoc = iframe.contentDocument || iframe.contentWindow?.document;
                     const responseText = iframeDoc?.body?.textContent?.trim();
                     
-                    console.log('Response:', responseText);
-                    
                     if (responseText === 'Success') {
                         setIsSuccess(true);
                     } else if (responseText && responseText.startsWith('Error:')) {
@@ -102,7 +97,6 @@ export default function EnrollPage() {
                     }
                 } catch (err) {
                     // Can't read iframe due to CORS, assume success
-                    console.log('Cannot read iframe response, assuming success');
                     setIsSuccess(true);
                 }
                 
@@ -113,7 +107,6 @@ export default function EnrollPage() {
             };
 
             // Submit the form
-            console.log('Submitting form...');
             form.submit();
 
         } catch (err) {

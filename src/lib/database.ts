@@ -18,7 +18,6 @@ async function getConnection(): Promise<mysql.Connection> {
       };
       
       connection = await mysql.createConnection(connectionConfig);
-      console.log('MySQL database connected successfully');
     } catch (error) {
       console.error('Failed to connect to MySQL:', error);
       throw error;
@@ -117,8 +116,6 @@ export async function initializeTables() {
         updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
       )
     `);
-
-    console.log('Database tables initialized successfully');
   } catch (error) {
     console.error('Error initializing database tables:', error);
     throw error;
@@ -178,7 +175,19 @@ export async function getSiteSettings() {
     const settings: any = {};
     
     rows.forEach((row: any) => {
-      settings[row.setting_key] = row.setting_value;
+      const rawValue = Buffer.isBuffer(row.setting_value)
+        ? row.setting_value.toString('utf-8')
+        : row.setting_value;
+
+      if (typeof rawValue === 'string') {
+        try {
+          settings[row.setting_key] = JSON.parse(rawValue);
+        } catch {
+          settings[row.setting_key] = rawValue;
+        }
+      } else {
+        settings[row.setting_key] = rawValue;
+      }
     });
     
     return settings;

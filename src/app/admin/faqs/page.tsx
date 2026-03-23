@@ -25,6 +25,12 @@ export default function FAQEditor() {
     category: ''
   });
 
+  useEffect(() => {
+    if (isAuthenticated) {
+      loadFAQData();
+    }
+  }, [isAuthenticated]);
+
   if (isLoading) {
     return (
       <div className="min-h-screen flex items-center justify-center">
@@ -34,14 +40,8 @@ export default function FAQEditor() {
   }
 
   if (!isAuthenticated) {
-    return null; // Will redirect to login
+    return null;
   }
-
-  useEffect(() => {
-    if (isAuthenticated) {
-      loadFAQData();
-    }
-  }, [isAuthenticated]);
 
   const loadFAQData = async () => {
     try {
